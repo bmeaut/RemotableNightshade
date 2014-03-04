@@ -1,1 +1,8 @@
 /.settings
+*.o
+*.la
+*.lo
+*.a
+**/.libs/**
+nscontrol/src/.libs/**
+src/nightshade
