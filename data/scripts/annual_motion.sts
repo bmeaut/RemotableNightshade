@@ -1,0 +1,842 @@
+#
+# Show annual motion 
+# step by sidereal days over 1 year
+# (works on any body)
+#
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1
+
+
+date sidereal 1
+wait duration 0.1
+date sidereal 1
+wait duration 0.1

@@ -1,0 +1,52 @@
+# This file contains fisheye distortion correction parameters 
+# and truncated mode configuration for Nightshade.
+#
+# On the DESKTOP build, lens 1 is always used.
+#
+# Each distortion definition begins with a lens, height, pconfig line where:
+#   lens = lens number
+#   height = window height in pixels, or 0 to match any height
+#   pconfig = projection configuration:
+#      0 = truncated (or default configuration when truncation isn't an option)
+#      1 = lens at dome center
+#      2 = lens below dome center (such as for projection angles much under 180 degrees)    
+#
+# Following this is an optional viewport line, of the form:
+#   viewport CENTER_X CENTER_Y RADIUS
+# If these are between 0 and 1, they are interpreted as fractions of the screen width,
+# otherwise as pixel values.  CENTER_Y is measured up from the bottom of the screen.
+#
+# Following this are distortion correction lines of two types:
+#   L = lens distortion
+#   G = geometry (projector placement) distortion
+#
+# Each type has two subtypes (as separate lines)
+#   P = project function parameters
+#   U = unproject function parameters
+#
+# parameters are:
+#   a, b, c, limit, fudge_factor
+#
+# where for projection (unit circle):
+# 	if (f < limit ) {
+#		f = a*f + b*f*f + c*f*f*f;
+#	} else {
+#		f = f + fudge_factor;
+#	}
+#
+# (see src/fisheye_projector.cpp for implementation details)
+#
+
+### Default lens, any resolution, no distortion, allows truncated mode
+lens 1 height 0 pconfig 0
+viewport 0.5 0.5 0.5
+LP 1.0 0.0 0.0 1.0 0.0
+LU 1.0 0.0 0.0 1.0 0.0
+
+lens 1 height 0 pconfig 1
+LP 1.0 0.0 0.0 1.0 0.0
+LU 1.0 0.0 0.0 1.0 0.0
+
+lens 1 height 0 pconfig 2
+LP 1.0 0.0 0.0 1.0 0.0
+LU 1.0 0.0 0.0 1.0 0.0

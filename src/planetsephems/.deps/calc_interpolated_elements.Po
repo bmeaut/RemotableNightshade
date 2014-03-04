@@ -1,0 +1,9 @@
+calc_interpolated_elements.o: calc_interpolated_elements.c \
+ /usr/include/stdc-predef.h /usr/include/x86_64-linux-gnu/bits/predefs.h \
+ calc_interpolated_elements.h
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/predefs.h:
+
+calc_interpolated_elements.h:

@@ -1,0 +1,32 @@
+Constellation art created by Johan Meuris 
+For Stellarium http://stellarium.org
+
+Jomejome
+jomejome at users.sourceforge.net
+http://users.pandora.be/jomejom/
+
+License: released under the Free Art License 
+http://artlibre.org/licence.php/lalgb.html
+
+Color added by Erasmo Sesena
+erasse at users.sourceforge.net
+
+
+===
+
+To REPLACE your existing Western constellation art, copy the png
+files over your existing constellation art png files.
+
+See either the directory
+
+stellarium/textures/constellation-art/
+
+or 
+
+stellarium/skycultures/western/
+
+
+ALTERNATIVEY with some work you can also add a new skyculture 
+to keep the existing art and use the new art when desired
+by changing your sky culture.  Details vary by release.
+

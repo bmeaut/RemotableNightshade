@@ -1,0 +1,19 @@
+stellplanet.o: stellplanet.c /usr/include/stdc-predef.h \
+ /usr/include/x86_64-linux-gnu/bits/predefs.h vsop87.h elp82b.h marssat.h \
+ l1.h tass17.h gust86.h
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/predefs.h:
+
+vsop87.h:
+
+elp82b.h:
+
+marssat.h:
+
+l1.h:
+
+tass17.h:
+
+gust86.h:

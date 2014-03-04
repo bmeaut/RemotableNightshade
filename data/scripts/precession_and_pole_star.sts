@@ -1,0 +1,158 @@
+#
+# Show how pole star changes due to precession
+#
+
+clear
+moveto lat 90 duration 2
+timerate rate 0
+flag show_tui_datetime 1
+flag equatorial_grid 1
+flag constellation_drawing 1
+flag precession_circle 1
+wait duration 2
+
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+date relative 146097
+wait duration 0.4
+
+date relative 73050
+
+
+

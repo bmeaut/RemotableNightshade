@@ -1,0 +1,4699 @@
+# Maltese translation for nightshade
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the nightshade package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: nightshade\n"
+"Report-Msgid-Bugs-To: support@nightshadesoftware.org\n"
+"POT-Creation-Date: 2011-12-21 11:41-0800\n"
+"PO-Revision-Date: 2006-09-02 13:57+0000\n"
+"Last-Translator: alex <ap@onvol.net>\n"
+"Language-Team: Maltese <mt@li.org>\n"
+"Language: mt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main.cpp:69
+#, c-format
+msgid ""
+"Usage: %s [OPTION] ...\n"
+" -v, --version          Output version information and exit.\n"
+" -h, --help             Display this help and exit.\n"
+msgstr ""
+
+#: src/main.cpp:89
+#, c-format
+msgid "%s: Bad command line argument(s)\n"
+msgstr ""
+
+#: src/main.cpp:90
+#, c-format
+msgid "Try `%s --help' for more information.\n"
+msgstr ""
+
+#: src/hip_star_mgr.cpp:368
+#, fuzzy
+msgid "Loading catalog "
+msgstr "Qed jillowdja l-katalgu NGC: "
+
+#: src/nebula.cpp:107 src/nebula.cpp:131 src/planet.cpp:265 src/planet.cpp:316
+msgid "Magnitude: "
+msgstr "Manjitudni: "
+
+#: src/nebula.cpp:109 src/planet.cpp:270
+msgid "RA/DE: "
+msgstr "RA/DE: "
+
+#: src/nebula.cpp:117 src/planet.cpp:278 src/planet.cpp:327
+#, fuzzy
+msgid "Alt/Az: "
+msgstr "Az/Alt: "
+
+#: src/nebula.cpp:119
+msgid "Type: "
+msgstr "Tip: "
+
+#: src/nebula.cpp:121
+msgid "Size: "
+msgstr "Daqs: "
+
+#: src/nebula.cpp:134
+#, fuzzy
+msgid "ly"
+msgstr "Aquila"
+
+#: src/nebula.cpp:139
+msgid "kly"
+msgstr ""
+
+#: src/nebula.cpp:142
+msgid "Mly"
+msgstr ""
+
+#: src/nebula.cpp:148 src/planet.cpp:281 src/planet.cpp:320
+msgid "Distance: "
+msgstr "Distanza: "
+
+#: src/nebula_mgr.cpp:492
+msgid "Loading NGC catalog: "
+msgstr "Qed jillowdja l-katalgu NGC: "
+
+#: src/nebula_mgr.cpp:603
+msgid "Loading Nebula Textures:"
+msgstr "Qed jillowdjaw in-Nebula Textures:"
+
+#: src/planet.cpp:281 src/planet.cpp:320
+msgid "AU"
+msgstr "UA"
+
+#: src/ui.cpp:580
+msgid "Script commander"
+msgstr "Script commander"
+
+#: src/ui.cpp:605
+msgid "Invalid Script command"
+msgstr "Script command invalidu"
+
+#: src/ui.cpp:652 src/ui.cpp:767 src/ui_conf.cpp:100 src/ui_tuiconf.cpp:587
+msgid "Constellation Lines"
+msgstr "Linji tal-kostellazzjonijiet"
+
+#: src/ui.cpp:654 src/ui.cpp:768 src/ui_conf.cpp:106 src/ui_tuiconf.cpp:588
+#, fuzzy
+msgid "Constellation Labels"
+msgstr "Ismijiet tal-kostellazzjonijiet"
+
+#: src/ui.cpp:656 src/ui.cpp:770 src/ui_tuiconf.cpp:590
+#, fuzzy
+msgid "Constellation Art"
+msgstr "Kostellazzjonijiet [R]"
+
+#: src/ui.cpp:658 src/ui.cpp:809 src/ui_conf.cpp:183 src/ui_tuiconf.cpp:598
+msgid "Azimuthal Grid"
+msgstr "Grid Azimutali"
+
+#: src/ui.cpp:660 src/ui.cpp:771 src/ui_conf.cpp:177 src/ui_tuiconf.cpp:599
+msgid "Equatorial Grid"
+msgstr "Grid Ekwatorjali"
+
+#: src/ui.cpp:662 src/ui.cpp:777 src/ui_conf.cpp:206
+msgid "Ground"
+msgstr "L-Art"
+
+#: src/ui.cpp:664 src/ui.cpp:780 src/ui_conf.cpp:211 src/ui_tuiconf.cpp:592
+msgid "Cardinal Points"
+msgstr "Punti tal-Kumpass"
+
+#: src/ui.cpp:666 src/ui.cpp:778 src/ui_conf.cpp:217
+msgid "Atmosphere"
+msgstr "Atmosfera"
+
+#: src/ui.cpp:668 src/ui.cpp:773 src/ui_tuiconf.cpp:602
+#, fuzzy
+msgid "Nebula Labels"
+msgstr "Ismijiet tan-nebuli"
+
+#: src/ui.cpp:670 src/ui.cpp:786 src/ui.cpp:833
+msgid "Help"
+msgstr "Għajnuna"
+
+#: src/ui.cpp:672
+#, fuzzy
+msgid "Equatorial/Altazimuthal Mount"
+msgstr "Mount Ekwatorjali/Altazimut [ENTER]"
+
+#: src/ui.cpp:674 src/ui.cpp:789 src/ui_conf.cpp:45
+msgid "Configuration"
+msgstr "Konfigurazzjoni u settings"
+
+#: src/ui.cpp:677 src/ui.cpp:774 src/ui_conf.cpp:165 src/ui_tuiconf.cpp:593
+#, fuzzy
+msgid "Body Labels"
+msgstr "Stilel"
+
+#: src/ui.cpp:680
+msgid "Quit [CTRL + Q]"
+msgstr "Agħlaq [CTRL + Q]"
+
+#: src/ui.cpp:682
+msgid "Quit [CMD + Q]"
+msgstr "Agħlaq [CMD + Q]"
+
+#: src/ui.cpp:685 src/ui.cpp:790
+#, fuzzy
+msgid "Search for Object"
+msgstr "Fittex għal xi oġġett"
+
+#: src/ui.cpp:687
+#, fuzzy
+msgid "Script Command"
+msgstr "Script commander"
+
+#: src/ui.cpp:689
+msgid "Track Selected Object"
+msgstr ""
+
+#: src/ui.cpp:691
+msgid "Flip Horizontally"
+msgstr ""
+
+#: src/ui.cpp:693
+msgid "Flip Vertically"
+msgstr ""
+
+#: src/ui.cpp:699 src/ui.cpp:800
+#, fuzzy
+msgid "Decrease Time Rate"
+msgstr "Naqqas l-ispeed tal-ħin [J]"
+
+#: src/ui.cpp:701 src/ui.cpp:801
+#, fuzzy
+msgid "Real Time Rate"
+msgstr "Ħin normali [K]"
+
+#: src/ui.cpp:703 src/ui.cpp:802
+#, fuzzy
+msgid "Increase Time Rate"
+msgstr "Żid l-ispeed tal-ħin [L]"
+
+#: src/ui.cpp:705 src/ui.cpp:799
+msgid "Return to Current Time"
+msgstr "Mur lura għall-ħin ta' bħalissa"
+
+#: src/ui.cpp:717
+#, fuzzy
+msgid ""
+"   Please check for newer versions and send bug reports\n"
+"    and comments to us at: http://nightshadesoftware.org\n"
+"\n"
+msgstr ""
+"   Jekk jogħġbok iċċekkja għal verżjonijiet ġodda u ibgħatilna rapport/i u "
+"kumment fejn hemm xi bug minn: http://www.nightshadesoftware.org\n"
+"\n"
+
+#: src/ui.cpp:738
+msgid "Information"
+msgstr "Informazzjoni"
+
+#: src/ui.cpp:753
+msgid "Movement and Selection:"
+msgstr ""
+
+#: src/ui.cpp:754
+msgid "Arrow Keys"
+msgstr ""
+
+#: src/ui.cpp:754
+msgid "Pan View"
+msgstr ""
+
+#: src/ui.cpp:755
+msgid "Page Up"
+msgstr ""
+
+#: src/ui.cpp:755
+msgid "Zoom In"
+msgstr ""
+
+#: src/ui.cpp:756
+msgid "Page Down"
+msgstr ""
+
+#: src/ui.cpp:756
+msgid "Zoom Out"
+msgstr ""
+
+#: src/ui.cpp:757
+msgid "Left Click"
+msgstr ""
+
+#: src/ui.cpp:757
+#, fuzzy
+msgid "Select Object"
+msgstr "Fittex għal xi oġġett"
+
+#: src/ui.cpp:758
+msgid "Right Click"
+msgstr ""
+
+#: src/ui.cpp:758 src/ui.cpp:759
+msgid "Unselect"
+msgstr ""
+
+#: src/ui.cpp:759
+msgid "CTRL + Left Click"
+msgstr ""
+
+#: src/ui.cpp:760
+msgid "Zoom out (planet and satellites views)"
+msgstr ""
+
+#: src/ui.cpp:761
+#, fuzzy
+msgid "Zoom to selected object"
+msgstr "Mur fuq l-oġġett magħżul [SPACE]"
+
+#: src/ui.cpp:762
+#, fuzzy
+msgid "Center on selected object"
+msgstr "Mur fuq l-oġġett magħżul [SPACE]"
+
+#: src/ui.cpp:764
+msgid "Display Options:"
+msgstr ""
+
+#: src/ui.cpp:765
+#, fuzzy
+msgid "Equatorial/altazimuthal mount"
+msgstr "Mount Ekwatorjali/Altazimut [ENTER]"
+
+#: src/ui.cpp:766
+msgid "Toggle fullscreen if possible."
+msgstr ""
+
+#: src/ui.cpp:769 src/ui_conf.cpp:112 src/ui_tuiconf.cpp:591
+msgid "Constellation Boundaries"
+msgstr "Burduri tal-kostellazzjonijiet"
+
+#: src/ui.cpp:772
+#, fuzzy
+msgid "Meridian"
+msgstr "Linja tal-meridjan"
+
+#: src/ui.cpp:775
+#, fuzzy
+msgid "Star Labels"
+msgstr "Stilel"
+
+#: src/ui.cpp:776 src/ui_conf.cpp:66
+msgid "Stars"
+msgstr "Stilel"
+
+#: src/ui.cpp:779 src/ui_conf.cpp:222
+msgid "Fog"
+msgstr "Ċpar"
+
+#: src/ui.cpp:781
+#, fuzzy
+msgid "Toggle Moon Scaling"
+msgstr "Daqs tal-qamar"
+
+#: src/ui.cpp:782 src/ui_conf.cpp:195 src/ui_tuiconf.cpp:601
+msgid "Ecliptic Line"
+msgstr "Linja ta' l-Ellittiku"
+
+#: src/ui.cpp:783 src/ui_conf.cpp:189 src/ui_tuiconf.cpp:600
+msgid "Equator Line"
+msgstr "Linja ta' l-Ekwatur"
+
+#: src/ui.cpp:785
+msgid "Dialogs and Other Controls:"
+msgstr ""
+
+#: src/ui.cpp:787
+msgid "About"
+msgstr ""
+
+#: src/ui.cpp:788
+msgid "Text Menu"
+msgstr ""
+
+#: src/ui.cpp:791 src/ui.cpp:814
+#, fuzzy
+msgid "Go to Selected Body"
+msgstr "Mur fuq l-oġġett magħżul [SPACE]"
+
+#: src/ui.cpp:792
+msgid "Toggle Script Recording"
+msgstr ""
+
+#: src/ui.cpp:793
+msgid "Take Screenshot"
+msgstr ""
+
+#: src/ui.cpp:794
+msgid "Toggle Video Frame Recording"
+msgstr ""
+
+#: src/ui.cpp:796
+#, fuzzy
+msgid "Time and Date:"
+msgstr "Zona tal-ħin :"
+
+#: src/ui.cpp:797
+#, fuzzy
+msgid "Pause Time"
+msgstr "Hin pre-settjat"
+
+#: src/ui.cpp:798
+#, fuzzy
+msgid "Stop Time"
+msgstr "Issettja l-Hin "
+
+#: src/ui.cpp:803
+msgid "Back 24 Hours"
+msgstr ""
+
+#: src/ui.cpp:804
+msgid "Forward 24 Hours"
+msgstr ""
+
+#: src/ui.cpp:805
+msgid "Back 7 Days"
+msgstr ""
+
+#: src/ui.cpp:806
+msgid "Forward 7 Days"
+msgstr ""
+
+#: src/ui.cpp:808
+msgid "After shift key '`' (backtick):"
+msgstr ""
+
+#: src/ui.cpp:810 src/ui_tuiconf.cpp:606
+msgid "Galactic Grid"
+msgstr ""
+
+#: src/ui.cpp:811 src/ui_tuiconf.cpp:594
+msgid "Body Orbits"
+msgstr ""
+
+#: src/ui.cpp:812 src/ui_tuiconf.cpp:596
+msgid "Body Trails"
+msgstr ""
+
+#: src/ui.cpp:813
+#, fuzzy
+msgid "Clouds"
+msgstr "Corvus"
+
+#: src/ui.cpp:815
+#, fuzzy
+msgid "Load Default Configuration"
+msgstr "Konfigurazzjoni u settings"
+
+#: src/ui.cpp:816
+msgid "Replay Last Script"
+msgstr ""
+
+#: src/ui.cpp:817
+#, fuzzy
+msgid "Tropic Lines"
+msgstr "Mixjiet tal-pjaneti"
+
+#: src/ui.cpp:818 src/ui_tuiconf.cpp:604
+msgid "Precession Circle"
+msgstr ""
+
+#: src/ui.cpp:820
+msgid "During Script Playback:"
+msgstr ""
+
+#: src/ui.cpp:821 src/ui.cpp:823
+#, fuzzy
+msgid "End Script"
+msgstr "Scripts "
+
+#: src/ui.cpp:822
+#, fuzzy
+msgid "Pause Script"
+msgstr "Scripts "
+
+#: src/ui.cpp:824
+msgid "Resume Script"
+msgstr ""
+
+#: src/ui.cpp:825
+msgid "Fast Forward Script"
+msgstr ""
+
+#: src/ui.cpp:827
+msgid "Miscellaneous:"
+msgstr ""
+
+#: src/ui.cpp:828
+msgid "Play demo script"
+msgstr ""
+
+#: src/ui.cpp:829
+msgid "Cycle through meteor shower rates"
+msgstr ""
+
+#: src/ui.cpp:830
+#, fuzzy
+msgid "Quit"
+msgstr "Indus"
+
+#: src/ui.cpp:1225
+msgid "Command recording stopped."
+msgstr "Il-kmand biex tirrekordja waqaf."
+
+#: src/ui.cpp:1230
+msgid "Recording commands to script file:\n"
+msgstr "Qed jirrekordja l-commands fi script file:\n"
+
+#: src/ui.cpp:1232
+msgid "Hit CTRL-R again to stop.\n"
+msgstr "Agħfas CTRL-R biex jieqaf.\n"
+
+#: src/ui.cpp:1234
+msgid "Error: Unable to open script file to record commands."
+msgstr "Żball: Ma jistax jinfetaħ l-iscript file biex jirrekordja l-commands."
+
+#: src/ui.cpp:1337
+msgid ""
+"Demo script not found (demo.sts).\n"
+"Download from:"
+msgstr ""
+
+#: src/ui_conf.cpp:72
+#, fuzzy
+msgid "Star Labels. Up to mag :"
+msgstr "Ismijiet ta' l-istilel.  Sa mag.:"
+
+#: src/ui_conf.cpp:84
+msgid "Star Twinkle. Amount :"
+msgstr "Teptip ta' l-istilel.  Ammont:"
+
+#: src/ui_conf.cpp:118
+msgid "Selected Constellation Only"
+msgstr "Il-Kostellazzjoni magħżula biss"
+
+#: src/ui_conf.cpp:129
+#, fuzzy
+msgid "Nebula Labels. Up to mag :"
+msgstr "Ismijiet ta' nebuli.  Sa mag.:"
+
+#: src/ui_conf.cpp:142
+msgid "Also display Nebulas without textures"
+msgstr ""
+
+#: src/ui_conf.cpp:153
+#, fuzzy
+msgid "Bodies"
+msgstr "Bootes"
+
+#: src/ui_conf.cpp:158
+msgid "Moon Scale"
+msgstr "Daqs tal-qamar"
+
+#: src/ui_conf.cpp:252 src/ui_conf.cpp:441 src/ui_conf.cpp:480
+#: src/ui_conf.cpp:541
+msgid "Save as default"
+msgstr "Issejvja bħala fissa"
+
+#: src/ui_conf.cpp:265
+msgid "Current Time :"
+msgstr "Ħin ta' bħalissa :"
+
+#: src/ui_conf.cpp:276
+msgid "Time Zone :"
+msgstr "Zona tal-ħin :"
+
+#: src/ui_conf.cpp:281
+msgid "Using System Default Time Zone"
+msgstr "Qed juża z-zona tal-ħin fissa li għandu l-kompjuter"
+
+#: src/ui_conf.cpp:292
+msgid "Time speed : "
+msgstr "Speed tal-ħin "
+
+#: src/ui_conf.cpp:302
+msgid ""
+"Use key J and L to decrease and increase\n"
+"   time speed.\n"
+"Use key K to return to real time speed."
+msgstr ""
+"Uża l-buttuna J u L biex tnaqqas u żżid\n"
+"l-ispeed tal-ħin.\n"
+"Uża l-buttuna K biex tirritorna għall-ħin normali."
+
+#: src/ui_conf.cpp:328
+msgid "Cursor : "
+msgstr "Cursor "
+
+#: src/ui_conf.cpp:333
+msgid "Selected : "
+msgstr "Maghzul "
+
+#: src/ui_conf.cpp:338
+msgid "Longitude : "
+msgstr "Longitudni "
+
+#: src/ui_conf.cpp:346
+msgid "Latitude : "
+msgstr "Latitudni "
+
+#: src/ui_conf.cpp:354
+msgid "Altitude : "
+msgstr "Altitudni "
+
+#: src/ui_conf.cpp:361
+msgid "Save location"
+msgstr "Issejva dan il-post"
+
+#: src/ui_conf.cpp:384
+msgid "Projection :"
+msgstr "Projjezjoni"
+
+#: src/ui_conf.cpp:404
+msgid "Disk Viewport"
+msgstr "Disk Viewport"
+
+#: src/ui_conf.cpp:412
+msgid "Screen Resolution :"
+msgstr "Resolution ta' l-iskrin"
+
+#: src/ui_conf.cpp:417
+msgid "Restart program for"
+msgstr "Irristartja"
+
+#: src/ui_conf.cpp:418
+msgid "change to apply."
+msgstr ""
+
+#: src/ui_conf.cpp:434
+msgid "For unlisted screen resolution, edit the file :"
+msgstr ""
+
+#: src/ui_conf.cpp:452
+msgid "Choose landscapes:"
+msgstr "Aghzel il-pajsagg:"
+
+#: src/ui_conf.cpp:468 src/ui_conf.cpp:915
+msgid "Author: "
+msgstr "Awtur: "
+
+#: src/ui_conf.cpp:492
+msgid "Program Language: "
+msgstr "Lingwa tal-programm: "
+
+#: src/ui_conf.cpp:509 src/ui_tuiconf.cpp:577
+msgid "Sky Language: "
+msgstr "Lingwa tas-sema: "
+
+#: src/ui_conf.cpp:527 src/ui_tuiconf.cpp:573
+msgid "Sky Culture: "
+msgstr "Kultura tas-sema: "
+
+#: src/ui_conf.cpp:548
+msgid "Language"
+msgstr "Lingwa"
+
+#: src/ui_conf.cpp:549
+#, fuzzy
+msgid "Date & Time"
+msgstr "Data u Hin"
+
+#: src/ui_conf.cpp:550
+msgid "Location"
+msgstr "Lokalità"
+
+#: src/ui_conf.cpp:551
+msgid "Landscapes"
+msgstr "Pajsagg"
+
+#: src/ui_conf.cpp:552
+msgid "Video"
+msgstr "Vidjo"
+
+#: src/ui_conf.cpp:553
+msgid "Rendering"
+msgstr "Rendering"
+
+#: src/ui_conf.cpp:678
+msgid "Object Search"
+msgstr "Fittex"
+
+#: src/ui_conf.cpp:685
+msgid "Search for (eg. Saturn, Polaris, HP6218, Orion, M31):"
+msgstr "Fittex ghal (per ez. Saturnu, Polaris, HP6128, Orion, M31):"
+
+#: src/ui_conf.cpp:702
+msgid "GO"
+msgstr "Mur"
+
+#: src/ui_conf.cpp:825
+msgid "Enter observatory name"
+msgstr "Nizzel l-isem tal-post"
+
+#: src/ui_conf.cpp:916 src/ui_tuiconf.cpp:679
+msgid "Info: "
+msgstr "Info: "
+
+#: src/ui_conf.cpp:965
+msgid ": Normal rate"
+msgstr ": Rata normali"
+
+#: src/ui_conf.cpp:970
+msgid ": Standard Perseids rate"
+msgstr ": Rata standard tal-Persejdi"
+
+#: src/ui_conf.cpp:975
+msgid ": Exceptional Leonid rate"
+msgstr ": Rata tal-Leonidi eccezjonali"
+
+#: src/ui_conf.cpp:980
+msgid ": Highest rate ever (1966 Leonids)"
+msgstr ": L-oghla rata (Leonidi 1966)"
+
+#: src/ui_conf.cpp:984
+msgid "Meteor Rate per minute"
+msgstr "Rata ta' meteori kull minuta"
+
+#: src/ui_conf.cpp:1020
+msgid "Current Time Speed is x"
+msgstr "Time Speed 1x"
+
+#: src/solarsystem.cpp:103
+#, fuzzy
+msgid "Loading Solar System:"
+msgstr "Oggett fis-sistema solari: "
+
+#: src/ui_tuiconf.cpp:501
+msgid "Re-enter password: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:501
+msgid "Passwords do not match"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:502
+msgid "Password updated successfully"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:503
+msgid "Password must be more than 3 characters"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:537
+msgid "Set Location "
+msgstr "Issetja l-post "
+
+#: src/ui_tuiconf.cpp:538
+msgid "Set Time "
+msgstr "Issettja l-Hin "
+
+#: src/ui_tuiconf.cpp:539
+msgid "General "
+msgstr "Generali "
+
+#: src/ui_tuiconf.cpp:540
+msgid "Stars "
+msgstr "Stilel "
+
+#: src/ui_tuiconf.cpp:541
+msgid "Colors "
+msgstr "Kuluri "
+
+#: src/ui_tuiconf.cpp:542
+msgid "Effects "
+msgstr "Effetti "
+
+#: src/ui_tuiconf.cpp:543
+msgid "Scripts "
+msgstr "Scripts "
+
+#: src/ui_tuiconf.cpp:544
+msgid "Administration "
+msgstr "Amministrazzjoni "
+
+#: src/ui_tuiconf.cpp:547
+msgid "Latitude: "
+msgstr "Latitudni "
+
+#: src/ui_tuiconf.cpp:548
+msgid "Longitude: "
+msgstr "Longitudni "
+
+#: src/ui_tuiconf.cpp:549
+msgid "Altitude (m): "
+msgstr "Altitudni (m): "
+
+#: src/ui_tuiconf.cpp:550
+msgid "Solar System Body: "
+msgstr "Oggett fis-sistema solari: "
+
+#: src/ui_tuiconf.cpp:552
+msgid "Heading: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:555
+msgid "Sky Time: "
+msgstr "Hin: "
+
+#: src/ui_tuiconf.cpp:556
+msgid "Set Time Zone: "
+msgstr "Issettja t-Time Zone: "
+
+#: src/ui_tuiconf.cpp:558
+msgid "Day keys: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:559
+msgid "Calendar"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:560
+msgid "Sidereal"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:561
+msgid "Preset Sky Time: "
+msgstr "Hin Pre-settjat: "
+
+#: src/ui_tuiconf.cpp:562
+msgid "Sky Time At Start-up: "
+msgstr "Hin fil-bidu: "
+
+#: src/ui_tuiconf.cpp:563
+msgid "Actual Time"
+msgstr "Hin bhalissa"
+
+#: src/ui_tuiconf.cpp:564
+msgid "Preset Time"
+msgstr "Hin pre-settjat"
+
+#: src/ui_tuiconf.cpp:565
+msgid "Time Display Format: "
+msgstr "Format tal-hin: "
+
+#: src/ui_tuiconf.cpp:566
+msgid "Date Display Format: "
+msgstr "Format tad-data: "
+
+#: src/ui_tuiconf.cpp:570
+msgid "Landscape: "
+msgstr "Pajsagg: "
+
+#: src/ui_tuiconf.cpp:580
+msgid "Show: "
+msgstr "Uri: "
+
+#: src/ui_tuiconf.cpp:580 src/ui_tuiconf.cpp:613 src/ui_tuiconf.cpp:628
+#: src/ui_tuiconf.cpp:630 src/s_gui.cpp:2382
+msgid "Yes"
+msgstr "Iva"
+
+#: src/ui_tuiconf.cpp:580 src/ui_tuiconf.cpp:613 src/ui_tuiconf.cpp:628
+#: src/ui_tuiconf.cpp:630 src/s_gui.cpp:2366
+msgid "No"
+msgstr "Le"
+
+#: src/ui_tuiconf.cpp:581
+#, fuzzy
+msgid "Star Value Multiplier: "
+msgstr "Multiplikatur tal-magnitude ta' l-istilel: "
+
+#: src/ui_tuiconf.cpp:582
+msgid "Maximum Magnitude to Label: "
+msgstr "L-oghla magnitude x'timmarka: "
+
+#: src/ui_tuiconf.cpp:583
+msgid "Twinkling: "
+msgstr "Teptip: "
+
+#: src/ui_tuiconf.cpp:584
+#, fuzzy
+msgid "Limiting Magnitude: "
+msgstr "Manjitudni: "
+
+#: src/ui_tuiconf.cpp:589
+msgid "Constellation Art Intensity"
+msgstr "Qawwa ta' l-istampi tal-kostellazzjonijiet"
+
+#: src/ui_tuiconf.cpp:595
+#, fuzzy
+msgid "Satellite Orbits"
+msgstr "Orbiti tal-pjaneti"
+
+#: src/ui_tuiconf.cpp:597
+msgid "Meridian Line"
+msgstr "Linja tal-meridjan"
+
+#: src/ui_tuiconf.cpp:603
+msgid "Nebula Circles"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:605
+msgid "Circumpolar Circle"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:611
+#, fuzzy
+msgid "Light Pollution Limiting Magnitude: "
+msgstr "Manjitudni: "
+
+#: src/ui_tuiconf.cpp:613
+msgid "Manual zoom: "
+msgstr "Zoom manwali: "
+
+#: src/ui_tuiconf.cpp:614
+msgid "Object Sizing Rule: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:614
+msgid "Point"
+msgstr "Point"
+
+#: src/ui_tuiconf.cpp:614
+msgid "Magnitude"
+msgstr "Magnitudni"
+
+#: src/ui_tuiconf.cpp:615
+#, fuzzy
+msgid "Magnitude Scaling Multiplier: "
+msgstr "Multiplikatur tal-magnitude: "
+
+#: src/ui_tuiconf.cpp:617
+msgid "Star Size Limit: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:618
+msgid "Planet Size Marginal Limit: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:620
+msgid "Milky Way intensity: "
+msgstr "Intensita tat-Triq ta' Sant'Anna: "
+
+#: src/ui_tuiconf.cpp:621
+msgid "Maximum Nebula Magnitude to Label: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:623
+msgid "Zoom Offset: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:625
+msgid "Zoom Duration: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:626
+#, fuzzy
+msgid "Flight Duration: "
+msgstr "Konfigurazzjoni u settings"
+
+#: src/ui_tuiconf.cpp:627
+msgid "Cursor Timeout: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:628
+msgid "Correct for light travel time: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:630
+msgid "Antialias Lines: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:631
+msgid "Line Width: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:635
+msgid "Local Script: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:639
+#, fuzzy
+msgid "Internal Script: "
+msgstr "Scripts "
+
+#: src/ui_tuiconf.cpp:643
+#, fuzzy
+msgid "USB Script: "
+msgstr "Scripts "
+
+#: src/ui_tuiconf.cpp:646
+msgid "CD/DVD Script: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:650
+#, fuzzy
+msgid "Shows: "
+msgstr "Uri: "
+
+#: src/ui_tuiconf.cpp:651
+msgid "Basis: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:652
+#, fuzzy
+msgid "Planets: "
+msgstr "Pjaneti"
+
+#: src/ui_tuiconf.cpp:653
+msgid "Deepsky: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:657
+msgid "Load Default Configuration: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:660
+msgid "Save Current Configuration as Default: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:663
+#, fuzzy
+msgid "Shut Down: "
+msgstr "Uri: "
+
+#: src/ui_tuiconf.cpp:666
+msgid "Update me via Internet: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:669
+msgid "Set UI Locale: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:670
+msgid "Projector Offset (percent of dome radius): "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:671
+msgid "Synchronize Internal Drive from USB Drive: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:674
+#, fuzzy
+msgid "Projection Configuration: "
+msgstr "Konfigurazzjoni u settings"
+
+#: src/ui_tuiconf.cpp:675
+#, fuzzy
+msgid "Truncated Projection"
+msgstr "Projjezjoni"
+
+#: src/ui_tuiconf.cpp:676
+msgid "Lens at Dome Center"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:677
+msgid "Lens Below Dome Center"
+msgstr ""
+
+#: src/ui_tuiconf.cpp:681
+#, fuzzy
+msgid "Video Shear: "
+msgstr "Daqs: "
+
+#: src/ui_tuiconf.cpp:683
+msgid "Video Offset: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:685
+msgid "Reset Password: "
+msgstr ""
+
+#: src/ui_tuiconf.cpp:822 src/ui_tuiconf.cpp:828
+msgid "Arrow down to load list."
+msgstr ""
+
+#: src/translations.h:40
+msgid "Sun"
+msgstr "Ix-Xemx"
+
+#: src/translations.h:41
+msgid "Mercury"
+msgstr "Merkurju"
+
+#: src/translations.h:42
+msgid "Venus"
+msgstr "Venere"
+
+#: src/translations.h:43
+msgid "Earth"
+msgstr "Id-Dinja"
+
+#: src/translations.h:44
+msgid "Moon"
+msgstr "Il-Qamar"
+
+#: src/translations.h:45
+msgid "Mars"
+msgstr "Marte"
+
+#: src/translations.h:46
+msgid "Phobos"
+msgstr "Fobos"
+
+#: src/translations.h:47
+#, fuzzy
+msgid "Deimos "
+msgstr "Dejmos"
+
+#: src/translations.h:48
+#, fuzzy
+msgid "Ceres"
+msgstr "Cepheus"
+
+#: src/translations.h:49
+msgid "Jupiter"
+msgstr "Gove"
+
+#: src/translations.h:50
+msgid "Io"
+msgstr "Ijo"
+
+#: src/translations.h:51
+msgid "Europa"
+msgstr "Ewropa"
+
+#: src/translations.h:52
+msgid "Ganymede"
+msgstr "Ganimede"
+
+#: src/translations.h:53
+msgid "Callisto"
+msgstr "Kallisto"
+
+#: src/translations.h:54
+msgid "Amalthea"
+msgstr ""
+
+#: src/translations.h:55
+msgid "Himalia"
+msgstr ""
+
+#: src/translations.h:56
+#, fuzzy
+msgid "Elara"
+msgstr "Id-Dinja"
+
+#: src/translations.h:57
+msgid "Pasiphae"
+msgstr ""
+
+#: src/translations.h:58
+msgid "Sinope"
+msgstr ""
+
+#: src/translations.h:59
+msgid "Lysithea"
+msgstr ""
+
+#: src/translations.h:60
+msgid "Carme"
+msgstr ""
+
+#: src/translations.h:61
+msgid "Ananke"
+msgstr ""
+
+#: src/translations.h:62
+msgid "Leda"
+msgstr ""
+
+#: src/translations.h:63
+#, fuzzy
+msgid "Thebe"
+msgstr "Fibe"
+
+#: src/translations.h:64
+msgid "Adrastea"
+msgstr ""
+
+#: src/translations.h:65
+#, fuzzy
+msgid "Metis"
+msgstr "Mimas"
+
+#: src/translations.h:66
+msgid "Saturn"
+msgstr "Saturnu"
+
+#: src/translations.h:67
+msgid "Mimas"
+msgstr "Mimas"
+
+#: src/translations.h:68
+msgid "Enceladus"
+msgstr "Enseladu"
+
+#: src/translations.h:69
+msgid "Tethys"
+msgstr "Tetis"
+
+#: src/translations.h:70
+msgid "Dione"
+msgstr "Djone"
+
+#: src/translations.h:71
+msgid "Rhea"
+msgstr "Rea"
+
+#: src/translations.h:72
+msgid "Titan"
+msgstr "Titan"
+
+#: src/translations.h:73
+msgid "Hyperion"
+msgstr "Iperjon"
+
+#: src/translations.h:74
+msgid "Iapetus"
+msgstr "Japetus"
+
+#: src/translations.h:75
+msgid "Uranus"
+msgstr "Uranu"
+
+#: src/translations.h:76
+msgid "Miranda"
+msgstr ""
+
+#: src/translations.h:77
+#, fuzzy
+msgid "Ariel"
+msgstr "Aries"
+
+#: src/translations.h:78
+msgid "Umbriel"
+msgstr ""
+
+#: src/translations.h:79
+#, fuzzy
+msgid "Titania"
+msgstr "Titan"
+
+#: src/translations.h:80
+msgid "Oberon"
+msgstr ""
+
+#: src/translations.h:81
+msgid "Cordelia"
+msgstr ""
+
+#: src/translations.h:82
+msgid "Ophelia"
+msgstr ""
+
+#: src/translations.h:83
+msgid "Bianca"
+msgstr ""
+
+#: src/translations.h:84
+msgid "Desdemona"
+msgstr ""
+
+#: src/translations.h:85
+#, fuzzy
+msgid "Juliet"
+msgstr "Gove"
+
+#: src/translations.h:86
+msgid "Portia"
+msgstr ""
+
+#: src/translations.h:87
+msgid "Rosalind"
+msgstr ""
+
+#: src/translations.h:88
+msgid "Belinda"
+msgstr ""
+
+#: src/translations.h:89
+msgid "Puck"
+msgstr ""
+
+#: src/translations.h:90
+#, fuzzy
+msgid "Caliban"
+msgstr "Carina"
+
+#: src/translations.h:91
+#, fuzzy
+msgid "Sycorax"
+msgstr "Fornax"
+
+#: src/translations.h:92
+msgid "Prospero"
+msgstr ""
+
+#: src/translations.h:93
+msgid "Setebos"
+msgstr ""
+
+#: src/translations.h:94
+msgid "Stephano"
+msgstr ""
+
+#: src/translations.h:95
+msgid "Trinculo"
+msgstr ""
+
+#: src/translations.h:96
+msgid "Francisco"
+msgstr ""
+
+#: src/translations.h:97
+msgid "Margaret"
+msgstr ""
+
+#: src/translations.h:98
+#, fuzzy
+msgid "Ferdinand"
+msgstr "Linja tal-meridjan"
+
+#: src/translations.h:99
+msgid "Perdita"
+msgstr ""
+
+#: src/translations.h:100
+msgid "Mab"
+msgstr ""
+
+#: src/translations.h:101
+msgid "Cupid"
+msgstr ""
+
+#: src/translations.h:102
+msgid "Neptune"
+msgstr "Nettunu"
+
+#: src/translations.h:103
+#, fuzzy
+msgid "Triton"
+msgstr "Titan"
+
+#: src/translations.h:104
+msgid "Neried"
+msgstr ""
+
+#: src/translations.h:105
+msgid "Naiad"
+msgstr ""
+
+#: src/translations.h:106
+msgid "Thalassa"
+msgstr ""
+
+#: src/translations.h:107
+#, fuzzy
+msgid "Despina"
+msgstr "Delphinus"
+
+#: src/translations.h:108
+msgid "Galatea"
+msgstr ""
+
+#: src/translations.h:109
+#, fuzzy
+msgid "Larissa"
+msgstr "Carina"
+
+#: src/translations.h:110
+#, fuzzy
+msgid "Proteus"
+msgstr "Bootes"
+
+#: src/translations.h:111
+#, fuzzy
+msgid "Halimede"
+msgstr "Ganimede"
+
+#: src/translations.h:112
+msgid "Psamathe"
+msgstr ""
+
+#: src/translations.h:113
+msgid "Sao"
+msgstr ""
+
+#: src/translations.h:114
+msgid "Laomedeia"
+msgstr ""
+
+#: src/translations.h:115
+#, fuzzy
+msgid "Neso"
+msgstr "Le"
+
+#: src/translations.h:116
+msgid "Pluto"
+msgstr "Plutone"
+
+#: src/translations.h:117
+msgid "Charon"
+msgstr "Karon"
+
+#: src/translations.h:118
+#, fuzzy
+msgid "Eris"
+msgstr "Aries"
+
+#: src/translations.h:119
+msgid "Solar System Observer"
+msgstr "Osservatur"
+
+#: src/translations.h:122
+#, fuzzy
+msgid "Asteroids"
+msgstr "Aries"
+
+#: src/translations.h:123
+#, fuzzy
+msgid "Comets"
+msgstr "Cetus"
+
+#: src/translations.h:124
+msgid "Planets"
+msgstr "Pjaneti"
+
+#: src/translations.h:125
+#, fuzzy
+msgid "Dwarf Planets"
+msgstr "Pjaneti"
+
+#: src/translations.h:126
+#, fuzzy
+msgid "Moons"
+msgstr "Il-Qamar"
+
+#: src/translations.h:127
+#, fuzzy
+msgid "Small Solar System Bodies"
+msgstr "Oggett fis-sistema solari: "
+
+#: src/translations.h:128
+msgid "Artificial Satellites"
+msgstr ""
+
+#: src/translations.h:129
+msgid "Spacecraft"
+msgstr ""
+
+#: src/translations.h:130
+#, fuzzy
+msgid "Kuiper Belt Objects"
+msgstr "Fittex għal xi oġġett"
+
+#: src/translations.h:133 src/s_gui.cpp:2804
+msgid "N"
+msgstr "T"
+
+#: src/translations.h:134 src/s_gui.cpp:2805
+msgid "S"
+msgstr "N"
+
+#: src/translations.h:135 src/s_gui.cpp:2807
+msgid "E"
+msgstr "L"
+
+#: src/translations.h:136 src/s_gui.cpp:2808
+msgid "W"
+msgstr "P"
+
+#: src/translations.h:139
+msgid "JAN"
+msgstr ""
+
+#: src/translations.h:140
+msgid "FEB"
+msgstr ""
+
+#: src/translations.h:141
+msgid "MAR"
+msgstr ""
+
+#: src/translations.h:142
+msgid "APR"
+msgstr ""
+
+#: src/translations.h:143
+msgid "MAY"
+msgstr ""
+
+#: src/translations.h:144
+msgid "JUN"
+msgstr ""
+
+#: src/translations.h:145
+msgid "JUL"
+msgstr ""
+
+#: src/translations.h:146
+#, fuzzy
+msgid "AUG"
+msgstr "UA"
+
+#: src/translations.h:147
+msgid "SEP"
+msgstr ""
+
+#: src/translations.h:148
+msgid "OCT"
+msgstr ""
+
+#: src/translations.h:149
+msgid "NOV"
+msgstr ""
+
+#: src/translations.h:150
+msgid "DEC"
+msgstr ""
+
+#: src/translations.h:153
+msgid "Chinese"
+msgstr "Ciniz"
+
+#: src/translations.h:154
+msgid "Egyptian"
+msgstr "Egizzjan"
+
+#: src/translations.h:155
+#, fuzzy
+msgid "Hindu"
+msgstr "Indus"
+
+#: src/translations.h:156
+#, fuzzy
+msgid "Inuit"
+msgstr "Indus"
+
+#: src/translations.h:157
+msgid "Inuit (color)"
+msgstr ""
+
+#: src/translations.h:158
+#, fuzzy
+msgid "Lakota"
+msgstr "Lacerta"
+
+#: src/translations.h:159
+msgid "Navajo"
+msgstr ""
+
+#: src/translations.h:160
+#, fuzzy
+msgid "Norse"
+msgstr "Norma"
+
+#: src/translations.h:161
+msgid "Polynesian"
+msgstr "Tal-Polinesja"
+
+#: src/translations.h:162
+msgid "Sami"
+msgstr ""
+
+#: src/translations.h:163
+msgid "Western"
+msgstr "Tal-Punent"
+
+#: src/translations.h:164
+#, fuzzy
+msgid "Western (modern)"
+msgstr "Tal-Punent"
+
+#: src/translations.h:165
+#, fuzzy
+msgid "Western (color)"
+msgstr "Tal-Punent"
+
+#: src/translations.h:169
+msgid "Aquila"
+msgstr "Aquila"
+
+#: src/translations.h:170
+msgid "Andromeda"
+msgstr "Andromeda"
+
+#: src/translations.h:171
+msgid "Sculptor"
+msgstr "Sculptor"
+
+#: src/translations.h:172
+msgid "Ara"
+msgstr "Ara"
+
+#: src/translations.h:173
+msgid "Libra"
+msgstr "Libra"
+
+#: src/translations.h:174
+msgid "Cetus"
+msgstr "Cetus"
+
+#: src/translations.h:175
+msgid "Aries"
+msgstr "Aries"
+
+#: src/translations.h:176 src/translations.h:246
+msgid "Scutum"
+msgstr "Scutum"
+
+#: src/translations.h:177
+msgid "Pyxis"
+msgstr "Pyxis"
+
+#: src/translations.h:178
+msgid "Bootes"
+msgstr "Bootes"
+
+#: src/translations.h:179
+msgid "Caelum"
+msgstr "Caelum"
+
+#: src/translations.h:180
+msgid "Chamaeleon"
+msgstr "Chamaeleon"
+
+#: src/translations.h:181
+msgid "Cancer"
+msgstr "Cancer"
+
+#: src/translations.h:182
+msgid "Capricornus"
+msgstr "Capricornus"
+
+#: src/translations.h:183
+msgid "Carina"
+msgstr "Carina"
+
+#: src/translations.h:184
+msgid "Cassiopeia"
+msgstr "Cassiopeia"
+
+#: src/translations.h:185
+msgid "Centaurus"
+msgstr "Centaurus"
+
+#: src/translations.h:186
+msgid "Cepheus"
+msgstr "Cepheus"
+
+#: src/translations.h:187
+msgid "Coma Berenices"
+msgstr "Coma Berenices"
+
+#: src/translations.h:188
+msgid "Canes Venatici"
+msgstr "Canes Venatici"
+
+#: src/translations.h:189
+msgid "Auriga"
+msgstr "Auriga"
+
+#: src/translations.h:190
+msgid "Columba"
+msgstr "Columba"
+
+#: src/translations.h:191
+msgid "Circinus"
+msgstr "Circinus"
+
+#: src/translations.h:192
+msgid "Crater"
+msgstr "Crater"
+
+#: src/translations.h:193
+msgid "Corona Australis"
+msgstr "Corona Australis"
+
+#: src/translations.h:194
+msgid "Corona Borealis"
+msgstr "Corona Borealis"
+
+#: src/translations.h:195
+msgid "Corvus"
+msgstr "Corvus"
+
+#: src/translations.h:196
+msgid "Crux"
+msgstr "Crux"
+
+#: src/translations.h:197
+msgid "Cygnus"
+msgstr "Cygnus"
+
+#: src/translations.h:198
+msgid "Delphinus"
+msgstr "Delphinus"
+
+#: src/translations.h:199
+msgid "Dorado"
+msgstr "Dorado"
+
+#: src/translations.h:200
+msgid "Draco"
+msgstr "Draco"
+
+#: src/translations.h:201
+msgid "Norma"
+msgstr "Norma"
+
+#: src/translations.h:202
+msgid "Eridanus"
+msgstr "Eridanus"
+
+#: src/translations.h:203
+msgid "Sagitta"
+msgstr "Sagitta"
+
+#: src/translations.h:204
+msgid "Fornax"
+msgstr "Fornax"
+
+#: src/translations.h:205
+msgid "Gemini"
+msgstr "Gemini"
+
+#: src/translations.h:206
+msgid "Camelopardalis"
+msgstr "Camelopardalis"
+
+#: src/translations.h:207
+msgid "Canis Major"
+msgstr "Canis Major"
+
+#: src/translations.h:208
+msgid "Ursa Major"
+msgstr "Ursa Major"
+
+#: src/translations.h:209
+msgid "Grus"
+msgstr "Grus"
+
+#: src/translations.h:210
+msgid "Hercules"
+msgstr "Hercules"
+
+#: src/translations.h:211
+msgid "Horologium"
+msgstr "Horologium"
+
+#: src/translations.h:212
+msgid "Hydra"
+msgstr "Hydra"
+
+#: src/translations.h:213
+msgid "Hydrus"
+msgstr "Hydrus"
+
+#: src/translations.h:214
+msgid "Indus"
+msgstr "Indus"
+
+#: src/translations.h:215
+msgid "Lacerta"
+msgstr "Lacerta"
+
+#: src/translations.h:216
+msgid "Monoceros"
+msgstr ""
+
+#: src/translations.h:217
+msgid "Lepus"
+msgstr ""
+
+#: src/translations.h:218
+msgid "Leo"
+msgstr ""
+
+#: src/translations.h:219
+msgid "Lupus"
+msgstr ""
+
+#: src/translations.h:220
+msgid "Lynx"
+msgstr ""
+
+#: src/translations.h:221
+msgid "Lyra"
+msgstr ""
+
+#: src/translations.h:222
+msgid "Antlia"
+msgstr ""
+
+#: src/translations.h:223
+msgid "Microscopium"
+msgstr ""
+
+#: src/translations.h:224
+msgid "Musca"
+msgstr ""
+
+#: src/translations.h:225
+msgid "Octans"
+msgstr ""
+
+#: src/translations.h:226
+msgid "Apus"
+msgstr ""
+
+#: src/translations.h:227
+msgid "Ophiuchus"
+msgstr ""
+
+#: src/translations.h:228
+msgid "Orion"
+msgstr ""
+
+#: src/translations.h:229
+msgid "Pavo"
+msgstr ""
+
+#: src/translations.h:230
+msgid "Pegasus"
+msgstr ""
+
+#: src/translations.h:231
+msgid "Pictor"
+msgstr ""
+
+#: src/translations.h:232
+msgid "Perseus"
+msgstr ""
+
+#: src/translations.h:233
+msgid "Equuleus"
+msgstr ""
+
+#: src/translations.h:234
+msgid "Canis Minor"
+msgstr ""
+
+#: src/translations.h:235
+msgid "Leo Minor"
+msgstr ""
+
+#: src/translations.h:236
+msgid "Vulpecula"
+msgstr ""
+
+#: src/translations.h:237
+msgid "Ursa Minor"
+msgstr ""
+
+#: src/translations.h:238
+msgid "Phoenix"
+msgstr ""
+
+#: src/translations.h:239
+msgid "Piscis Austrinus"
+msgstr ""
+
+#: src/translations.h:240
+msgid "Pisces"
+msgstr ""
+
+#: src/translations.h:241
+msgid "Volans"
+msgstr ""
+
+#: src/translations.h:242
+msgid "Puppis"
+msgstr ""
+
+#: src/translations.h:243
+msgid "Reticulum"
+msgstr ""
+
+#: src/translations.h:244
+msgid "Sagittarius"
+msgstr ""
+
+#: src/translations.h:245
+msgid "Scorpius"
+msgstr ""
+
+#: src/translations.h:247
+msgid "Serpens"
+msgstr ""
+
+#: src/translations.h:248
+msgid "Sextans"
+msgstr ""
+
+#: src/translations.h:249
+msgid "Mensa"
+msgstr ""
+
+#: src/translations.h:250
+msgid "Taurus"
+msgstr ""
+
+#: src/translations.h:251
+msgid "Telescopium"
+msgstr ""
+
+#: src/translations.h:252
+msgid "Tucana"
+msgstr ""
+
+#: src/translations.h:253
+msgid "Triangulum"
+msgstr ""
+
+#: src/translations.h:254
+msgid "Triangulum Australe"
+msgstr ""
+
+#: src/translations.h:255
+msgid "Aquarius"
+msgstr ""
+
+#: src/translations.h:256
+msgid "Virgo"
+msgstr ""
+
+#: src/translations.h:257
+msgid "Vela"
+msgstr ""
+
+#: src/translations.h:260
+msgid "Bull's Foreleg"
+msgstr ""
+
+#: src/translations.h:261
+msgid "Two Poles"
+msgstr ""
+
+#: src/translations.h:262
+msgid "Lion"
+msgstr ""
+
+#: src/translations.h:263
+msgid "Two Jaws"
+msgstr ""
+
+#: src/translations.h:264
+msgid "Sah"
+msgstr ""
+
+#: src/translations.h:265
+msgid "Bird"
+msgstr ""
+
+#: src/translations.h:266
+msgid "Sek"
+msgstr ""
+
+#: src/translations.h:267
+msgid "Triangle"
+msgstr ""
+
+#: src/translations.h:268
+msgid "Ferry Boat"
+msgstr ""
+
+#: src/translations.h:269 src/translations.h:340
+msgid "Boat"
+msgstr ""
+
+#: src/translations.h:270
+msgid "Crocodile"
+msgstr ""
+
+#: src/translations.h:271
+msgid "Selkis"
+msgstr ""
+
+#: src/translations.h:272
+msgid "Prow"
+msgstr ""
+
+#: src/translations.h:273
+msgid "Horus"
+msgstr ""
+
+#: src/translations.h:274
+msgid "Sheepfold"
+msgstr ""
+
+#: src/translations.h:275
+msgid "Giant"
+msgstr ""
+
+#: src/translations.h:276
+msgid "Hippopotamus"
+msgstr ""
+
+#: src/translations.h:277
+msgid "Flock"
+msgstr ""
+
+#: src/translations.h:278
+msgid "Pair of Stars"
+msgstr ""
+
+#: src/translations.h:279
+msgid "Khanuwy Fish"
+msgstr ""
+
+#: src/translations.h:280 src/translations.h:319
+msgid "Net"
+msgstr ""
+
+#: src/translations.h:281
+msgid "Jaw"
+msgstr ""
+
+#: src/translations.h:282
+msgid "Mooring Post"
+msgstr ""
+
+#: src/translations.h:283
+msgid "Kenemet"
+msgstr ""
+
+#: src/translations.h:284
+msgid "Chematy"
+msgstr ""
+
+#: src/translations.h:285
+msgid "Waty Bekety"
+msgstr ""
+
+#: src/translations.h:286
+msgid "Sheep"
+msgstr ""
+
+#: src/translations.h:287
+msgid "Stars of Water"
+msgstr ""
+
+#: src/translations.h:290
+msgid "Northern Dipper"
+msgstr ""
+
+#: src/translations.h:291
+msgid "Curved Array"
+msgstr ""
+
+#: src/translations.h:292
+msgid "Coiled Thong"
+msgstr ""
+
+#: src/translations.h:293
+msgid "Wings"
+msgstr ""
+
+#: src/translations.h:294
+msgid "Chariot"
+msgstr ""
+
+#: src/translations.h:295
+msgid "Tail"
+msgstr ""
+
+#: src/translations.h:296
+msgid "Winnowing Basket"
+msgstr ""
+
+#: src/translations.h:297 src/translations.h:453
+msgid "Dipper"
+msgstr ""
+
+#: src/translations.h:298
+msgid "Drum"
+msgstr ""
+
+#: src/translations.h:299
+msgid "Three Steps"
+msgstr ""
+
+#: src/translations.h:300
+msgid "Imperial Guards"
+msgstr ""
+
+#: src/translations.h:301
+msgid "Horn"
+msgstr ""
+
+#: src/translations.h:302
+msgid "Willow"
+msgstr ""
+
+#: src/translations.h:303
+msgid "Imperial Passageway"
+msgstr ""
+
+#: src/translations.h:304
+msgid "Kitchen"
+msgstr ""
+
+#: src/translations.h:305
+msgid "River Turtle"
+msgstr ""
+
+#: src/translations.h:306
+msgid "Stomach"
+msgstr ""
+
+#: src/translations.h:307
+msgid "Great General"
+msgstr ""
+
+#: src/translations.h:308
+msgid "Wall"
+msgstr ""
+
+#: src/translations.h:309
+msgid "Legs"
+msgstr ""
+
+#: src/translations.h:310
+msgid "Root"
+msgstr ""
+
+#: src/translations.h:311
+msgid "Ramparts"
+msgstr ""
+
+#: src/translations.h:312
+msgid "Flying Corridor"
+msgstr ""
+
+#: src/translations.h:313
+msgid "Outer Fence"
+msgstr ""
+
+#: src/translations.h:314
+msgid "Ford"
+msgstr ""
+
+#: src/translations.h:315
+msgid "Seven Excellencies"
+msgstr ""
+
+#: src/translations.h:316
+msgid "Market"
+msgstr ""
+
+#: src/translations.h:317
+msgid "Five Chariots"
+msgstr ""
+
+#: src/translations.h:318
+msgid "Rolled Tongue"
+msgstr ""
+
+#: src/translations.h:320
+msgid "Toilet"
+msgstr ""
+
+#: src/translations.h:321
+msgid "Screen"
+msgstr ""
+
+#: src/translations.h:322
+msgid "Soldiers Market"
+msgstr ""
+
+#: src/translations.h:323
+msgid "Square Granary"
+msgstr ""
+
+#: src/translations.h:324
+msgid "Three Stars"
+msgstr ""
+
+#: src/translations.h:325
+msgid "Four Channels"
+msgstr ""
+
+#: src/translations.h:326
+msgid "Well"
+msgstr ""
+
+#: src/translations.h:327
+msgid "South River"
+msgstr ""
+
+#: src/translations.h:328
+msgid "North River"
+msgstr ""
+
+#: src/translations.h:329
+msgid "Five Feudal Kings"
+msgstr ""
+
+#: src/translations.h:330
+msgid "Orchard"
+msgstr ""
+
+#: src/translations.h:331
+msgid "Meadows"
+msgstr ""
+
+#: src/translations.h:332
+msgid "Circular Granary"
+msgstr ""
+
+#: src/translations.h:333
+msgid "Purple Palace"
+msgstr ""
+
+#: src/translations.h:334
+msgid "Extended Net"
+msgstr ""
+
+#: src/translations.h:335
+msgid "Arsenal"
+msgstr ""
+
+#: src/translations.h:336
+msgid "Hook"
+msgstr ""
+
+#: src/translations.h:337
+msgid "Supreme Palace"
+msgstr ""
+
+#: src/translations.h:338
+msgid "Jade Well"
+msgstr ""
+
+#: src/translations.h:339
+msgid "Lance"
+msgstr ""
+
+#: src/translations.h:341
+msgid "Mausoleum"
+msgstr ""
+
+#: src/translations.h:342
+msgid "Dog"
+msgstr ""
+
+#: src/translations.h:343
+msgid "Earth God's Temple"
+msgstr ""
+
+#: src/translations.h:344
+msgid "Bow and Arrow"
+msgstr ""
+
+#: src/translations.h:345
+msgid "Pestle"
+msgstr ""
+
+#: src/translations.h:346
+msgid "Mortar"
+msgstr ""
+
+#: src/translations.h:347
+msgid "Rooftop"
+msgstr ""
+
+#: src/translations.h:348
+msgid "Thunderbolt"
+msgstr ""
+
+#: src/translations.h:349
+msgid "Chariot Yard"
+msgstr ""
+
+#: src/translations.h:350
+msgid "Good Gourd"
+msgstr ""
+
+#: src/translations.h:351
+msgid "Rotten Gourd"
+msgstr ""
+
+#: src/translations.h:352
+msgid "Encampment"
+msgstr ""
+
+#: src/translations.h:353
+msgid "Thunder and Lightning"
+msgstr ""
+
+#: src/translations.h:354
+msgid "Palace Gate"
+msgstr ""
+
+#: src/translations.h:355
+msgid "Emptiness"
+msgstr ""
+
+#: src/translations.h:356
+msgid "Weaving Girl"
+msgstr ""
+
+#: src/translations.h:357
+msgid "Girl"
+msgstr ""
+
+#: src/translations.h:358
+msgid "Ox"
+msgstr ""
+
+#: src/translations.h:359
+msgid "Heart"
+msgstr ""
+
+#: src/translations.h:360
+msgid "Room"
+msgstr ""
+
+#: src/translations.h:361
+msgid "Spring"
+msgstr ""
+
+#: src/translations.h:362
+msgid "Establishment"
+msgstr ""
+
+#: src/translations.h:363
+msgid "Flail"
+msgstr ""
+
+#: src/translations.h:364
+msgid "Spear"
+msgstr ""
+
+#: src/translations.h:365
+msgid "Right Flag"
+msgstr ""
+
+#: src/translations.h:366
+msgid "Left Flag"
+msgstr ""
+
+#: src/translations.h:367
+msgid "Drumstick"
+msgstr ""
+
+#: src/translations.h:368
+msgid "Bond"
+msgstr ""
+
+#: src/translations.h:369
+msgid "Woman's Bed"
+msgstr ""
+
+#: src/translations.h:370
+msgid "Western Door"
+msgstr ""
+
+#: src/translations.h:371
+msgid "Eastern Door"
+msgstr ""
+
+#: src/translations.h:372
+msgid "Farmland"
+msgstr ""
+
+#: src/translations.h:373
+msgid "Star"
+msgstr ""
+
+#: src/translations.h:374
+msgid "Ghosts"
+msgstr ""
+
+#: src/translations.h:375
+msgid "Xuanyuan"
+msgstr ""
+
+#: src/translations.h:376
+msgid "Tripod"
+msgstr ""
+
+#: src/translations.h:377
+msgid "Neck"
+msgstr ""
+
+#: src/translations.h:378
+msgid "Zaofu"
+msgstr ""
+
+#: src/translations.h:379
+msgid "Market Officer"
+msgstr ""
+
+#: src/translations.h:380
+msgid "Banner of Three Stars"
+msgstr ""
+
+#: src/translations.h:383
+msgid "Bailer"
+msgstr ""
+
+#: src/translations.h:384
+msgid "Cat's Cradle"
+msgstr ""
+
+#: src/translations.h:385
+msgid "Voice of Joy"
+msgstr ""
+
+#: src/translations.h:386
+msgid "The Seven"
+msgstr ""
+
+#: src/translations.h:387
+msgid "Maui's Fishhook"
+msgstr ""
+
+#: src/translations.h:388
+msgid "Navigator's Triangle"
+msgstr ""
+
+#: src/translations.h:389
+msgid "Kite of Kawelo"
+msgstr ""
+
+#: src/translations.h:390
+msgid "Frigate Bird"
+msgstr ""
+
+#: src/translations.h:391
+msgid "Cared for by Moon"
+msgstr ""
+
+#: src/translations.h:392
+msgid "Dolphin"
+msgstr ""
+
+#: src/translations.h:395
+msgid "Mama Llama"
+msgstr ""
+
+#: src/translations.h:396
+msgid "Baby Llama"
+msgstr ""
+
+#: src/translations.h:397
+#, fuzzy
+msgid "Toad"
+msgstr "Dorado"
+
+#: src/translations.h:398
+#, fuzzy
+msgid "Quail"
+msgstr "Indus"
+
+#: src/translations.h:399
+#, fuzzy
+msgid "Fox"
+msgstr "Ċpar"
+
+#: src/translations.h:400
+msgid "Herder"
+msgstr ""
+
+#: src/translations.h:401 src/translations.h:451
+msgid "Snake"
+msgstr ""
+
+#: src/translations.h:404
+msgid "Two Sunbeams"
+msgstr ""
+
+#: src/translations.h:405
+msgid "Two Placed Far Apart"
+msgstr ""
+
+#: src/translations.h:406
+#, fuzzy
+msgid "Dogs"
+msgstr "Djone"
+
+#: src/translations.h:407
+#, fuzzy
+msgid "Collarbones"
+msgstr "Linji tal-kostellazzjonijiet"
+
+#: src/translations.h:408
+msgid "Lamp Stand"
+msgstr ""
+
+#: src/translations.h:409
+#, fuzzy
+msgid "Caribou"
+msgstr "Capricornus"
+
+#: src/translations.h:410
+msgid "Two in Front"
+msgstr ""
+
+#: src/translations.h:411
+msgid "Breastbone"
+msgstr ""
+
+#: src/translations.h:412
+msgid "Runners"
+msgstr ""
+
+#: src/translations.h:413
+msgid "Blubber Container"
+msgstr ""
+
+#: src/translations.h:414
+msgid "The One Behind"
+msgstr ""
+
+#: src/translations.h:417
+msgid "Sapt Rishi"
+msgstr ""
+
+#: src/translations.h:418
+msgid "Laghu Saptrishi"
+msgstr ""
+
+#: src/translations.h:419
+msgid "Kaalpurush"
+msgstr ""
+
+#: src/translations.h:420
+msgid "Mrgsirsa"
+msgstr ""
+
+#: src/translations.h:421 src/translations.h:731
+#, fuzzy
+msgid "Ardra"
+msgstr "Ara"
+
+#: src/translations.h:422 src/translations.h:762
+msgid "Pushya"
+msgstr ""
+
+#: src/translations.h:423 src/translations.h:733
+msgid "Aslesha"
+msgstr ""
+
+#: src/translations.h:424 src/translations.h:763
+msgid "Rohini"
+msgstr ""
+
+#: src/translations.h:425 src/translations.h:747
+msgid "Magha"
+msgstr ""
+
+#: src/translations.h:426
+msgid "Purvaphalguni"
+msgstr ""
+
+#: src/translations.h:427
+msgid "Uttraphalguni"
+msgstr ""
+
+#: src/translations.h:428 src/translations.h:742
+msgid "Hasta"
+msgstr ""
+
+#: src/translations.h:429 src/translations.h:738
+msgid "Chitra"
+msgstr ""
+
+#: src/translations.h:430 src/translations.h:765
+msgid "Swati"
+msgstr ""
+
+#: src/translations.h:431 src/translations.h:772
+msgid "Vishakha"
+msgstr ""
+
+#: src/translations.h:432 src/translations.h:730
+msgid "Anuradha"
+msgstr ""
+
+#: src/translations.h:433 src/translations.h:743
+msgid "Jyeshtha"
+msgstr ""
+
+#: src/translations.h:434 src/translations.h:750
+#, fuzzy
+msgid "Mula"
+msgstr "Aquila"
+
+#: src/translations.h:435
+msgid "Purvasdha"
+msgstr ""
+
+#: src/translations.h:436
+msgid "Uttrasdha"
+msgstr ""
+
+#: src/translations.h:437
+msgid "Sravan"
+msgstr ""
+
+#: src/translations.h:438
+msgid "Danistha"
+msgstr ""
+
+#: src/translations.h:439
+msgid "Satbhisaj"
+msgstr ""
+
+#: src/translations.h:440
+msgid "Purvabhadrapad"
+msgstr ""
+
+#: src/translations.h:441
+msgid "Uttrabhadprad"
+msgstr ""
+
+#: src/translations.h:442
+msgid "Punarvasu"
+msgstr ""
+
+#: src/translations.h:443
+#, fuzzy
+msgid "Revati"
+msgstr "Rea"
+
+#: src/translations.h:444
+msgid "Ashwani"
+msgstr ""
+
+#: src/translations.h:445
+#, fuzzy
+msgid "Bharani"
+msgstr "Karon"
+
+#: src/translations.h:446 src/translations.h:745
+msgid "Kritika"
+msgstr ""
+
+#: src/translations.h:447
+msgid "Shwan"
+msgstr ""
+
+#: src/translations.h:450
+msgid "Hand"
+msgstr ""
+
+#: src/translations.h:452
+msgid "Fireplace"
+msgstr ""
+
+#: src/translations.h:454
+msgid "Race Track"
+msgstr ""
+
+#: src/translations.h:455
+msgid "Animal"
+msgstr ""
+
+#: src/translations.h:456
+msgid "Elk"
+msgstr ""
+
+#: src/translations.h:457
+msgid "Seven Little Girls"
+msgstr ""
+
+#: src/translations.h:458
+msgid "Dried Willow"
+msgstr ""
+
+#: src/translations.h:459
+msgid "Salamander"
+msgstr ""
+
+#: src/translations.h:460
+msgid "Turtle"
+msgstr ""
+
+#: src/translations.h:461
+msgid "Thunderbird"
+msgstr ""
+
+#: src/translations.h:462
+msgid "Bear's Lodge"
+msgstr ""
+
+#: src/translations.h:465
+msgid "Revolving Male"
+msgstr ""
+
+#: src/translations.h:466
+msgid "Revolving Female"
+msgstr ""
+
+#: src/translations.h:467
+msgid "Man with Feet Apart"
+msgstr ""
+
+#: src/translations.h:468
+msgid "Lizard"
+msgstr ""
+
+#: src/translations.h:469
+msgid "Dilyehe"
+msgstr ""
+
+#: src/translations.h:470
+msgid "First Big One"
+msgstr ""
+
+#: src/translations.h:471
+msgid "Rabbit Tracks"
+msgstr ""
+
+#: src/translations.h:472
+msgid "First Slim One"
+msgstr ""
+
+#: src/translations.h:475
+msgid "Aurvandil's Toe"
+msgstr ""
+
+#: src/translations.h:476
+msgid "Wolf's Mouth"
+msgstr ""
+
+#: src/translations.h:477
+msgid "The Fishermen"
+msgstr ""
+
+#: src/translations.h:478
+msgid "Woman's Cart"
+msgstr ""
+
+#: src/translations.h:479
+msgid "Man's Cart"
+msgstr ""
+
+#: src/translations.h:480
+msgid "The Asar Battlefield"
+msgstr ""
+
+#: src/translations.h:483
+msgid "Sarva the Elk"
+msgstr ""
+
+#: src/translations.h:484
+msgid "Favdna's Bow and Arrow"
+msgstr ""
+
+#: src/translations.h:485
+msgid "Galla's Sons"
+msgstr ""
+
+#: src/translations.h:486
+msgid "Sky Support"
+msgstr ""
+
+#: src/translations.h:487
+msgid "Favdna"
+msgstr ""
+
+#: src/translations.h:488
+msgid "The Runner"
+msgstr ""
+
+#: src/translations.h:489
+msgid "Morning Star"
+msgstr ""
+
+#: src/translations.h:490
+msgid "Pack of Dogs"
+msgstr ""
+
+#: src/translations.h:491
+msgid "Galla"
+msgstr ""
+
+#: src/translations.h:492
+msgid "The Ski Runners"
+msgstr ""
+
+#: src/translations.h:496
+msgid "Acamar"
+msgstr ""
+
+#: src/translations.h:497
+msgid "Achernar"
+msgstr ""
+
+#: src/translations.h:498
+#, fuzzy
+msgid "Acrab"
+msgstr "Ara"
+
+#: src/translations.h:499
+#, fuzzy
+msgid "Acrux"
+msgstr "Crux"
+
+#: src/translations.h:500
+msgid "Acubens"
+msgstr ""
+
+#: src/translations.h:501
+msgid "Adhafera"
+msgstr ""
+
+#: src/translations.h:502
+#, fuzzy
+msgid "Adhara"
+msgstr "Ara"
+
+#: src/translations.h:503
+msgid "Adhil"
+msgstr ""
+
+#: src/translations.h:504
+msgid "Ain"
+msgstr ""
+
+#: src/translations.h:505
+msgid "Albali"
+msgstr ""
+
+#: src/translations.h:506
+msgid "Albireo"
+msgstr ""
+
+#: src/translations.h:507
+msgid "Alchiba"
+msgstr ""
+
+#: src/translations.h:508
+msgid "Alcor"
+msgstr ""
+
+#: src/translations.h:509
+msgid "Alcyone"
+msgstr ""
+
+#: src/translations.h:510
+msgid "Aldebaran"
+msgstr ""
+
+#: src/translations.h:511
+msgid "Alderamin"
+msgstr ""
+
+#: src/translations.h:512
+msgid "Alfirk"
+msgstr ""
+
+#: src/translations.h:513
+msgid "Algedi"
+msgstr ""
+
+#: src/translations.h:514
+msgid "Algenib"
+msgstr ""
+
+#: src/translations.h:515
+msgid "Algieba"
+msgstr ""
+
+#: src/translations.h:516
+msgid "Algol"
+msgstr ""
+
+#: src/translations.h:517
+#, fuzzy
+msgid "Algorab"
+msgstr "Ara"
+
+#: src/translations.h:518
+#, fuzzy
+msgid "Alhena"
+msgstr "Rea"
+
+#: src/translations.h:519
+msgid "Alioth"
+msgstr ""
+
+#: src/translations.h:520
+msgid "Alkaid"
+msgstr ""
+
+#: src/translations.h:521
+msgid "Alkalurops"
+msgstr ""
+
+#: src/translations.h:522
+#, fuzzy
+msgid "Alkes"
+msgstr "Aries"
+
+#: src/translations.h:523
+msgid "Almaak"
+msgstr ""
+
+#: src/translations.h:524
+msgid "Alnair"
+msgstr ""
+
+#: src/translations.h:525
+msgid "Alnasl"
+msgstr ""
+
+#: src/translations.h:526
+msgid "Alnath"
+msgstr ""
+
+#: src/translations.h:527
+#, fuzzy
+msgid "Alnilam"
+msgstr "Aquila"
+
+#: src/translations.h:528
+msgid "Alnitak"
+msgstr ""
+
+#: src/translations.h:529
+msgid "Al Niyat"
+msgstr ""
+
+#: src/translations.h:530
+msgid "Alphard"
+msgstr ""
+
+#: src/translations.h:531
+msgid "Alphekka"
+msgstr ""
+
+#: src/translations.h:532
+msgid "Alpheratz"
+msgstr ""
+
+#: src/translations.h:533
+#, fuzzy
+msgid "Alrakis"
+msgstr "Aries"
+
+#: src/translations.h:534
+#, fuzzy
+msgid "Alrescha"
+msgstr "Aries"
+
+#: src/translations.h:535
+msgid "Alshain"
+msgstr ""
+
+#: src/translations.h:536
+msgid "Altair"
+msgstr ""
+
+#: src/translations.h:537
+msgid "Altais"
+msgstr ""
+
+#: src/translations.h:538
+msgid "Alterf"
+msgstr ""
+
+#: src/translations.h:539
+#, fuzzy
+msgid "Aludra"
+msgstr "Ara"
+
+#: src/translations.h:540
+#, fuzzy
+msgid "Alula Australis"
+msgstr "Corona Australis"
+
+#: src/translations.h:541
+#, fuzzy
+msgid "Alula Borealis"
+msgstr "Corona Borealis"
+
+#: src/translations.h:542
+#, fuzzy
+msgid "Alya"
+msgstr "Aquila"
+
+#: src/translations.h:543
+msgid "Ancha"
+msgstr ""
+
+#: src/translations.h:544
+msgid "Ankaa"
+msgstr ""
+
+#: src/translations.h:545
+#, fuzzy
+msgid "Antares"
+msgstr "Stilel"
+
+#: src/translations.h:546
+msgid "Arcturus"
+msgstr ""
+
+#: src/translations.h:547
+#, fuzzy
+msgid "Arkab"
+msgstr "Ara"
+
+#: src/translations.h:548
+#, fuzzy
+msgid "Arneb"
+msgstr "Aries"
+
+#: src/translations.h:549
+msgid "Ascella"
+msgstr ""
+
+#: src/translations.h:550
+#, fuzzy
+msgid "Asellus Australis"
+msgstr "Corona Australis"
+
+#: src/translations.h:551
+msgid "Asellus Borealis"
+msgstr ""
+
+#: src/translations.h:552
+msgid "Aspidiske"
+msgstr ""
+
+#: src/translations.h:553
+msgid "Asterope"
+msgstr ""
+
+#: src/translations.h:554
+msgid "Atik"
+msgstr ""
+
+#: src/translations.h:555
+#, fuzzy
+msgid "Atlas"
+msgstr "Stilel"
+
+#: src/translations.h:556
+#, fuzzy
+msgid "Atria"
+msgstr "Ara"
+
+#: src/translations.h:557
+msgid "Avior"
+msgstr ""
+
+#: src/translations.h:558
+msgid "Azelfafage"
+msgstr ""
+
+#: src/translations.h:559
+msgid "Azha"
+msgstr ""
+
+#: src/translations.h:560
+msgid "Babcock's Star"
+msgstr ""
+
+#: src/translations.h:561
+msgid "Barnard's Star"
+msgstr ""
+
+#: src/translations.h:562
+msgid "Baten Kaitos"
+msgstr ""
+
+#: src/translations.h:563
+msgid "Beid"
+msgstr ""
+
+#: src/translations.h:564
+msgid "Bellatrix"
+msgstr ""
+
+#: src/translations.h:565
+msgid "Bernes 135"
+msgstr ""
+
+#: src/translations.h:566
+msgid "Betelgeuse"
+msgstr ""
+
+#: src/translations.h:567
+msgid "Biham"
+msgstr ""
+
+#: src/translations.h:568
+#, fuzzy
+msgid "Botein"
+msgstr "Bootes"
+
+#: src/translations.h:569
+msgid "Campbell's Star"
+msgstr ""
+
+#: src/translations.h:570
+#, fuzzy
+msgid "Canopus"
+msgstr "Uranu"
+
+#: src/translations.h:571
+#, fuzzy
+msgid "Capella"
+msgstr "Caelum"
+
+#: src/translations.h:572
+msgid "Caph"
+msgstr ""
+
+#: src/translations.h:573
+#, fuzzy
+msgid "Castor"
+msgstr "Kallisto"
+
+#: src/translations.h:574
+msgid "Cebalrai"
+msgstr ""
+
+#: src/translations.h:575
+msgid "Celaeno"
+msgstr ""
+
+#: src/translations.h:576
+#, fuzzy
+msgid "Chara"
+msgstr "Karon"
+
+#: src/translations.h:577
+#, fuzzy
+msgid "Chertan"
+msgstr "Karon"
+
+#: src/translations.h:578
+msgid "Cor Caroli"
+msgstr ""
+
+#: src/translations.h:579
+msgid "Cujam"
+msgstr ""
+
+#: src/translations.h:580
+#, fuzzy
+msgid "Cursa"
+msgstr "Cetus"
+
+#: src/translations.h:581
+msgid "Dabih"
+msgstr ""
+
+#: src/translations.h:582
+#, fuzzy
+msgid "Deneb"
+msgstr "Djone"
+
+#: src/translations.h:583
+msgid "Deneb Algedi"
+msgstr ""
+
+#: src/translations.h:584
+msgid "Denebola"
+msgstr ""
+
+#: src/translations.h:585
+msgid "Diphda"
+msgstr ""
+
+#: src/translations.h:586
+msgid "Dschubba"
+msgstr ""
+
+#: src/translations.h:587
+msgid "Dubhe"
+msgstr ""
+
+#: src/translations.h:588
+msgid "Edasich"
+msgstr ""
+
+#: src/translations.h:589
+msgid "Electra"
+msgstr ""
+
+#: src/translations.h:590
+msgid "Enif"
+msgstr ""
+
+#: src/translations.h:591
+msgid "Errai"
+msgstr ""
+
+#: src/translations.h:592
+msgid "Etamin"
+msgstr ""
+
+#: src/translations.h:593
+msgid "Fomalhaut"
+msgstr ""
+
+#: src/translations.h:594
+msgid "Furud"
+msgstr ""
+
+#: src/translations.h:595
+#, fuzzy
+msgid "Gacrux"
+msgstr "Crux"
+
+#: src/translations.h:596
+msgid "Giausar"
+msgstr ""
+
+#: src/translations.h:597
+msgid "Gienah"
+msgstr ""
+
+#: src/translations.h:598
+msgid "Girtab"
+msgstr ""
+
+#: src/translations.h:599
+msgid "Gomeisa"
+msgstr ""
+
+#: src/translations.h:600
+msgid "Grumium"
+msgstr ""
+
+#: src/translations.h:601
+#, fuzzy
+msgid "Hadar"
+msgstr "Hydra"
+
+#: src/translations.h:602
+msgid "Hamal"
+msgstr ""
+
+#: src/translations.h:603
+#, fuzzy
+msgid "Homan"
+msgstr "Norma"
+
+#: src/translations.h:604
+msgid "Izar"
+msgstr ""
+
+#: src/translations.h:605
+msgid "Kapteyn's Star"
+msgstr ""
+
+#: src/translations.h:606
+#, fuzzy
+msgid "Kaus Australis"
+msgstr "Corona Australis"
+
+#: src/translations.h:607
+#, fuzzy
+msgid "Kaus Borealis"
+msgstr "Corona Borealis"
+
+#: src/translations.h:608
+msgid "Kaus Media"
+msgstr ""
+
+#: src/translations.h:609
+msgid "Keid"
+msgstr ""
+
+#: src/translations.h:610
+msgid "Kitalpha"
+msgstr ""
+
+#: src/translations.h:611
+msgid "Kocab"
+msgstr ""
+
+#: src/translations.h:612
+msgid "Kornephoros"
+msgstr ""
+
+#: src/translations.h:613
+msgid "Kruger 60"
+msgstr ""
+
+#: src/translations.h:614
+msgid "Kurhah"
+msgstr ""
+
+#: src/translations.h:615
+msgid "Lesath"
+msgstr ""
+
+#: src/translations.h:616
+msgid "Luyten's Star"
+msgstr ""
+
+#: src/translations.h:617
+#, fuzzy
+msgid "Maasym"
+msgstr "Marte"
+
+#: src/translations.h:618
+#, fuzzy
+msgid "Maia"
+msgstr "Mimas"
+
+#: src/translations.h:619
+#, fuzzy
+msgid "Marfik"
+msgstr "Marte"
+
+#: src/translations.h:620
+#, fuzzy
+msgid "Markab"
+msgstr "Marte"
+
+#: src/translations.h:621
+#, fuzzy
+msgid "Marsic"
+msgstr "Marte"
+
+#: src/translations.h:622
+#, fuzzy
+msgid "Matar"
+msgstr "Marte"
+
+#: src/translations.h:623
+msgid "Mebsuta"
+msgstr ""
+
+#: src/translations.h:624
+msgid "Megrez"
+msgstr ""
+
+#: src/translations.h:625
+msgid "Meissa"
+msgstr ""
+
+#: src/translations.h:626
+msgid "Mekbuda"
+msgstr ""
+
+#: src/translations.h:627
+msgid "Menkalinan"
+msgstr ""
+
+#: src/translations.h:628
+#, fuzzy
+msgid "Menkar"
+msgstr "Marte"
+
+#: src/translations.h:629
+msgid "Menkent"
+msgstr ""
+
+#: src/translations.h:630
+msgid "Menkib"
+msgstr ""
+
+#: src/translations.h:631
+msgid "Merak"
+msgstr ""
+
+#: src/translations.h:632
+msgid "Merga"
+msgstr ""
+
+#: src/translations.h:633
+msgid "Merope"
+msgstr ""
+
+#: src/translations.h:634
+msgid "Mesarthim"
+msgstr ""
+
+#: src/translations.h:635
+msgid "Miaplacidus"
+msgstr ""
+
+#: src/translations.h:636
+#, fuzzy
+msgid "Mimosa"
+msgstr "Mimas"
+
+#: src/translations.h:637
+msgid "Mintaka"
+msgstr ""
+
+#: src/translations.h:638
+#, fuzzy
+msgid "Mira"
+msgstr "Mimas"
+
+#: src/translations.h:639
+msgid "Mirach"
+msgstr ""
+
+#: src/translations.h:640
+msgid "Mirphak"
+msgstr ""
+
+#: src/translations.h:641
+msgid "Mirzam"
+msgstr ""
+
+#: src/translations.h:642
+#, fuzzy
+msgid "Mizar"
+msgstr "Marte"
+
+#: src/translations.h:643
+msgid "Mothallah"
+msgstr ""
+
+#: src/translations.h:644
+msgid "Muliphein"
+msgstr ""
+
+#: src/translations.h:645
+msgid "Muphrid"
+msgstr ""
+
+#: src/translations.h:646
+msgid "Muscida"
+msgstr ""
+
+#: src/translations.h:647
+#, fuzzy
+msgid "Naos"
+msgstr "Le"
+
+#: src/translations.h:648
+msgid "Nashira"
+msgstr ""
+
+#: src/translations.h:649
+msgid "Nekkar"
+msgstr ""
+
+#: src/translations.h:650
+msgid "Nihal"
+msgstr ""
+
+#: src/translations.h:651
+msgid "Nunki"
+msgstr ""
+
+#: src/translations.h:652
+msgid "Nusakan"
+msgstr ""
+
+#: src/translations.h:653
+msgid "Peacock"
+msgstr ""
+
+#: src/translations.h:654
+msgid "Phact"
+msgstr ""
+
+#: src/translations.h:655
+msgid "Phad"
+msgstr ""
+
+#: src/translations.h:656
+msgid "Pherkad"
+msgstr ""
+
+#: src/translations.h:657
+#, fuzzy
+msgid "Pleione"
+msgstr "Djone"
+
+#: src/translations.h:658
+#, fuzzy
+msgid "Polaris"
+msgstr "Orbiti tal-pjaneti"
+
+#: src/translations.h:659
+msgid "Pollux"
+msgstr ""
+
+#: src/translations.h:660
+#, fuzzy
+msgid "Porrima"
+msgstr "Norma"
+
+#: src/translations.h:661
+#, fuzzy
+msgid "Procyon"
+msgstr "Projjezjoni"
+
+#: src/translations.h:662
+#, fuzzy
+msgid "Propus"
+msgstr "Grus"
+
+#: src/translations.h:663
+msgid "Proxima"
+msgstr ""
+
+#: src/translations.h:664
+msgid "Rasalas"
+msgstr ""
+
+#: src/translations.h:665
+msgid "Rasalgethi"
+msgstr ""
+
+#: src/translations.h:666
+msgid "Rasalhague"
+msgstr ""
+
+#: src/translations.h:667
+msgid "Rastaban"
+msgstr ""
+
+#: src/translations.h:668
+msgid "Red Rectangle"
+msgstr ""
+
+#: src/translations.h:669
+msgid "Regor"
+msgstr ""
+
+#: src/translations.h:670
+msgid "Regulus"
+msgstr ""
+
+#: src/translations.h:671
+msgid "Rigel"
+msgstr ""
+
+#: src/translations.h:672
+msgid "Rigil Kent"
+msgstr ""
+
+#: src/translations.h:673
+msgid "Rotanev"
+msgstr ""
+
+#: src/translations.h:674
+msgid "Ruchbah"
+msgstr ""
+
+#: src/translations.h:675
+msgid "Rukbat"
+msgstr ""
+
+#: src/translations.h:676
+msgid "Sabik"
+msgstr ""
+
+#: src/translations.h:677
+msgid "Sadachbia"
+msgstr ""
+
+#: src/translations.h:678
+msgid "Sadalbari"
+msgstr ""
+
+#: src/translations.h:679
+msgid "Sadalmelik"
+msgstr ""
+
+#: src/translations.h:680
+msgid "Sadalsuud"
+msgstr ""
+
+#: src/translations.h:681
+#, fuzzy
+msgid "Sadr"
+msgstr "Stilel"
+
+#: src/translations.h:682
+msgid "Saiph"
+msgstr ""
+
+#: src/translations.h:683
+#, fuzzy
+msgid "Seginus"
+msgstr "Venere"
+
+#: src/translations.h:684
+msgid "Sham"
+msgstr ""
+
+#: src/translations.h:685
+msgid "Shaula"
+msgstr ""
+
+#: src/translations.h:686
+#, fuzzy
+msgid "Sheat"
+msgstr "Rea"
+
+#: src/translations.h:687
+msgid "Shedir"
+msgstr ""
+
+#: src/translations.h:688
+msgid "Sheliak"
+msgstr ""
+
+#: src/translations.h:689
+msgid "Sheratan"
+msgstr ""
+
+#: src/translations.h:690
+#, fuzzy
+msgid "Sirius"
+msgstr "Circinus"
+
+#: src/translations.h:691
+#, fuzzy
+msgid "Situla"
+msgstr "Sagitta"
+
+#: src/translations.h:692
+#, fuzzy
+msgid "Skat"
+msgstr "Saturnu"
+
+#: src/translations.h:693
+msgid "Spica"
+msgstr ""
+
+#: src/translations.h:694
+#, fuzzy
+msgid "Sualocin"
+msgstr "Issejva dan il-post"
+
+#: src/translations.h:695
+#, fuzzy
+msgid "Subra"
+msgstr "Libra"
+
+#: src/translations.h:696
+msgid "Suhail"
+msgstr ""
+
+#: src/translations.h:697
+msgid "Sulafat"
+msgstr ""
+
+#: src/translations.h:698
+#, fuzzy
+msgid "Syrma"
+msgstr "Norma"
+
+#: src/translations.h:699
+#, fuzzy
+msgid "Talitha"
+msgstr "Titan"
+
+#: src/translations.h:700
+#, fuzzy
+msgid "Tania Australis"
+msgstr "Corona Australis"
+
+#: src/translations.h:701
+#, fuzzy
+msgid "Tania Borealis"
+msgstr "Corona Borealis"
+
+#: src/translations.h:702
+msgid "Tarazed"
+msgstr ""
+
+#: src/translations.h:703
+msgid "Taygeta"
+msgstr ""
+
+#: src/translations.h:704
+#, fuzzy
+msgid "Tegmine"
+msgstr "Gemini"
+
+#: src/translations.h:705
+msgid "Tejat"
+msgstr ""
+
+#: src/translations.h:706
+msgid "The Garnet Star"
+msgstr ""
+
+#: src/translations.h:707
+msgid "Thuban"
+msgstr ""
+
+#: src/translations.h:708
+msgid "Unukalhai"
+msgstr ""
+
+#: src/translations.h:709
+msgid "Van Maanen 2"
+msgstr ""
+
+#: src/translations.h:710
+msgid "Vega"
+msgstr ""
+
+#: src/translations.h:711
+msgid "Vindemiatrix"
+msgstr ""
+
+#: src/translations.h:712
+msgid "Wasat"
+msgstr ""
+
+#: src/translations.h:713
+msgid "Wazn"
+msgstr ""
+
+#: src/translations.h:714
+#, fuzzy
+msgid "Wezen"
+msgstr "Tal-Punent"
+
+#: src/translations.h:715
+msgid "Yed Posterior"
+msgstr ""
+
+#: src/translations.h:716
+msgid "Yed Prior"
+msgstr ""
+
+#: src/translations.h:717
+msgid "Yildun"
+msgstr ""
+
+#: src/translations.h:718
+msgid "Zaniah"
+msgstr ""
+
+#: src/translations.h:719
+msgid "Zaurak"
+msgstr ""
+
+#: src/translations.h:720
+msgid "Zavijava"
+msgstr ""
+
+#: src/translations.h:721
+#, fuzzy
+msgid "Zibal"
+msgstr "Libra"
+
+#: src/translations.h:722
+#, fuzzy
+msgid "Zosma"
+msgstr "Norma"
+
+#: src/translations.h:723
+msgid "Zubenelgenubi"
+msgstr ""
+
+#: src/translations.h:724
+msgid "Zubeneschamali"
+msgstr ""
+
+#: src/translations.h:727
+msgid "Abhijeet"
+msgstr ""
+
+#: src/translations.h:728
+msgid "Agni"
+msgstr ""
+
+#: src/translations.h:729
+#, fuzzy
+msgid "Angira"
+msgstr "Ara"
+
+#: src/translations.h:732
+msgid "Ashwini"
+msgstr ""
+
+#: src/translations.h:734
+#, fuzzy
+msgid "Atri"
+msgstr "Aries"
+
+#: src/translations.h:735
+msgid "Augutsya"
+msgstr ""
+
+#: src/translations.h:736
+#, fuzzy
+msgid "Bharni"
+msgstr "Karon"
+
+#: src/translations.h:737
+msgid "Brahamhridya"
+msgstr ""
+
+#: src/translations.h:739
+msgid "Dhanishtha-1"
+msgstr ""
+
+#: src/translations.h:740
+msgid "Dhanishtha-2"
+msgstr ""
+
+#: src/translations.h:741
+msgid "Dhruv"
+msgstr ""
+
+#: src/translations.h:744
+msgid "Kratu"
+msgstr ""
+
+#: src/translations.h:746
+msgid "Lubhdak"
+msgstr ""
+
+#: src/translations.h:748
+msgid "Marichi"
+msgstr ""
+
+#: src/translations.h:749
+msgid "Mrigsirsa"
+msgstr ""
+
+#: src/translations.h:751
+msgid "Prajapati"
+msgstr ""
+
+#: src/translations.h:752
+msgid "Pulaha"
+msgstr ""
+
+#: src/translations.h:753
+msgid "Pulastya"
+msgstr ""
+
+#: src/translations.h:754
+msgid "Punarsvasu-2"
+msgstr ""
+
+#: src/translations.h:755
+msgid "Punarvasu-1"
+msgstr ""
+
+#: src/translations.h:756
+msgid "Punarvasu-2"
+msgstr ""
+
+#: src/translations.h:757
+msgid "Purva Bhadrapad-1"
+msgstr ""
+
+#: src/translations.h:758
+msgid "Purva Bhadrapad-2"
+msgstr ""
+
+#: src/translations.h:759
+msgid "Purvaphalguni-1"
+msgstr ""
+
+#: src/translations.h:760
+msgid "Purvaphalguni-2"
+msgstr ""
+
+#: src/translations.h:761
+msgid "Purvasadha-1"
+msgstr ""
+
+#: src/translations.h:764
+msgid "Shravan"
+msgstr ""
+
+#: src/translations.h:766
+msgid "Uttarabhadrapad-1"
+msgstr ""
+
+#: src/translations.h:767
+msgid "Uttarabhadrapad-2"
+msgstr ""
+
+#: src/translations.h:768
+msgid "UttraPhalguni-1"
+msgstr ""
+
+#: src/translations.h:769
+msgid "Uttraphalguni-2"
+msgstr ""
+
+#: src/translations.h:770
+msgid "Uttrasadha"
+msgstr ""
+
+#: src/translations.h:771
+msgid "Vashista"
+msgstr ""
+
+#: src/translations.h:775
+msgid "Day star"
+msgstr ""
+
+#: src/translations.h:776
+msgid "Guide star"
+msgstr ""
+
+#: src/translations.h:777
+msgid "South star"
+msgstr ""
+
+#: src/translations.h:780
+#, fuzzy
+msgid "A'a"
+msgstr "Ara"
+
+#: src/translations.h:781
+msgid "Hawaiki"
+msgstr ""
+
+#: src/translations.h:782
+msgid "Hiki-analia"
+msgstr ""
+
+#: src/translations.h:783
+msgid "Hiku-ha"
+msgstr ""
+
+#: src/translations.h:784
+msgid "Hiku-kahi"
+msgstr ""
+
+#: src/translations.h:785
+msgid "Hiku-kolu"
+msgstr ""
+
+#: src/translations.h:786
+msgid "Hiku-lima"
+msgstr ""
+
+#: src/translations.h:787
+msgid "Hiku-lua"
+msgstr ""
+
+#: src/translations.h:788
+msgid "Hiku-ono"
+msgstr ""
+
+#: src/translations.h:789
+msgid "Hiku-pau"
+msgstr ""
+
+#: src/translations.h:790
+msgid "Hokule'a"
+msgstr ""
+
+#: src/translations.h:791
+msgid "Hokulei"
+msgstr ""
+
+#: src/translations.h:792
+msgid "Hokupa'a"
+msgstr ""
+
+#: src/translations.h:793
+msgid "Hoku'ula"
+msgstr ""
+
+#: src/translations.h:794
+msgid "Holopuni"
+msgstr ""
+
+#: src/translations.h:795
+msgid "Humu"
+msgstr ""
+
+#: src/translations.h:796
+msgid "Ka-maile-hope"
+msgstr ""
+
+#: src/translations.h:797
+msgid "Ka-maile-mua"
+msgstr ""
+
+#: src/translations.h:798
+msgid "Ka_Maka"
+msgstr ""
+
+#: src/translations.h:799
+msgid "Kaulia"
+msgstr ""
+
+#: src/translations.h:800
+msgid "Kaulua-koko"
+msgstr ""
+
+#: src/translations.h:801
+msgid "Ke_ali'i_o_kona_i_ka_lewa"
+msgstr ""
+
+#: src/translations.h:802
+msgid "Keoe"
+msgstr ""
+
+#: src/translations.h:803
+msgid "Lehua-Kona"
+msgstr ""
+
+#: src/translations.h:804
+msgid "Mole_Honua"
+msgstr ""
+
+#: src/translations.h:805
+msgid "Nana-hope"
+msgstr ""
+
+#: src/translations.h:806
+msgid "Nana-mua"
+msgstr ""
+
+#: src/translations.h:807
+msgid "Puana"
+msgstr ""
+
+#: src/translations.h:808
+msgid "Puana-kau"
+msgstr ""
+
+#: src/translations.h:809
+msgid "Pu'uhonua"
+msgstr ""
+
+#: src/translations.h:813
+msgid "M31"
+msgstr ""
+
+#: src/translations.h:814
+msgid "M42/M43"
+msgstr ""
+
+#: src/translations.h:815
+msgid "M45"
+msgstr ""
+
+#: src/translations.h:816
+msgid "Einstein Cross"
+msgstr ""
+
+#: src/translations.h:817
+msgid "SN Remnant HH30"
+msgstr ""
+
+#: src/translations.h:818
+msgid "Hubble Deep Field"
+msgstr ""
+
+#: src/translations.h:819
+msgid "Southern Ring Nebula"
+msgstr ""
+
+#: src/translations.h:820
+msgid "Ring Nebula"
+msgstr ""
+
+#: src/translations.h:821
+msgid "Supernova Remnant"
+msgstr ""
+
+#: src/translations.h:822
+msgid "Tarantula Nebula"
+msgstr ""
+
+#: src/translations.h:823
+msgid "Spiral Galaxy Coma"
+msgstr ""
+
+#: src/translations.h:824
+msgid "Merging Galaxies"
+msgstr ""
+
+#: src/translations.h:825
+msgid "Keyhole Nebula"
+msgstr ""
+
+#: src/translations.h:826
+msgid "Reflection Nebula Orion"
+msgstr ""
+
+#: src/translations.h:827
+msgid "Planetary Nebula Aquila"
+msgstr ""
+
+#: src/translations.h:828
+msgid "Spirograph Nebula"
+msgstr ""
+
+#: src/translations.h:829
+msgid "Stars Forming SMC"
+msgstr ""
+
+#: src/translations.h:830
+msgid "Interacting Galaxies"
+msgstr ""
+
+#: src/translations.h:831
+msgid "Hubble X"
+msgstr ""
+
+#: src/translations.h:832
+msgid "Ant Nebula"
+msgstr ""
+
+#: src/translations.h:833
+#, fuzzy
+msgid "Omega Centauri"
+msgstr "Centaurus"
+
+#: src/translations.h:834
+msgid "Hubble V"
+msgstr ""
+
+#: src/translations.h:835
+msgid "Thackerays Globules"
+msgstr ""
+
+#: src/translations.h:836
+msgid "Face On Galaxy"
+msgstr ""
+
+#: src/translations.h:837
+msgid "Galaxy spiral arms"
+msgstr ""
+
+#: src/translations.h:838
+msgid "H II LMC"
+msgstr ""
+
+#: src/translations.h:839
+msgid "Retina Nebula"
+msgstr ""
+
+#: src/translations.h:840
+#, fuzzy
+msgid "Cassiopeia A"
+msgstr "Cassiopeia"
+
+#: src/translations.h:841
+msgid "Little Ghost Nebula"
+msgstr ""
+
+#: src/translations.h:842
+msgid "Double Bubble"
+msgstr ""
+
+#: src/translations.h:843
+msgid "Dwarf irregular galaxy"
+msgstr ""
+
+#: src/translations.h:844
+msgid "Egg Nebula"
+msgstr ""
+
+#: src/translations.h:845
+msgid "V838 Monocerotis"
+msgstr ""
+
+#: src/translations.h:846
+msgid "NGC1275 PerseusA"
+msgstr ""
+
+#: src/translations.h:847
+msgid "Pencil Nebula"
+msgstr ""
+
+#: src/translations.h:848
+msgid "LMC Supernova Remnant"
+msgstr ""
+
+#: src/translations.h:849
+msgid "Globular Cluster Ara"
+msgstr ""
+
+#: src/translations.h:850
+msgid "M104 Sombrero Galaxy"
+msgstr ""
+
+#: src/translations.h:851
+msgid "Stars Forming M33"
+msgstr ""
+
+#: src/translations.h:852
+msgid "M64 Black Eye Galaxy"
+msgstr ""
+
+#: src/translations.h:853
+msgid "Hubble Ultra Deep Field"
+msgstr ""
+
+#: src/translations.h:854
+msgid "Spiral Galaxy Leo"
+msgstr ""
+
+#: src/translations.h:855
+msgid "Rosetta Nebula"
+msgstr ""
+
+#: src/translations.h:856
+msgid "IC434 & Horse Head Nebula"
+msgstr ""
+
+#: src/translations.h:857
+msgid "NGC253"
+msgstr ""
+
+#: src/translations.h:858
+msgid "Chi & h Per"
+msgstr ""
+
+#: src/translations.h:859
+msgid "California Nebula"
+msgstr ""
+
+#: src/translations.h:860
+msgid "NGC6946"
+msgstr ""
+
+#: src/translations.h:861
+msgid "M1"
+msgstr ""
+
+#: src/translations.h:862
+msgid "M2"
+msgstr ""
+
+#: src/translations.h:863
+msgid "M3"
+msgstr ""
+
+#: src/translations.h:864
+msgid "M4"
+msgstr ""
+
+#: src/translations.h:865
+msgid "M5"
+msgstr ""
+
+#: src/translations.h:866
+msgid "M6"
+msgstr ""
+
+#: src/translations.h:867
+msgid "M7"
+msgstr ""
+
+#: src/translations.h:868
+msgid "M8"
+msgstr ""
+
+#: src/translations.h:869
+msgid "M9"
+msgstr ""
+
+#: src/translations.h:870
+msgid "M10"
+msgstr ""
+
+#: src/translations.h:871
+msgid "M11"
+msgstr ""
+
+#: src/translations.h:872
+msgid "M12"
+msgstr ""
+
+#: src/translations.h:873
+msgid "M13"
+msgstr ""
+
+#: src/translations.h:874
+msgid "M15"
+msgstr ""
+
+#: src/translations.h:875
+msgid "M16"
+msgstr ""
+
+#: src/translations.h:876
+msgid "M17"
+msgstr ""
+
+#: src/translations.h:877
+msgid "M20"
+msgstr ""
+
+#: src/translations.h:878
+msgid "M22"
+msgstr ""
+
+#: src/translations.h:879
+msgid "M27"
+msgstr ""
+
+#: src/translations.h:880
+msgid "M33"
+msgstr ""
+
+#: src/translations.h:881
+msgid "M34"
+msgstr ""
+
+#: src/translations.h:882
+msgid "M36"
+msgstr ""
+
+#: src/translations.h:883
+msgid "M37"
+msgstr ""
+
+#: src/translations.h:884
+msgid "M38"
+msgstr ""
+
+#: src/translations.h:885
+msgid "M44"
+msgstr ""
+
+#: src/translations.h:886
+msgid "M46"
+msgstr ""
+
+#: src/translations.h:887
+msgid "M49"
+msgstr ""
+
+#: src/translations.h:888
+msgid "M51"
+msgstr ""
+
+#: src/translations.h:889
+msgid "M53"
+msgstr ""
+
+#: src/translations.h:890
+msgid "M54"
+msgstr ""
+
+#: src/translations.h:891
+msgid "M58"
+msgstr ""
+
+#: src/translations.h:892
+msgid "M59"
+msgstr ""
+
+#: src/translations.h:893
+msgid "M60"
+msgstr ""
+
+#: src/translations.h:894
+msgid "M61"
+msgstr ""
+
+#: src/translations.h:895
+msgid "M63"
+msgstr ""
+
+#: src/translations.h:896
+msgid "M65"
+msgstr ""
+
+#: src/translations.h:897
+msgid "M66"
+msgstr ""
+
+#: src/translations.h:898
+msgid "M74"
+msgstr ""
+
+#: src/translations.h:899
+msgid "M76"
+msgstr ""
+
+#: src/translations.h:900
+msgid "M78"
+msgstr ""
+
+#: src/translations.h:901
+msgid "M81"
+msgstr ""
+
+#: src/translations.h:902
+msgid "M82"
+msgstr ""
+
+#: src/translations.h:903
+msgid "M83"
+msgstr ""
+
+#: src/translations.h:904
+msgid "M84"
+msgstr ""
+
+#: src/translations.h:905
+msgid "M85"
+msgstr ""
+
+#: src/translations.h:906
+msgid "M86"
+msgstr ""
+
+#: src/translations.h:907
+msgid "M87"
+msgstr ""
+
+#: src/translations.h:908
+msgid "M89"
+msgstr ""
+
+#: src/translations.h:909
+msgid "M90"
+msgstr ""
+
+#: src/translations.h:910
+msgid "M91"
+msgstr ""
+
+#: src/translations.h:911
+msgid "M92"
+msgstr ""
+
+#: src/translations.h:912
+msgid "M94"
+msgstr ""
+
+#: src/translations.h:913
+msgid "M95"
+msgstr ""
+
+#: src/translations.h:914
+msgid "M96"
+msgstr ""
+
+#: src/translations.h:915
+msgid "M97"
+msgstr ""
+
+#: src/translations.h:916
+msgid "M98"
+msgstr ""
+
+#: src/translations.h:917
+msgid "M99"
+msgstr ""
+
+#: src/translations.h:918
+msgid "M100"
+msgstr ""
+
+#: src/translations.h:919
+msgid "M101"
+msgstr ""
+
+#: src/translations.h:920
+msgid "M105"
+msgstr ""
+
+#: src/translations.h:921
+msgid "M106"
+msgstr ""
+
+#: src/translations.h:922
+msgid "M108"
+msgstr ""
+
+#: src/translations.h:923
+msgid "M109"
+msgstr ""
+
+#: src/translations.h:927
+msgid "Select and exit to run."
+msgstr ""
+
+#: src/translations.h:930
+#, fuzzy
+msgid "Do"
+msgstr "Djone"
+
+#: src/translations.h:931
+#, fuzzy
+msgid "Done"
+msgstr "Djone"
+
+#: src/translations.h:932
+msgid "Are you sure ?"
+msgstr ""
+
+#: src/s_gui.cpp:2370 src/s_gui.cpp:2413
+msgid "Cancel"
+msgstr ""
+
+#: src/s_gui.cpp:2385 src/s_gui.cpp:2411
+msgid "OK"
+msgstr ""
+
+#: src/s_gui.cpp:2857
+msgid "Year"
+msgstr ""
+
+#: src/s_gui.cpp:2862
+msgid "Month"
+msgstr ""
+
+#: src/s_gui.cpp:2867
+msgid "Day"
+msgstr ""
+
+#: src/s_gui.cpp:2872
+msgid "Hour"
+msgstr ""
+
+#: src/s_gui.cpp:2877
+msgid "Minutes"
+msgstr ""
+
+#: src/s_gui.cpp:2882
+msgid "Seconds"
+msgstr ""
+
+#, fuzzy
+#~ msgid " Az/Alt: "
+#~ msgstr "Az/Alt: "
+
+#, fuzzy
+#~ msgid " (Double)"
+#~ msgstr " (Varjabbli)"
+
+#~ msgid " (Variable)"
+#~ msgstr " (Varjabbli)"
+
+#~ msgid " Light Years"
+#~ msgstr " Snin Dawl"
+
+#~ msgid "Spectral Type: "
+#~ msgstr "Tip Spectral: "
+
+#~ msgid "Loading Hipparcos catalog:"
+#~ msgstr "Qed jillowdja l-katalgu Hipparcos:"
+
+#, fuzzy
+#~ msgid "Planet Labels"
+#~ msgstr "Ismijiet tal-pjaneti"
+
+#, fuzzy
+#~ msgid "Go to Selected Planet"
+#~ msgstr "Mur fuq l-oġġett magħżul [SPACE]"
+
+#~ msgid "Planet Orbits"
+#~ msgstr "Orbiti tal-pjaneti"
+
+#~ msgid "Planet Trails"
+#~ msgstr "Mixjiet tal-pjaneti"
+
+#~ msgid "Planets Hints"
+#~ msgstr "Tagħrif dwar il-pjaneti"
+
+#~ msgid "Constellation Names"
+#~ msgstr "Ismijiet tal-kostellazzjonijiet"
+
+#~ msgid "Nebula Names"
+#~ msgstr "Ismijiet tan-nebuli"
+
+#~ msgid "Planet Names"
+#~ msgstr "Ismijiet tal-pjaneti"
+
+#, fuzzy
+#~ msgid "Decrease Time Speed"
+#~ msgstr "Naqqas l-ispeed tal-ħin [J]"
+
+#, fuzzy
+#~ msgid "Increase Time Speed"
+#~ msgstr "Żid l-ispeed tal-ħin [L]"
+
+#, fuzzy
+#~ msgid "Time rate 0"
+#~ msgstr "Zona tal-ħin :"
+
+#, fuzzy
+#~ msgid "Set to current time"
+#~ msgstr "Mur lura għall-ħin ta' bħalissa"
+
+#, fuzzy
+#~ msgid "Normal time rate"
+#~ msgstr ": Rata normali"
+
+#, fuzzy
+#~ msgid "Go to selected planet"
+#~ msgstr "Mur fuq l-oġġett magħżul [SPACE]"
+
+#, fuzzy
+#~ msgid "Search"
+#~ msgstr "Fittex"
+
+#, fuzzy
+#~ msgid "ENTER: Equatorial/altazimuthal mount"
+#~ msgstr "Mount Ekwatorjali/Altazimut [ENTER]"
+
+#, fuzzy
+#~ msgid "C: Constellation lines"
+#~ msgstr "Linji tal-kostellazzjonijiet"
+
+#, fuzzy
+#~ msgid "B: Constellation boundaries"
+#~ msgstr "Burduri tal-kostellazzjonijiet"
+
+#, fuzzy
+#~ msgid "R: Constellation art"
+#~ msgstr "Kostellazzjonijiet [R]"
+
+#, fuzzy
+#~ msgid "E: Equatorial grid"
+#~ msgstr "Grid Ekwatorjali"
+
+#, fuzzy
+#~ msgid "S: Stars"
+#~ msgstr "Stilel"
+
+#, fuzzy
+#~ msgid "G: Ground"
+#~ msgstr "L-Art"
+
+#, fuzzy
+#~ msgid "A: Atmosphere"
+#~ msgstr "Atmosfera"
+
+#, fuzzy
+#~ msgid "F: Fog"
+#~ msgstr "Ċpar"
+
+#, fuzzy
+#~ msgid "Q: Cardinal points"
+#~ msgstr "Punti tal-Kumpass"
+
+#, fuzzy
+#~ msgid "4 ,: Ecliptic line"
+#~ msgstr "Linja ta' l-Ellittiku"
+
+#, fuzzy
+#~ msgid "5 .: Equator line"
+#~ msgstr "Linja ta' l-Ekwatur"
+
+#, fuzzy
+#~ msgid "H: Help"
+#~ msgstr "Għajnuna"
+
+#, fuzzy
+#~ msgid ",: Toggle planet trails"
+#~ msgstr "Mixjiet tal-pjaneti"
+
+#, fuzzy
+#~ msgid "Z: Azimuthal grid"
+#~ msgstr "Grid Azimutali"
+
+#~ msgid "Constellations Lines"
+#~ msgstr "Linji li jgħaqqdu l-kostellazzjonijiet"
+
+#~ msgid "Constellations Names"
+#~ msgstr "Ismijiet tal-kostellazzjonijiet"
+
+#~ msgid "Constellations Boundaries"
+#~ msgstr "Burduri tal-Kostellazzjonijiet"
+
+#~ msgid "Drawing of the Constellations [C]"
+#~ msgstr "Tpinġijiet tal-Kostellazzjonijiet [C]"
+
+#~ msgid "Names of the Constellations [V]"
+#~ msgstr "Ismijiet tal-Kostellazzjonijiet [V]"
+
+#~ msgid "Constellations Art [R]"
+#~ msgstr "Kostellazzjonijiet [R]"
+
+#~ msgid "Azimuthal Grid [Z]"
+#~ msgstr "Grid ta' l-Azimut [Z]"
+
+#~ msgid "Equatorial Grid [E]"
+#~ msgstr "Grid Ekwatorjali [E]"
+
+#~ msgid "Ground [G]"
+#~ msgstr "L-art [G]"
+
+#~ msgid "Cardinal Points [Q]"
+#~ msgstr "Punti Kardinali [Q]"
+
+#~ msgid "Atmosphere [A]"
+#~ msgstr "Atmosfera [A]"
+
+#~ msgid "Nebulas [N]"
+#~ msgstr "Nebuli [N]"
+
+#~ msgid "Help [H]"
+#~ msgstr "Għajnuna [H]"
+
+#~ msgid "Configuration window"
+#~ msgstr "Għażliet u settings"
+
+#, fuzzy
+#~ msgid "Planet labels [P]"
+#~ msgstr "Ismijiet tal-pjaneti"
+
+#~ msgid "Goto selected object [SPACE]"
+#~ msgstr "Mur fuq l-oġġett magħżul [SPACE]"
+
+#~ msgid "Loading Constellation Art: "
+#~ msgstr "Qed jillowdja l-Kostellazzjonijiet: "
+
+#~ msgid "Night (red) mode"
+#~ msgstr "Night Mode (ahmar)"
+
+#~ msgid ""
+#~ "Movement & selection:\n"
+#~ "Arrow Keys       : Change viewing RA/DE\n"
+#~ "Page Up/Down     : Zoom\n"
+#~ "CTRL+Up/Down     : Zoom\n"
+#~ "Left Click       : Select object\n"
+#~ "Right Click      : Unselect\n"
+#~ "CTRL+Left Click  : Unselect\n"
+#~ "\\                : Zoom out (planet + moons if applicable)\n"
+#~ "/                : Zoom to selected object\n"
+#~ "SPACE            : Center on selected object\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Mexxi u a\n"
+#~ "\n"
+
+#~ msgid "Magnitude Sizing Multiplier: "
+#~ msgstr "Multiplikatur tal-magnitude: "
+
+#, fuzzy
+#~ msgid "Star size limit: "
+#~ msgstr "Multiplikatur tal-magnitude ta' l-istilel: "

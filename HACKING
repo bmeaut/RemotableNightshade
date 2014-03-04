@@ -1,0 +1,29 @@
+
+ __   _ _____  ______ _     _ _______ _______ _     _ _______ ______  _______
+ | \  |   |   |  ____ |_____|    |    |______ |_____| |_____| |     \ |______
+ |  \_| __|__ |_____| |     |    |    ______| |     | |     | |_____/ |______
+                                                                             
+
+                    http://www.nightshadesoftware.org
+
+--------------------------------------------------------------------------------
+
+How you can get involved in the project:
+
+* We are looking for a Mac developer to build a Mac package.  See the previous 
+work in macosx-xcode.tar.gz in the root directory.
+
+* See the TODO file for features we want to add if you know C++ programming.
+Fix a bug or a add a new feature.  See the end of the INSTALL file for how to 
+get the latest source code and submit patches!
+
+* We are looking for sky culture information to include.  This should have
+reliable source references.  See the data/sky_cultures directory.
+
+* We are looking for culturally appropriate constellation art for sky cultures
+without imagery included.  See the data/sky_cultures directory.
+
+* Other ideas:  Educational or demonstration scripts, landscapes, lesson plans
+(see http://digitaliseducation.com/curricula.html for free examples).
+
+

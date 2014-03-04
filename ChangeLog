@@ -1,0 +1,158 @@
+
+ __   _ _____  ______ _     _ _______ _______ _     _ _______ ______  _______
+ | \  |   |   |  ____ |_____|    |    |______ |_____| |_____| |     \ |______
+ |  \_| __|__ |_____| |     |    |    ______| |     | |     | |_____/ |______
+                                                                             
+                    http://www.nightshadesoftware.org
+
+11.12.1 - December, 2011
+	Fixed and reenabled orbit interpolation code
+	Enabled galactic grid
+	Added comet magnitude
+	Fixed bug with scientific names not loading
+	Added wait until script feature
+	Fixed bug with Earth terminator when using shader
+	Fixed memory leak with TUI
+	Fixed 2 hang and one crash case
+	
+11.7.1 - July, 2011
+	Cleaned up information output on selected object
+	Revamped nebula images and data, adding distances
+	Replaced light_pollution_luminance with light_pollution_limiting_magnitude
+	  for config/scripts to be more intuitive
+	Improved light pollution realism
+	Fixed bug with atmosphere being dimmer than should be
+	User Milky Way textures are now used at full intensity
+	Added remaining dwarf planets and more moons
+	Extended simulation time out to years +/- 1,000,000
+	Refactored solar system loading code
+	Fixed bug with lighting=false bodies and ringed_shader
+	Fixed script recording (CTRL-R) regression
+        Extended star catalogs.
+	Fixed memory leak in GUI.
+
+	
+11.2.1 - Feb 14, 2011
+	Launch/Integration of full nscontrol library
+	Added Hevelius art Western sky culture by Mark Crossley
+	Command set milky_way_texture now completed (need to document)
+	Corrected Sheat star name in western-mod culture
+	Circumpolar circle feature by Lionel Ruiz
+	Smoother orbit visualizations using splines
+	Toggle mount type moved to 'U' key
+	Fixed bug with TUI lat/lon being slow on arrow change
+	Made lat/lon change duration from TUI based on degree change
+	Fixed bug with lunar eclipse and scaled Moon
+	Mellinger (2000) Milky Way texture reprocessed by Lionel Ruiz
+	Precession circle color is now editable through TUI
+	Added TUI item to adjust flight duration between bodies
+	Flight between bodies is now the default
+	Splash screen comes up as early as possible to assist debugging
+	
+10.11.1 - Nov 1, 2010
+	Extended image loading support (JPG, TIFF, GIF, PNG)
+        Support for negative Julian dates
+	Added Inca sky culture
+	Cleaned up script paths with defines
+	Earth precession circle (Lionel)
+	Tropic lines on other planets (Lionel)
+	New splash image
+	Added shaders for more realistic planet rendering including shadowing
+	Random access script keystroke feature
+	Code filename cleanup
+	Enabled 'configuration' StratoScript command
+	Added default body texture
+	Added asteroid data download utility (see util directory)
+	Basic scriptable fly-to feature
+	More fluid body motions
+	Body halos now draw using depth buffer
+	Improved help text for easier translating
+	Improved scroll bar usability
+	Changed landscape GUI selector so it will scroll
+	Added hour markers to tropic lines
+	Updated user guide
+
+10.7.1 - July 16, 2010
+	Added "nebula" StratoScript command to add or replace default nebulae
+	Added line antialiasing options
+	Added User Guide pdf in doc directory
+	
+10.5.2 - May 20, 2010
+	'nscontrol' subproject integrated with main build
+	Build now verifies minimum boost version
+	Fixed CTRL-F shortcut for Find dialog
+	Updated az, sk, ko, pt_BR, pt, es translations
+	Added sky_culture StratoScript command to define cultures by script
+	
+10.5.1 - May 5, 2010
+	Created nscontrol library to support control from external applications
+	Added 30 more translated languages
+	Added Aztec sky culture (author Enrique Gómez Candelario)
+	Added video frame recording mode (CTRL-V to toggle)
+	Changed ecliptic month labels to translatable text
+	Fixed tropic lines color and state bugs
+	Add Windows build instructions (see INSTALL.WIN32)
+	Fixed rpm spec file
+	
+10.2.1 - Beta test release - February 16, 2010
+
+	Default to fullscreen, full resolution on new install
+	Mac OSX build now working
+	Enable truncated projection setup
+	Enable distortion correction setup
+	Added tropic lines - Lionel Ruiz patch
+	Better TUI rendering
+	Allow rectangular constellation art textures
+	Fixed M31 alignment and new image
+	Smaller daytime Sun halo with atmosphere
+	Body orbits fade as body enters/leaves view
+	
+9.12.2
+	
+	First preview release, December 31, 2009
+
+	
+Changes of note from Stellarium 0.8.2
+	
+	Performance improvements
+	Constellation boundaries are now per sky culture
+	TUI displays "Done" for completed actions
+	Azimuthal grid meridian labels
+	Support for proportional constellation art definitions
+	Updated ephemera
+	Partial sphere/cylindrical landscape support
+	Night landscape textures for fisheye and spherical types
+	Replaced forest landscape
+	Added beach landscape
+	Mipmap option for fisheye and spherical landscapes
+	Rotation parameter for fisheye and spherical landscapes
+	Cleaned up parameter names for fisheye and spherical landscapes
+	Reloading defaults halts any in-progress observer move_to
+	Updated Spanish translations
+	Added TUI 8.9 system info
+	Shear distortion correction feature
+	Fixed flashing planet bugs
+	Updated Spanish translations
+	Bug fixes with audio control
+	New Earth, Mars textures
+	Added dome coordinate system for images
+	Zoom offset feature
+	Internal scripts support
+	Offcenter projection distortion correction
+	Depth buffered planet/orbit rendering
+	Moon orbits
+	enabled flat textures for testing only
+	orbits with depth buffers (in development)
+	script image aspect ratio bug fix
+	wait duration hard option for scripts
+	fixed elliptical orbits
+	cometary orbit support for satellites
+	add and drop solar system bodies from scripts
+	draw moon orbits, with own color
+	moon orbits draw even if parent selected
+	moon view step for neptune
+	changed ssystem param sidereal_period to orbit_visualization_period
+	object trails do not key off orbit_visualiztion_period
+	more efficient object trail drawing
+	planet north pole support added to ssystem.ini
+	comet_orbit support

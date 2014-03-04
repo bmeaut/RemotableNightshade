@@ -1,0 +1,12 @@
+# visit Earth's moon
+clear
+wait duration 2
+set home_planet Moon
+moveto lat 0 lon 0 duration 2
+set landscape_name Moon
+flag landscape on
+select planet Earth pointer off
+wait duration 2
+
+
+

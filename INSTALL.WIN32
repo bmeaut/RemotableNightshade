@@ -1,0 +1,60 @@
+===============================================================================
+Building Nightshade from source on Windows (7/Vista/XP)
+===============================================================================
+
+Note: Windows versions prior to XP (Windows version 5) are not supported.
+
+Building from source on a Windows system requires the MinGW/MSys environment, 
+which facilitates compilation of native Windows binaries from Unix based source 
+code distributions. To ease the installation of this environment and Nightshade 
+dependencies, prebuilt packages containing a fully functional MinGW system and 
+all necessary dependencies are available from nightshadesoftware.org. 
+
+* Download the MinGW/MSys binaries; 
+  http://nightshadesoftware.org/downloads/NshadeWin32BuildSystem-1.2.zip. 
+  Unpack the archive to a directory of your choosing.
+
+* Obtain the Nightshade source code from http://nightshadesoftware.org and 
+  extract the archive to any directory. The directory does not need to be a 
+  subdirectory of your MinGW installation.
+
+* In the Windows file explorer or console, navigate to the directory where you 
+  unpacked MinGW and run msys/msys.bat. This will open the MSys console, which 
+  accepts typical Unix commands.
+
+* Within the Msys shell, 'cd' to the location you extracted the Nightshade 
+  source package. Note that drives are specified using /[drive]. For example, 
+  'cd c:\mydir' becomes 'cd /c/mydir' in the Msys shell.
+
+* Run './configure --prefix='/mingw' followed by 'make'. 
+  A 'make install' is optional but not recommended. Rather, the build should be 
+  installed by a Windows installer; see "Building a Windows install for 
+  Nightshade" below.
+  
+* Now run a 'make dist' to update and compile the language files.
+
+* Assuming the build completes without error, you may now run nightshade from 
+  within the Msys environment by typing 'src/nightshade.exe'.
+
+===============================================================================
+Building a Windows install for Nightshade
+===============================================================================
+
+To build a Windows installer for your Nightshade build (to run without Msys), 
+continue with the following steps.
+
+* Download and install Inno Setup from http://www.jrsoftware.org.
+
+* Download http://nightshadesoftware.org/downloads/NightshadeWin32Deps-1.2.zip 
+  and unpack it in your Nightshade source tree root directory. This package 
+  provides prebuilt Windows binary dependencies and configuration files for the 
+  installer archive. 
+
+* Copy [Nightshade source location]/nscontrol/src/.libs/libnscontrol-0.dll to 
+  [Nightshade source location]/win32/bdist. Replace the existing file if 
+  present. 
+
+* From the windows file explorer, navigate to your Nightshade source tree 
+  folder, right click the file 'nightshade.iss' and select 'compile'. 
+
+* The installer will be written to 'Output/setup.exe'.

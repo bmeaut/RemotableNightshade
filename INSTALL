@@ -1,0 +1,159 @@
+
+ __   _ _____  ______ _     _ _______ _______ _     _ _______ ______  _______
+ | \  |   |   |  ____ |_____|    |    |______ |_____| |_____| |     \ |______
+ |  \_| __|__ |_____| |     |    |    ______| |     | |     | |_____/ |______
+                                                                             
+
+                    http://www.nightshadesoftware.org
+
+                   NIGHTSHADE INSTALLATION INSTRUCTIONS
+
+===============================================================================
+                           BINARY INSTALLATION
+===============================================================================
+Most users will prefer using precompiled binary packages:
+
+- WINDOWS USERS :
+Run the setup.exe and follow the instructions.
+
+- MACOSX USERS :
+Versions beginning with 10.11.1 are available as binary installers for Intel
+based Macs. Only Snow Leapard has been tested but Leopard is expected to work.
+Version 10.2.1 is available via Macports as described below.  
+
+- LINUX USERS :
+Look for the binary package matching your distribution or build from source.
+
+
+===============================================================================
+        COMPILATION from the source package (nightshade-XXX.tgz)
+===============================================================================
+
+If you can't find a suited binary package or if you are curious you can also 
+compile the software by yourself.
+
+Compilation and installation have been successfuly tested on many plateforms 
+and OS (including windows). These are general explanations for any architec-
+tures. Special (tricky) cases are described below.
+
+To compile nightshade, you will need the following development libraries :
+- openGL - (libgl-dev on linux, libopengl32 on win32)
+- GLU - (libglu-dev on linux libglu32 on win32)
+- SDL - www.libsdl.org (libsdl-dev)
+- Zlib - www.zlib.net (zlib-dev)
+- PNG - www.libpng.org (libpng-dev)
+- JPEG - www.ijg.org (libjpeg-dev)
+- TIFF - www.libtiff.org (libtiff-dev)
+- GraphicsMagick++ - www.graphicsmagick.org
+- SDL_Pango - for font rendering
+- SDL-mixer - this is optional, but required to enable sound support (libsdl-mixer-dev)
+- boost - www.boost.org (minimum version 1.35, 1.42+ is highly recommended)
+- FastDB - http://www.garret.ru/fastdb.html
+	-Note that as of this writing, the FastDB build system installs headers that
+    it shouldn't. If you experience problems building Nightshade, remove or 
+    rename the config.h and acconfig.h headers from the fastdb include directory; 
+    typically found in /usr/local/include/fastdb.
+
+Now compile nightshade sources
+~$ cd nightshade-XXX
+~$ ./configure
+~$ make
+
+then to launch the local version of the program type
+~$ ./src/nightshade
+
+to fully install nightshade (so that it will be launchable from everywhere)
+~$ sudo make install
+
+once installed you may want to clean the build directory
+~$ make clean
+
+If you want to uninstall nightshade, type as root
+~$ make uninstall
+
+===============================================================================
+Install from Macports for MACOSX
+===============================================================================
+
+For Intel/OSX based Macs, Nightshade can be built from the source code similar 
+to the instructions above. 
+
+Nightshade is included in Macports, which greatly simplifies installing Nightshade. 
+
+** Ensure the latest version of XCode tools is installed for your Mac.
+	-Available http://develper.apple.com/technologies/tools/xcode.html. **
+
+1. Install Macports from http://www.macports.org/install.php.
+
+2. Open a command prompt.
+
+3. Type the following: sudo port install nightshade
+
+4. You will be prompted for the administrator's password.
+
+5. Depending on your system, several dependencies may need to be installed 
+prior to Nightshade, please be patient while installation proceeds.
+
+
+If you want to compile from source, for example if the Macports install is not 
+the current version, you can now follow the compiling from source instructions 
+above.*
+
+* Note, by default macports installs libraries and include files to '/opt/local'.
+It may be necessary to invoke the configure script as shown below.
+	env CPPFLAGS='/opt/local/include' ./configure 
+
+===============================================================================
+Special instructions for COMPILATION on WINDOWS (XP) with MinGW
+===============================================================================
+
+Please see INSTALL.WIN32
+
+===============================================================================
+              COMPILATION (and modification) from the BZR sources
+===============================================================================
+
+You can get the latest bzr repository code from LaunchPad. However with this BZR
+version no correct behaviour is garanteed. It is mainly intended for use by
+developers.
+
+You can browse the BZR tree at http://code.launchpad.net/nightshade
+
+To create your own local branch (assuming you have installed bzr) type in 
+a console:
+
+~$ bzr branch lp:nightshade nightshade 
+
+then to compile type:
+~$ cd nightshade
+~$ ./autogen.sh
+~$ ./configure
+~$ make
+
+then to launch the local version of the program type
+~$ ./src/nightshade
+
+You can now have a look at the src/ directory where you will find the source files.
+Edit whatever you want in it and when your new great feature is done you will need 
+to share it with the community of nightshade developers.
+
+To save a revision locally, type:
+
+~$ bzr commit -m "Some comment about your change"
+
+While you are working you can get new changes from the main trunk by typing:
+
+~$ bzr merge
+
+When you are satisfied with your changes, an official developer will need to review 
+your changes for inclusion.  But as you are not an official developer (yet!) you 
+will need to create a patch file which will contain all the changes you did on the 
+source code.
+
+~$ bzr send -o description-of-my-change.patch
+
+Then email the patch to support@nightshadesoftware.org!
+
+
+
+

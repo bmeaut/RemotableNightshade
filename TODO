@@ -1,0 +1,24 @@
+#
+# Todo list
+# 
+
+
+- Move application logic to centralized command design
+
+- Centralize configuration parameters for easily saving and 
+  restoring state
+
+- Enhance StratoScript features with text labelling, etc.
+
+- Improve atmosphere performance (see Stellarium)
+
+- Add guided fly-to-body feature
+
+
+### Known issues
+
+- No timezone/daylight savings correction on Windows
+
+- If you can not run or get slow performance upgrade your 
+  video driver (requires opengl accelleration)
+

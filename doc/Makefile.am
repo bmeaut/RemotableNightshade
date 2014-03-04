@@ -1,0 +1,1 @@
+EXTRA_DIST = developer-guide.pdf nightshade-user-guide.pdf nightshade-user-guide.ES.pdf stratoscript-commands.pdf stratoscript-commands.ES.pdf 
