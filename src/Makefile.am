@@ -34,9 +34,11 @@ nightshade_SOURCES = object.h object.cpp \
 	external_viewer.h external_viewer.cpp GLee.h GLee.c app_settings.h app_settings.cpp \
 	signals.cpp signals.h program_object.cpp program_object.h shader.cpp shader.h \
 	night_shader.cpp night_shader.h bump_shader.cpp bump_shader.h \
-	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h
+	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h \
+    webapi_defines.h webapi_webapi.cpp webapi_webapi.h
 
-nightshade_LDFLAGS = `GraphicsMagick++-config --libs`
+nightshade_CFLAGS = `pkg-config --cflags libmicrohttpd`
+nightshade_LDFLAGS = `GraphicsMagick++-config --libs` `pkg-config --libs libmicrohttpd`
 nightshade_LDADD = $(top_builddir)/nscontrol/src/libnscontrol.la \
 $(BOOST_SYSTEM_LIBS) \
 $(BOOST_FILESYSTEM_LIBS) \

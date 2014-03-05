@@ -107,6 +107,9 @@ public:
 
 	~App();
 
+	//! Necessary for the Webapi
+	Core& getCore() { return *core; }
+
 	//! Initialize application and core
 	void init(void);
 

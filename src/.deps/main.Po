@@ -707,7 +707,8 @@ main.o: main.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
- /usr/include/x86_64-linux-gnu/bits/sigthread.h
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h webapi_webapi.h \
+ /usr/local/include/microhttpd.h webapi_definitions.h
 
 /usr/include/stdc-predef.h:
 
@@ -2396,3 +2397,9 @@ signals.h:
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+webapi_webapi.h:
+
+/usr/local/include/microhttpd.h:
+
+webapi_definitions.h:

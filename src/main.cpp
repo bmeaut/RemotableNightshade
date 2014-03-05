@@ -45,6 +45,8 @@
 #include <Shlobj.h>
 #endif
 
+#include "webapi_webapi.h"
+
 using namespace std;
 
 string CDIR;	// Config Directory
@@ -276,6 +278,11 @@ int main(int argc, char **argv)
 
 	App* app = new App( sdl );
 
+	// Initialize the Webapi & start it.
+	Webapi* webapi = new Webapi(app->getCore());
+	webapi->setPort(8888);
+	webapi->startListening();
+
 	// Register custom suspend and term signal handers
 	ISignals* signalObj = ISignals::Create(app);
 	signalObj->Register( SIGTSTP, ISignals::NSSigTSTP );
@@ -288,6 +295,7 @@ int main(int argc, char **argv)
 	app->startMainLoop();
 
 	// Clean memory
+	delete webapi;
 	delete app;
 	delete sdl;
 	delete signalObj;
