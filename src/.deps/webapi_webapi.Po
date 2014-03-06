@@ -37,7 +37,7 @@ webapi_webapi.o: webapi_webapi.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/socket.h \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
- /usr/include/x86_64-linux-gnu/bits/socket2.h webapi_definitions.h core.h \
+ /usr/include/x86_64-linux-gnu/bits/socket2.h webapi_definitions.h \
  /usr/include/c++/4.8/string \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
@@ -84,7 +84,7 @@ webapi_webapi.o: webapi_webapi.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
- /usr/include/c++/4.8/bits/basic_string.tcc solarsystem.h \
+ /usr/include/c++/4.8/bits/basic_string.tcc core.h solarsystem.h \
  /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_construct.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
  /usr/include/c++/4.8/bits/stl_uninitialized.h \
@@ -664,7 +664,56 @@ webapi_webapi.o: webapi_webapi.cpp /usr/include/stdc-predef.h \
  ../src/iniparser/iniparser.h ../src/iniparser/dictionary.h \
  constellation_mgr.h nebula_mgr.h grid.h atmosphere.h skylight.h \
  skybright.h draw.h landscape.h meteor_mgr.h meteor.h sky_localizer.h \
- image_mgr.h image.h geodesic_grid.h
+ image_mgr.h image.h geodesic_grid.h \
+ /usr/local/include/boost/algorithm/string/predicate.hpp \
+ /usr/local/include/boost/algorithm/string/config.hpp \
+ /usr/local/include/boost/range/begin.hpp \
+ /usr/local/include/boost/range/config.hpp \
+ /usr/local/include/boost/range/iterator.hpp \
+ /usr/local/include/boost/range/mutable_iterator.hpp \
+ /usr/local/include/boost/range/const_iterator.hpp \
+ /usr/local/include/boost/range/end.hpp \
+ /usr/local/include/boost/range/detail/implementation_help.hpp \
+ /usr/local/include/boost/range/detail/common.hpp \
+ /usr/local/include/boost/range/detail/sfinae.hpp \
+ /usr/local/include/boost/range/as_literal.hpp \
+ /usr/local/include/boost/range/iterator_range.hpp \
+ /usr/local/include/boost/range/functions.hpp \
+ /usr/local/include/boost/range/size.hpp \
+ /usr/local/include/boost/range/difference_type.hpp \
+ /usr/local/include/boost/range/distance.hpp \
+ /usr/local/include/boost/range/empty.hpp \
+ /usr/local/include/boost/range/rbegin.hpp \
+ /usr/local/include/boost/range/reverse_iterator.hpp \
+ /usr/local/include/boost/iterator/reverse_iterator.hpp \
+ /usr/local/include/boost/utility.hpp \
+ /usr/local/include/boost/utility/base_from_member.hpp \
+ /usr/local/include/boost/preprocessor/repetition/enum_binary_params.hpp \
+ /usr/local/include/boost/preprocessor/repetition/repeat_from_to.hpp \
+ /usr/local/include/boost/utility/binary.hpp \
+ /usr/local/include/boost/preprocessor/control/deduce_d.hpp \
+ /usr/local/include/boost/preprocessor/seq/cat.hpp \
+ /usr/local/include/boost/preprocessor/seq/fold_left.hpp \
+ /usr/local/include/boost/preprocessor/seq/seq.hpp \
+ /usr/local/include/boost/preprocessor/seq/elem.hpp \
+ /usr/local/include/boost/preprocessor/seq/size.hpp \
+ /usr/local/include/boost/preprocessor/seq/transform.hpp \
+ /usr/local/include/boost/preprocessor/arithmetic/mod.hpp \
+ /usr/local/include/boost/preprocessor/arithmetic/detail/div_base.hpp \
+ /usr/local/include/boost/preprocessor/comparison/less_equal.hpp \
+ /usr/local/include/boost/preprocessor/logical/not.hpp \
+ /usr/local/include/boost/next_prior.hpp \
+ /usr/local/include/boost/noncopyable.hpp \
+ /usr/local/include/boost/iterator/iterator_adaptor.hpp \
+ /usr/local/include/boost/range/rend.hpp \
+ /usr/local/include/boost/range/detail/str_types.hpp \
+ /usr/local/include/boost/range/size_type.hpp \
+ /usr/local/include/boost/algorithm/string/compare.hpp \
+ /usr/local/include/boost/algorithm/string/find.hpp \
+ /usr/local/include/boost/algorithm/string/finder.hpp \
+ /usr/local/include/boost/algorithm/string/constants.hpp \
+ /usr/local/include/boost/algorithm/string/detail/finder.hpp \
+ /usr/local/include/boost/algorithm/string/detail/predicate.hpp
 
 /usr/include/stdc-predef.h:
 
@@ -761,8 +810,6 @@ webapi_webapi.h:
 /usr/include/x86_64-linux-gnu/bits/socket2.h:
 
 webapi_definitions.h:
-
-core.h:
 
 /usr/include/c++/4.8/string:
 
@@ -875,6 +922,8 @@ core.h:
 /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h:
 
 /usr/include/c++/4.8/bits/basic_string.tcc:
+
+core.h:
 
 solarsystem.h:
 
@@ -2233,3 +2282,101 @@ image_mgr.h:
 image.h:
 
 geodesic_grid.h:
+
+/usr/local/include/boost/algorithm/string/predicate.hpp:
+
+/usr/local/include/boost/algorithm/string/config.hpp:
+
+/usr/local/include/boost/range/begin.hpp:
+
+/usr/local/include/boost/range/config.hpp:
+
+/usr/local/include/boost/range/iterator.hpp:
+
+/usr/local/include/boost/range/mutable_iterator.hpp:
+
+/usr/local/include/boost/range/const_iterator.hpp:
+
+/usr/local/include/boost/range/end.hpp:
+
+/usr/local/include/boost/range/detail/implementation_help.hpp:
+
+/usr/local/include/boost/range/detail/common.hpp:
+
+/usr/local/include/boost/range/detail/sfinae.hpp:
+
+/usr/local/include/boost/range/as_literal.hpp:
+
+/usr/local/include/boost/range/iterator_range.hpp:
+
+/usr/local/include/boost/range/functions.hpp:
+
+/usr/local/include/boost/range/size.hpp:
+
+/usr/local/include/boost/range/difference_type.hpp:
+
+/usr/local/include/boost/range/distance.hpp:
+
+/usr/local/include/boost/range/empty.hpp:
+
+/usr/local/include/boost/range/rbegin.hpp:
+
+/usr/local/include/boost/range/reverse_iterator.hpp:
+
+/usr/local/include/boost/iterator/reverse_iterator.hpp:
+
+/usr/local/include/boost/utility.hpp:
+
+/usr/local/include/boost/utility/base_from_member.hpp:
+
+/usr/local/include/boost/preprocessor/repetition/enum_binary_params.hpp:
+
+/usr/local/include/boost/preprocessor/repetition/repeat_from_to.hpp:
+
+/usr/local/include/boost/utility/binary.hpp:
+
+/usr/local/include/boost/preprocessor/control/deduce_d.hpp:
+
+/usr/local/include/boost/preprocessor/seq/cat.hpp:
+
+/usr/local/include/boost/preprocessor/seq/fold_left.hpp:
+
+/usr/local/include/boost/preprocessor/seq/seq.hpp:
+
+/usr/local/include/boost/preprocessor/seq/elem.hpp:
+
+/usr/local/include/boost/preprocessor/seq/size.hpp:
+
+/usr/local/include/boost/preprocessor/seq/transform.hpp:
+
+/usr/local/include/boost/preprocessor/arithmetic/mod.hpp:
+
+/usr/local/include/boost/preprocessor/arithmetic/detail/div_base.hpp:
+
+/usr/local/include/boost/preprocessor/comparison/less_equal.hpp:
+
+/usr/local/include/boost/preprocessor/logical/not.hpp:
+
+/usr/local/include/boost/next_prior.hpp:
+
+/usr/local/include/boost/noncopyable.hpp:
+
+/usr/local/include/boost/iterator/iterator_adaptor.hpp:
+
+/usr/local/include/boost/range/rend.hpp:
+
+/usr/local/include/boost/range/detail/str_types.hpp:
+
+/usr/local/include/boost/range/size_type.hpp:
+
+/usr/local/include/boost/algorithm/string/compare.hpp:
+
+/usr/local/include/boost/algorithm/string/find.hpp:
+
+/usr/local/include/boost/algorithm/string/finder.hpp:
+
+/usr/local/include/boost/algorithm/string/constants.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/finder.hpp:
+
+/usr/local/include/boost/algorithm/string/detail/predicate.hpp:
