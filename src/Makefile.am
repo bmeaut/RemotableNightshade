@@ -35,7 +35,8 @@ nightshade_SOURCES = object.h object.cpp \
 	signals.cpp signals.h program_object.cpp program_object.h shader.cpp shader.h \
 	night_shader.cpp night_shader.h bump_shader.cpp bump_shader.h \
 	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h \
-    webapi_defines.h webapi_webapi.cpp webapi_webapi.h
+    mongoose-cpp/mongoose.c mongoose-cpp/mongoose.h mongoose-cpp/mongcpp.cpp mongoose-cpp/mongcpp.h \
+    mongoose-cpp/mwebapi.cpp mongoose-cpp/mwebapi.h
 
 nightshade_CFLAGS = `pkg-config --cflags libmicrohttpd`
 nightshade_LDFLAGS = `GraphicsMagick++-config --libs` `pkg-config --libs libmicrohttpd`
@@ -50,7 +51,7 @@ $(top_builddir)/src/iniparser/libiniparser.a \
 @NS_LIBS@ \
 @LIBINTL@
 
-INCLUDES = -I$(top_builddir)/nscontrol/src -I$(top_srcdir)/src/planetsephems -I$(top_srcdir)/src/stellastro -I$(top_srcdir)/src/iniparser -I$(top_srcdir)/intl
+INCLUDES = -I$(top_builddir)/nscontrol/src -I$(top_srcdir)/src/planetsephems -I$(top_srcdir)/src/stellastro -I$(top_srcdir)/src/iniparser -I$(top_srcdir)/src/mongoose-cpp -I$(top_srcdir)/intl
 
 SUBDIRS = planetsephems stellastro iniparser ../nscontrol
 noinst_HEADERS = translations.h translator.h app.h

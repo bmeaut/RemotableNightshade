@@ -45,7 +45,8 @@
 #include <Shlobj.h>
 #endif
 
-#include "webapi_webapi.h"
+
+#include "mongoose-cpp/mwebapi.h"
 
 using namespace std;
 
@@ -230,6 +231,8 @@ void setDirectories(const char* executableName)
 // Main procedure
 int main(int argc, char **argv)
 {
+
+
 	// Used for getting system date formatting
 	setlocale(LC_TIME, "");
 
@@ -279,9 +282,9 @@ int main(int argc, char **argv)
 	App* app = new App( sdl );
 
 	// Initialize the Webapi & start it.
-	Webapi* webapi = new Webapi(app->getCore());
-	webapi->setPort(8888);
-	webapi->startListening();
+	MWebapi ms(app->getCore());
+	ms.start();
+	cout << ms.isRunning() << endl;
 
 	// Register custom suspend and term signal handers
 	ISignals* signalObj = ISignals::Create(app);
@@ -295,7 +298,7 @@ int main(int argc, char **argv)
 	app->startMainLoop();
 
 	// Clean memory
-	delete webapi;
+	ms.stop();
 	delete app;
 	delete sdl;
 	delete signalObj;

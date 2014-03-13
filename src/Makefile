@@ -143,7 +143,8 @@ am_nightshade_OBJECTS = object.$(OBJEXT) object_base.$(OBJEXT) \
 	program_object.$(OBJEXT) shader.$(OBJEXT) \
 	night_shader.$(OBJEXT) bump_shader.$(OBJEXT) \
 	ring_shader.$(OBJEXT) ringed_shader.$(OBJEXT) \
-	named_sockets.$(OBJEXT) webapi_webapi.$(OBJEXT)
+	named_sockets.$(OBJEXT) nightshade-mongoose.$(OBJEXT) \
+	mongcpp.$(OBJEXT) mwebapi.$(OBJEXT)
 nightshade_OBJECTS = $(am_nightshade_OBJECTS)
 am__DEPENDENCIES_1 =
 nightshade_DEPENDENCIES =  \
@@ -489,7 +490,8 @@ nightshade_SOURCES = object.h object.cpp \
 	signals.cpp signals.h program_object.cpp program_object.h shader.cpp shader.h \
 	night_shader.cpp night_shader.h bump_shader.cpp bump_shader.h \
 	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h \
-    webapi_defines.h webapi_webapi.cpp webapi_webapi.h
+    mongoose-cpp/mongoose.c mongoose-cpp/mongoose.h mongoose-cpp/mongcpp.cpp mongoose-cpp/mongcpp.h \
+    mongoose-cpp/mwebapi.cpp mongoose-cpp/mwebapi.h
 
 nightshade_CFLAGS = `pkg-config --cflags libmicrohttpd`
 nightshade_LDFLAGS = `GraphicsMagick++-config --libs` `pkg-config --libs libmicrohttpd`
@@ -504,7 +506,7 @@ $(top_builddir)/src/iniparser/libiniparser.a \
  -lm -lrt  -L/usr/lib/x86_64-linux-gnu -lSDL -lpng -lz -lSDL_mixer -lSDL_Pango \
 
 
-INCLUDES = -I$(top_builddir)/nscontrol/src -I$(top_srcdir)/src/planetsephems -I$(top_srcdir)/src/stellastro -I$(top_srcdir)/src/iniparser -I$(top_srcdir)/intl
+INCLUDES = -I$(top_builddir)/nscontrol/src -I$(top_srcdir)/src/planetsephems -I$(top_srcdir)/src/stellastro -I$(top_srcdir)/src/iniparser -I$(top_srcdir)/src/mongoose-cpp -I$(top_srcdir)/intl
 SUBDIRS = planetsephems stellastro iniparser ../nscontrol
 noinst_HEADERS = translations.h translator.h app.h
 all: all-recursive
@@ -631,12 +633,15 @@ include ./$(DEPDIR)/mapping.Po
 include ./$(DEPDIR)/mapping_classes.Po
 include ./$(DEPDIR)/meteor.Po
 include ./$(DEPDIR)/meteor_mgr.Po
+include ./$(DEPDIR)/mongcpp.Po
+include ./$(DEPDIR)/mwebapi.Po
 include ./$(DEPDIR)/named_sockets.Po
 include ./$(DEPDIR)/navigator.Po
 include ./$(DEPDIR)/nebula.Po
 include ./$(DEPDIR)/nebula_mgr.Po
 include ./$(DEPDIR)/night_shader.Po
 include ./$(DEPDIR)/nightshade-GLee.Po
+include ./$(DEPDIR)/nightshade-mongoose.Po
 include ./$(DEPDIR)/object.Po
 include ./$(DEPDIR)/object_base.Po
 include ./$(DEPDIR)/observer.Po
@@ -672,7 +677,6 @@ include ./$(DEPDIR)/ui_conf.Po
 include ./$(DEPDIR)/ui_tuiconf.Po
 include ./$(DEPDIR)/utility.Po
 include ./$(DEPDIR)/viewport_distorter.Po
-include ./$(DEPDIR)/webapi_webapi.Po
 include ./$(DEPDIR)/zone_array.Po
 
 .c.o:
@@ -710,6 +714,20 @@ nightshade-GLee.obj: GLee.c
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(nightshade_CFLAGS) $(CFLAGS) -c -o nightshade-GLee.obj `if test -f 'GLee.c'; then $(CYGPATH_W) 'GLee.c'; else $(CYGPATH_W) '$(srcdir)/GLee.c'; fi`
 
+nightshade-mongoose.o: mongoose-cpp/mongoose.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(nightshade_CFLAGS) $(CFLAGS) -MT nightshade-mongoose.o -MD -MP -MF $(DEPDIR)/nightshade-mongoose.Tpo -c -o nightshade-mongoose.o `test -f 'mongoose-cpp/mongoose.c' || echo '$(srcdir)/'`mongoose-cpp/mongoose.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/nightshade-mongoose.Tpo $(DEPDIR)/nightshade-mongoose.Po
+#	$(AM_V_CC)source='mongoose-cpp/mongoose.c' object='nightshade-mongoose.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(nightshade_CFLAGS) $(CFLAGS) -c -o nightshade-mongoose.o `test -f 'mongoose-cpp/mongoose.c' || echo '$(srcdir)/'`mongoose-cpp/mongoose.c
+
+nightshade-mongoose.obj: mongoose-cpp/mongoose.c
+	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(nightshade_CFLAGS) $(CFLAGS) -MT nightshade-mongoose.obj -MD -MP -MF $(DEPDIR)/nightshade-mongoose.Tpo -c -o nightshade-mongoose.obj `if test -f 'mongoose-cpp/mongoose.c'; then $(CYGPATH_W) 'mongoose-cpp/mongoose.c'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mongoose.c'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/nightshade-mongoose.Tpo $(DEPDIR)/nightshade-mongoose.Po
+#	$(AM_V_CC)source='mongoose-cpp/mongoose.c' object='nightshade-mongoose.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
+#	$(AM_V_CC_no)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(nightshade_CFLAGS) $(CFLAGS) -c -o nightshade-mongoose.obj `if test -f 'mongoose-cpp/mongoose.c'; then $(CYGPATH_W) 'mongoose-cpp/mongoose.c'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mongoose.c'; fi`
+
 .cpp.o:
 	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
 	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
@@ -730,6 +748,34 @@ nightshade-GLee.obj: GLee.c
 #	$(AM_V_CXX)source='$<' object='$@' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(LTCXXCOMPILE) -c -o $@ $<
+
+mongcpp.o: mongoose-cpp/mongcpp.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mongcpp.o -MD -MP -MF $(DEPDIR)/mongcpp.Tpo -c -o mongcpp.o `test -f 'mongoose-cpp/mongcpp.cpp' || echo '$(srcdir)/'`mongoose-cpp/mongcpp.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mongcpp.Tpo $(DEPDIR)/mongcpp.Po
+#	$(AM_V_CXX)source='mongoose-cpp/mongcpp.cpp' object='mongcpp.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mongcpp.o `test -f 'mongoose-cpp/mongcpp.cpp' || echo '$(srcdir)/'`mongoose-cpp/mongcpp.cpp
+
+mongcpp.obj: mongoose-cpp/mongcpp.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mongcpp.obj -MD -MP -MF $(DEPDIR)/mongcpp.Tpo -c -o mongcpp.obj `if test -f 'mongoose-cpp/mongcpp.cpp'; then $(CYGPATH_W) 'mongoose-cpp/mongcpp.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mongcpp.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mongcpp.Tpo $(DEPDIR)/mongcpp.Po
+#	$(AM_V_CXX)source='mongoose-cpp/mongcpp.cpp' object='mongcpp.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mongcpp.obj `if test -f 'mongoose-cpp/mongcpp.cpp'; then $(CYGPATH_W) 'mongoose-cpp/mongcpp.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mongcpp.cpp'; fi`
+
+mwebapi.o: mongoose-cpp/mwebapi.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mwebapi.o -MD -MP -MF $(DEPDIR)/mwebapi.Tpo -c -o mwebapi.o `test -f 'mongoose-cpp/mwebapi.cpp' || echo '$(srcdir)/'`mongoose-cpp/mwebapi.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mwebapi.Tpo $(DEPDIR)/mwebapi.Po
+#	$(AM_V_CXX)source='mongoose-cpp/mwebapi.cpp' object='mwebapi.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mwebapi.o `test -f 'mongoose-cpp/mwebapi.cpp' || echo '$(srcdir)/'`mongoose-cpp/mwebapi.cpp
+
+mwebapi.obj: mongoose-cpp/mwebapi.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT mwebapi.obj -MD -MP -MF $(DEPDIR)/mwebapi.Tpo -c -o mwebapi.obj `if test -f 'mongoose-cpp/mwebapi.cpp'; then $(CYGPATH_W) 'mongoose-cpp/mwebapi.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mwebapi.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/mwebapi.Tpo $(DEPDIR)/mwebapi.Po
+#	$(AM_V_CXX)source='mongoose-cpp/mwebapi.cpp' object='mwebapi.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mwebapi.obj `if test -f 'mongoose-cpp/mwebapi.cpp'; then $(CYGPATH_W) 'mongoose-cpp/mwebapi.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mwebapi.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

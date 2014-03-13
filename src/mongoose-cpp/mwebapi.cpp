@@ -1,83 +1,161 @@
 /*
- * webapi.cpp
+ * mwebapi.cpp
  *
- *  Created on: Mar 4, 2014
+ *  Created on: Mar 11, 2014
  *      Author: dev
  */
 
-#include "webapi_webapi.h"
+#include "mwebapi.h"
 
 #include <string>
+#include <time.h>
+#include <sstream>
+#include <iostream>
+
 #include <boost/algorithm/string/predicate.hpp>
 
 using namespace std;
 
-CommandState parseURI(string uri);
-struct MHD_Response* createResponseString(const string& text);
-
-Webapi::Webapi(Core& core)
-			: core(core)
-			, port(DEFAULT_PORT)
-			, daemonStartFlag(MHD_USE_SELECT_INTERNALLY)
-			, daemon(NULL) {
-
-
-}
-
-Webapi::~Webapi() {
-	if (daemon != NULL) {
-		MHD_stop_daemon(daemon);
-	}
-}
-
-/**
- * It's a hack! See http://stackoverflow.com/a/15599707
- * It's necessary, because the MHD_start_daemon function doesn't
- * take Webapi::answer_to_connection() as ahc parameter.
+/* ###########################################################################################################
+ * 				String contants
+ * ###########################################################################################################
  */
 
-Webapi* pWebapi = NULL;
-static int webapi_adapter(void* cls, struct MHD_Connection* connection, const char* url,  const char* method,
-								 const char* version, const char* upload_data, size_t* upload_data_size, void** con_cls) {
-	return pWebapi->answer_to_connection(cls, connection, url, method, version, upload_data, upload_data_size, con_cls);
+static string HTTP_GET("GET");
+static string HTTP_POST("POST");
+
+static string CommandTypeFlag("flag");
+static string CommandTypeScript("script");
+
+static string ConstellationLines("constellationLines");
+static string ConstellationLabels("constellationLabels");
+static string ConstellationArt("constellationArt");
+static string AzimuthalGrid("azimuthalGrid");
+static string EquatorialGrid("equatorialGrid");
+static string Ground("ground");
+static string CardinalPoints("cardinalPoints");
+static string Atmosphere("atmosphere");
+static string BodyLabels("bodyLabels");
+static string NebulaLabels("nebulaLabels");
+static string Mount("mount");
+
+static string On("on");
+static string Off("off");
+static string Toggle("toggle");
+
+/* ###########################################################################################################
+ * 				Forward declarations
+ * ###########################################################################################################
+ */
+
+static CommandState parseFlagURI(string uri);
+template<class T> inline std::string toString(const T& t);
+static string ipToString(long ip);
+
+/* ###########################################################################################################
+ * 				MWebapi implementations
+ * ###########################################################################################################
+ */
+
+MWebapi::MWebapi(Core& core)
+			: MongooseServer()
+			, core(core) {
+	this->setOption("listening_ports", "8888");
 }
 
-bool Webapi::startListening() {
-	pWebapi = this;
-	daemon = MHD_start_daemon(daemonStartFlag, port,
-								NULL, // AcceptPolicyCallback
-								NULL, // ^^ params
-								&webapi_adapter, // AccessHandlerCallback (function, that processes a request)
-								NULL, // ^^ params
-								MHD_OPTION_END);
+MWebapi::~MWebapi() {
+	// TODO Auto-generated destructor stub
+}
 
-	if (daemon != NULL) {
-		printf("daemon is listening on port %d!\n", port);
-	} else {
-		printf("daemon is NULL. Something went wrong. :(\n");
+template<class T>
+inline std::string toString(const T& t) {
+	std::stringstream ss;
+	ss << t;
+	return ss.str();
+}
+
+static string ipToString(long ip) {
+	string res;
+	long workIp, a, b, c, d;
+	workIp = ip;
+	d = workIp % 0x100;
+	workIp = workIp >> 8;
+	c = workIp % 0x100;
+	workIp = workIp >> 8;
+	b = workIp % 0x100;
+	workIp = workIp >> 8;
+	a = workIp;
+	res = toString(a) + "." + toString(b) + "." + toString(c) + "." + toString(d);
+	return res;
+}
+
+const string generateInfoContent(const MongooseRequest &request) {
+	string result;
+	result = "<h1>Sample Info Page</h1>";
+	result += "<br />Request URI: " + request.getUri();
+	result += "<br />Your IP: " + ipToString(request.getRemoteIp());
+
+	time_t tim;
+	time(&tim);
+
+	result += "<br />Current date & time: " + toString(ctime(&tim));
+	result += "<br /><br /><a href=\"/\">Index page</a>";
+
+	return result;
+}
+
+void handleInfo(const MongooseRequest &request, MongooseResponse &response) {
+	response.setStatus(200);
+	response.setConnectionAlive(false);
+	response.setCacheDisabled();
+	response.setContentType("text/html");
+	response.addContent(generateInfoContent(request));
+	response.write();
+}
+
+bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
+		MongooseConnection& connection, const MongooseRequest& request,
+		MongooseResponse& response) {
+	bool processed = false;
+
+	response.setConnectionAlive(false);
+	response.setCacheDisabled();
+	response.setContentType("text/html");
+
+	if (eventCode == MG_NEW_REQUEST) {
+		string uri(request.getUri().substr(1)); // remove leading '/'
+		cout << "Incoming request at " << uri << endl;
+
+		if (boost::equals(request.getRequestMethod(), HTTP_GET)) {
+			if (boost::starts_with(uri, CommandTypeFlag)) {
+				uri = uri.substr(CommandTypeFlag.length());
+				processed = processFlagRequest(uri, response);
+			}
+		} else if (boost::equals(request.getRequestMethod(), HTTP_POST)) {
+			if (boost::starts_with(uri, CommandTypeScript)) {
+				uri = uri.substr(CommandTypeScript.length());
+				processed = processScriptRequest(uri, request, response);
+			}
+		}
+
+		response.setStatus(processed ? 200 : 404);
+		response.write();
+
+		return true;
 	}
-	return (daemon != NULL);
+
+	return false;
 }
 
-int Webapi::answer_to_connection(void* cls, 			// params
-								 struct MHD_Connection* connection,
-								 const char* url, 		// requested URI
-								 const char* method,    // GET or POST (usually)
-								 const char* version,
-								 const char* upload_data,
-								 size_t* upload_data_size,
-								 void** con_cls) {
-	CommandState cs = parseURI(string(url));
+bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
+	uri = uri.substr(1); // remove leading '/'
 
-	MHD_Response* response;
-	int ret;
-	unsigned int statusCode;
+	cout << "Requested a flag: " << uri << endl << endl;
+
+	CommandState cs = parseFlagURI(string(uri));
 
 	if (cs.command == NOT_FOUND) {
-		const string errorStr("Unknown command!");
-		response = createResponseString(errorStr);
-		MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain");
-		statusCode = MHD_HTTP_BAD_REQUEST;
+		response.addContent("Unknown command!");
 	} else {
 		switch (cs.command) {
 			case CONSTELLATION_LINES:
@@ -272,46 +350,31 @@ int Webapi::answer_to_connection(void* cls, 			// params
 			default:
 				break;
 		}
-
-		// TODO prepare a full state report, and send it back
-		const string respText("Success!!");
-
-		response = createResponseString(respText);
-		MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain");
-		statusCode = MHD_HTTP_OK;
 	}
 
-	if (NULL != response) {
-		ret = MHD_queue_response(connection, statusCode, response);
-		MHD_destroy_response(response);
-		return ret;
-	}
+	response.addContent("Success!!");
 
-	return MHD_NO;
+	return true;
 }
 
+bool MWebapi::processScriptRequest(string uri, const MongooseRequest& request,
+		MongooseResponse& response) {
 
-static string ConstellationLines("constellationLines");
-static string ConstellationLabels("constellationLabels");
-static string ConstellationArt("constellationArt");
-static string AzimuthalGrid("azimuthalGrid");
-static string EquatorialGrid("equatorialGrid");
-static string Ground("ground");
-static string CardinalPoints("cardinalPoints");
-static string Atmosphere("atmosphere");
-static string BodyLabels("bodyLabels");
-static string NebulaLabels("nebulaLabels");
-static string Mount("mount");
+	cout << "Requested a script execution:" << endl;
+	cout << "\t" << request.readQueryString() << endl;
 
-static string On("on");
-static string Off("off");
-static string Toggle("toggle");
+	response.addContent("Success!!");
 
-CommandState parseURI(string uri) {
+	return true;
+}
+
+/* ###########################################################################################################
+ * 				Utility functions (visible only in the current translation unit)
+ * ###########################################################################################################
+ */
+
+static CommandState parseFlagURI(string uri) {
 	CommandState ret;
-
-	// first character should be a '/'
-	uri = uri.substr(1);
 
 	if (boost::starts_with(uri, ConstellationLines)) {
 		ret.command = CONSTELLATION_LINES;
@@ -356,16 +419,8 @@ CommandState parseURI(string uri) {
 	} else if (boost::equals(uri, Off)) {
 		ret.state = OFF;
 	} else if (boost::equals(uri, Toggle)) {
-		ret. state = TOGGLE;
+		ret.state = TOGGLE;
 	}
 
 	return ret;
-}
-
-struct MHD_Response* createResponseString(const string& text) {
-	return MHD_create_response_from_buffer(
-			strlen(text.c_str()),
-			(void*) text.c_str(),
-			MHD_RESPMEM_MUST_COPY
-	);
 }
