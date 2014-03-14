@@ -10,7 +10,7 @@
 
 #include <string>
 
-#include "core.h"
+#include "app.h"
 #include "mongcpp.h"
 
 
@@ -46,13 +46,15 @@ struct CommandState {
 
 class MWebapi : public MongooseServer {
 public:
-	MWebapi(Core& core);
+	MWebapi(App& app);
 	virtual ~MWebapi();
 
 	virtual bool handleEvent(ServerHandlingEvent eventCode, MongooseConnection &connection, const MongooseRequest &request, MongooseResponse &response);
 
 protected:
+	App& app;
 	Core& core;
+	AppCommandInterface& commander;
 
 	bool processFlagRequest(string uri, MongooseResponse& response);
 	bool processScriptRequest(string uri, const MongooseRequest& request, MongooseResponse& response);

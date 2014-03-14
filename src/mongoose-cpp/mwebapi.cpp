@@ -13,6 +13,7 @@
 #include <iostream>
 
 #include <boost/algorithm/string/predicate.hpp>
+#include <boost/format.hpp>
 
 using namespace std;
 
@@ -57,9 +58,11 @@ static string ipToString(long ip);
  * ###########################################################################################################
  */
 
-MWebapi::MWebapi(Core& core)
+MWebapi::MWebapi(App& app)
 			: MongooseServer()
-			, core(core) {
+			, app(app)
+			, core(app.getCore())
+			, commander(app.getCommander()) {
 	this->setOption("listening_ports", "8888");
 }
 
@@ -360,10 +363,29 @@ bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
 bool MWebapi::processScriptRequest(string uri, const MongooseRequest& request,
 		MongooseResponse& response) {
 
-	cout << "Requested a script execution:" << endl;
-	cout << "\t" << request.readQueryString() << endl;
+	stringstream scriptContent(request.readQueryString());
 
-	response.addContent("Success!!");
+	//cout << "Requested a script execution:" << endl;
+	//cout << "\t" << scriptContent << endl;
+
+	string line;
+	int counter = 0;
+	bool successful = true;
+	string failingLine;
+	while (std::getline(scriptContent, line)) {
+		counter++;
+		successful = commander.execute_command(line);
+		if (! successful) {
+			failingLine = line;
+			break;
+		}
+	}
+
+	if (successful) {
+		response.addContent((boost::format("Success!! Successfully executed %d lines.") % counter).str());
+	} else {
+		response.addContent((boost::format("Error! Execution failed at line %d: %s") % counter % failingLine).str());
+	}
 
 	return true;
 }

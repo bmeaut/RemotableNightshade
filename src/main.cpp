@@ -282,7 +282,7 @@ int main(int argc, char **argv)
 	App* app = new App( sdl );
 
 	// Initialize the Webapi & start it.
-	MWebapi ms(app->getCore());
+	MWebapi ms(*app);
 	ms.start();
 	cout << ms.isRunning() << endl;
 

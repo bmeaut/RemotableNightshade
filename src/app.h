@@ -109,6 +109,7 @@ public:
 
 	//! Necessary for the Webapi
 	Core& getCore() { return *core; }
+	AppCommandInterface& getCommander() { return *commander; }
 
 	//! Initialize application and core
 	void init(void);
