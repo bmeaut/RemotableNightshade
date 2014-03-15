@@ -363,10 +363,13 @@ bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
 bool MWebapi::processScriptRequest(string uri, const MongooseRequest& request,
 		MongooseResponse& response) {
 
-	stringstream scriptContent(request.readQueryString());
+	string query(request.readQueryString());
+	stringstream scriptContent(query);
 
-	//cout << "Requested a script execution:" << endl;
-	//cout << "\t" << scriptContent << endl;
+	// DEBUG
+	cout << "Requested a script execution:" << endl;
+	cout << "\t" << query << endl;
+	// END DEBUG
 
 	string line;
 	int counter = 0;
