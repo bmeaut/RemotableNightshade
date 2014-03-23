@@ -11,9 +11,14 @@
 #include <time.h>
 #include <sstream>
 #include <iostream>
+#include <fstream>
 
+#include <boost/algorithm/string/classification.hpp>
 #include <boost/algorithm/string/predicate.hpp>
+#include <boost/algorithm/string/split.hpp>
 #include <boost/format.hpp>
+
+#include "script_mgr.h"
 
 using namespace std;
 
@@ -26,7 +31,8 @@ static string HTTP_GET("GET");
 static string HTTP_POST("POST");
 
 static string CommandTypeFlag("flag");
-static string CommandTypeScript("script");
+static string CommandTypeExecute("execute");
+static string CommandTypeRun("run");
 
 static string ConstellationLines("constellationLines");
 static string ConstellationLabels("constellationLabels");
@@ -49,9 +55,11 @@ static string Toggle("toggle");
  * ###########################################################################################################
  */
 
+
+
 static CommandState parseFlagURI(string uri);
-template<class T> inline std::string toString(const T& t);
-static string ipToString(long ip);
+static QueryParams parseQuery(const string& query);
+
 
 /* ###########################################################################################################
  * 				MWebapi implementations
@@ -62,58 +70,24 @@ MWebapi::MWebapi(App& app)
 			: MongooseServer()
 			, app(app)
 			, core(app.getCore())
-			, commander(app.getCommander()) {
+			, commander(app.getCommander())
+			, remoteScriptsDir(core.getScriptDir() + "/remote/") {
 	this->setOption("listening_ports", "8888");
+
+	debug();
+}
+
+void MWebapi::debug() {
+	cout << "DBUGGING!!! -------------------------------------------" << endl << endl;
+
+	ScriptMgr& s = app.getScriptManager();
+	cout << s.get_script_list(remoteScriptsDir) << endl;
+
+	cout << endl << "end of DBUGGING!!! -------------------------------------------" << endl;
 }
 
 MWebapi::~MWebapi() {
 	// TODO Auto-generated destructor stub
-}
-
-template<class T>
-inline std::string toString(const T& t) {
-	std::stringstream ss;
-	ss << t;
-	return ss.str();
-}
-
-static string ipToString(long ip) {
-	string res;
-	long workIp, a, b, c, d;
-	workIp = ip;
-	d = workIp % 0x100;
-	workIp = workIp >> 8;
-	c = workIp % 0x100;
-	workIp = workIp >> 8;
-	b = workIp % 0x100;
-	workIp = workIp >> 8;
-	a = workIp;
-	res = toString(a) + "." + toString(b) + "." + toString(c) + "." + toString(d);
-	return res;
-}
-
-const string generateInfoContent(const MongooseRequest &request) {
-	string result;
-	result = "<h1>Sample Info Page</h1>";
-	result += "<br />Request URI: " + request.getUri();
-	result += "<br />Your IP: " + ipToString(request.getRemoteIp());
-
-	time_t tim;
-	time(&tim);
-
-	result += "<br />Current date & time: " + toString(ctime(&tim));
-	result += "<br /><br /><a href=\"/\">Index page</a>";
-
-	return result;
-}
-
-void handleInfo(const MongooseRequest &request, MongooseResponse &response) {
-	response.setStatus(200);
-	response.setConnectionAlive(false);
-	response.setCacheDisabled();
-	response.setContentType("text/html");
-	response.addContent(generateInfoContent(request));
-	response.write();
 }
 
 bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
@@ -135,9 +109,12 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 				processed = processFlagRequest(uri, response);
 			}
 		} else if (boost::equals(request.getRequestMethod(), HTTP_POST)) {
-			if (boost::starts_with(uri, CommandTypeScript)) {
-				uri = uri.substr(CommandTypeScript.length());
-				processed = processScriptRequest(uri, request, response);
+			if (boost::starts_with(uri, CommandTypeExecute)) {
+				uri = uri.substr(CommandTypeExecute.length());
+				processed = processExecuteRequest(uri, request, response);
+			} else if (boost::starts_with(uri, CommandTypeRun)) {
+				uri = uri.substr(CommandTypeRun.length());
+				processed = processRunRequest(uri, request, response);
 			}
 		}
 
@@ -360,7 +337,7 @@ bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
 	return true;
 }
 
-bool MWebapi::processScriptRequest(string uri, const MongooseRequest& request,
+bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request,
 		MongooseResponse& response) {
 
 	string query(request.readQueryString());
@@ -393,10 +370,95 @@ bool MWebapi::processScriptRequest(string uri, const MongooseRequest& request,
 	return true;
 }
 
+
+
+bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, MongooseResponse& response) {
+	string script(request.readQueryString());
+	stringstream scriptContent(script);
+
+	QueryParams params = parseQuery(request.getQueryString());
+
+	// DEBUG
+	cout << "Requested a script execution at " << request.getQueryString() << endl;
+	cout << "\t" << script << endl;
+
+	// END DEBUG
+
+	string filename;
+	QueryParams::const_iterator it;
+	if ((it = params.find("file")) != params.end()) {
+		filename = it->second;
+	} else {
+		response.addContent("Error! No filename specified!");
+		return true;
+	}
+
+	if (script.length() == 0) {
+		response.addContent("Error! Script is empty!");
+		return true;
+	}
+
+	if (writeRemoteScript(scriptContent, params)) {
+		app.getScriptManager().play_script(remoteScriptsDir + params["file"], remoteScriptsDir);
+		response.addContent("Successfully saved & started to execute the script");
+		return true;
+	} else {
+		response.addContent("Error! Failed to save script!");
+		return true;
+	}
+
+
+	return true;
+}
+
+bool MWebapi::writeRemoteScript(stringstream& script, const QueryParams& params) {
+
+
+
+	ofstream os;
+	os.open(string(remoteScriptsDir + params["file"]).c_str(), ios::out | ios::trunc);
+
+	if (! os.bad()) {
+		string line;
+		while (std::getline(script, line)) {
+			os << line << endl;
+		}
+		os.close();
+		return true;
+	}
+
+	return false;
+}
+
+
 /* ###########################################################################################################
  * 				Utility functions (visible only in the current translation unit)
  * ###########################################################################################################
  */
+
+
+static QueryParams parseQuery(const string& query) {
+	static string PAIR_DELIMITER("&");
+	static string KEY_DELIMITER("=");
+	QueryParams ret;
+
+	if (query.length() == 0) return ret;
+
+	std::vector<string> pairs;
+	boost::split(pairs, query, boost::is_any_of(PAIR_DELIMITER));
+
+	for( std::vector<string>::const_iterator i = pairs.begin(); i != pairs.end(); ++i) {
+		std::vector<std::string> entry;
+		boost::split(entry, *i, boost::is_any_of(KEY_DELIMITER));
+		ret[entry[0]] = entry[1];
+	}
+
+	for (QueryParams::const_iterator it = ret.begin(); it != ret.end(); ++it) {
+		std::cout << it->first << " " << it->second << "\n";
+	}
+
+	return ret;
+}
 
 static CommandState parseFlagURI(string uri) {
 	CommandState ret;

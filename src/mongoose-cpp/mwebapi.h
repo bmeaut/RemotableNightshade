@@ -44,6 +44,8 @@ struct CommandState {
 	State state;
 };
 
+typedef map<string, string> QueryParams;
+
 class MWebapi : public MongooseServer {
 public:
 	MWebapi(App& app);
@@ -56,8 +58,15 @@ protected:
 	Core& core;
 	AppCommandInterface& commander;
 
+	string remoteScriptsDir;
+
 	bool processFlagRequest(string uri, MongooseResponse& response);
-	bool processScriptRequest(string uri, const MongooseRequest& request, MongooseResponse& response);
+	bool processExecuteRequest(string uri, const MongooseRequest& request, MongooseResponse& response);
+	bool processRunRequest(string uri, const MongooseRequest& request, MongooseResponse& response);
+
+	bool writeRemoteScript(stringstream& script, const QueryParams& params);
+
+	void debug();
 };
 
 #endif /* MWEBAPI_H_ */

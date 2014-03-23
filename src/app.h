@@ -110,6 +110,7 @@ public:
 	//! Necessary for the Webapi
 	Core& getCore() { return *core; }
 	AppCommandInterface& getCommander() { return *commander; }
+	ScriptMgr& getScriptManager() { return *scripts; }
 
 	//! Initialize application and core
 	void init(void);
