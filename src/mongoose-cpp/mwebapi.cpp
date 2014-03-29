@@ -33,6 +33,7 @@ static string HTTP_POST("POST");
 static string CommandTypeFlag("flag");
 static string CommandTypeExecute("execute");
 static string CommandTypeRun("run");
+static string CommandTypeGetState("state");
 
 static string ConstellationLines("constellationLines");
 static string ConstellationLabels("constellationLabels");
@@ -49,6 +50,16 @@ static string Mount("mount");
 static string On("on");
 static string Off("off");
 static string Toggle("toggle");
+
+static string Response("response");
+
+static string FlagState("flagState");
+
+static string ScriptState("scriptState");
+static string IsPlaying("isPlaying");
+static string CurrentFile("curentFile");
+static string IsFaster("isFaster");
+static string IsPaused("isPaused");
 
 /* ###########################################################################################################
  * 				Forward declarations
@@ -77,11 +88,53 @@ MWebapi::MWebapi(App& app)
 	debug();
 }
 
+Json::Value MWebapi::flagStateToJson() {
+	Json::Value root;
+
+	root[ConstellationLines] = 	core.getFlagConstellationLines();
+	root[ConstellationLabels] = 	core.getFlagConstellationNames();
+	root[ConstellationArt] = 		core.getFlagConstellationArt();
+	root[AzimuthalGrid] = 			core.getFlagAzimutalGrid();
+	root[EquatorialGrid] = 		core.getFlagEquatorGrid();
+	root[Ground] = 				core.getFlagLandscape();
+	root[CardinalPoints] = 		core.getFlagCardinalsPoints();
+	root[Atmosphere] = 			core.getFlagAtmosphere();
+	root[BodyLabels] = 			core.getFlagPlanetsHints();
+	root[NebulaLabels] = 			core.getFlagNebulaHints();
+	// true: Equatorial, false: Altazimutal
+	root[Mount] = 					(core.getFlagConstellationLines() == Core::MOUNT_EQUATORIAL);
+
+	return root;
+}
+
+Json::Value MWebapi::scriptStateToJson() {
+	Json::Value root;
+
+	ScriptMgr& sm = app.getScriptManager();
+
+	root[IsPlaying] = sm.is_playing();
+
+	if (sm.is_playing()) {
+		root[CurrentFile] = sm.getCurrentScriptName();
+		root[IsPaused] = sm.is_paused();
+		root[IsFaster] = sm.is_faster();
+	}
+
+	return root;
+}
+
 void MWebapi::debug() {
 	cout << "DBUGGING!!! -------------------------------------------" << endl << endl;
 
-	ScriptMgr& s = app.getScriptManager();
-	cout << s.get_script_list(remoteScriptsDir) << endl;
+//	ScriptMgr& s = app.getScriptManager();
+//	cout << s.get_script_list(remoteScriptsDir) << endl;
+
+	Json::Value root;
+	root[FlagState] = flagStateToJson();
+	root[ScriptState] = scriptStateToJson();
+
+	cout << "Current state is: " << endl << root << endl << endl;
+
 
 	cout << endl << "end of DBUGGING!!! -------------------------------------------" << endl;
 }
@@ -103,22 +156,29 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 		string uri(request.getUri().substr(1)); // remove leading '/'
 		cout << "Incoming request at " << uri << endl;
 
+		Json::Value responseContent;
+
 		if (boost::equals(request.getRequestMethod(), HTTP_GET)) {
 			if (boost::starts_with(uri, CommandTypeFlag)) {
 				uri = uri.substr(CommandTypeFlag.length());
-				processed = processFlagRequest(uri, response);
+				processed = processFlagRequest(uri, responseContent);
 			}
 		} else if (boost::equals(request.getRequestMethod(), HTTP_POST)) {
 			if (boost::starts_with(uri, CommandTypeExecute)) {
 				uri = uri.substr(CommandTypeExecute.length());
-				processed = processExecuteRequest(uri, request, response);
+				processed = processExecuteRequest(uri, request, responseContent);
 			} else if (boost::starts_with(uri, CommandTypeRun)) {
 				uri = uri.substr(CommandTypeRun.length());
-				processed = processRunRequest(uri, request, response);
+				processed = processRunRequest(uri, request, responseContent);
 			}
 		}
 
+		processStateRequest(request, responseContent);
+
 		response.setStatus(processed ? 200 : 404);
+
+		Json::FastWriter writer;
+		response.addContent(writer.write(responseContent));
 		response.write();
 
 		return true;
@@ -127,7 +187,7 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 	return false;
 }
 
-bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
+bool MWebapi::processFlagRequest(string uri, Json::Value& response) {
 	uri = uri.substr(1); // remove leading '/'
 
 	cout << "Requested a flag: " << uri << endl << endl;
@@ -135,7 +195,7 @@ bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
 	CommandState cs = parseFlagURI(string(uri));
 
 	if (cs.command == NOT_FOUND) {
-		response.addContent("Unknown command!");
+		response[Response] =  "Unknown command!";
 	} else {
 		switch (cs.command) {
 			case CONSTELLATION_LINES:
@@ -330,15 +390,14 @@ bool MWebapi::processFlagRequest(string uri, MongooseResponse& response) {
 			default:
 				break;
 		}
+		response[Response] =  "Success!!";
 	}
 
-	response.addContent("Success!!");
 
 	return true;
 }
 
-bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request,
-		MongooseResponse& response) {
+bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 
 	string query(request.readQueryString());
 	stringstream scriptContent(query);
@@ -362,9 +421,9 @@ bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request,
 	}
 
 	if (successful) {
-		response.addContent((boost::format("Success!! Successfully executed %d lines.") % counter).str());
+		response[Response] =  (boost::format("Success!! Successfully executed %d lines.") % counter).str();
 	} else {
-		response.addContent((boost::format("Error! Execution failed at line %d: %s") % counter % failingLine).str());
+		response[Response] =  (boost::format("Error! Execution failed at line %d: %s") % counter % failingLine).str();
 	}
 
 	return true;
@@ -372,7 +431,7 @@ bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request,
 
 
 
-bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, MongooseResponse& response) {
+bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 	string script(request.readQueryString());
 	stringstream scriptContent(script);
 
@@ -389,21 +448,21 @@ bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Mong
 	if ((it = params.find("file")) != params.end()) {
 		filename = it->second;
 	} else {
-		response.addContent("Error! No filename specified!");
+		response[Response] =  "Error! No filename specified!";
 		return true;
 	}
 
 	if (script.length() == 0) {
-		response.addContent("Error! Script is empty!");
+		response[Response] = "Error! Script is empty!";
 		return true;
 	}
 
 	if (writeRemoteScript(scriptContent, params)) {
 		app.getScriptManager().play_script(remoteScriptsDir + params["file"], remoteScriptsDir);
-		response.addContent("Successfully saved & started to execute the script");
+		return "Successfully saved & started to execute the script";
 		return true;
 	} else {
-		response.addContent("Error! Failed to save script!");
+		response[Response] =  "Error! Failed to save script!";
 		return true;
 	}
 
@@ -411,10 +470,14 @@ bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Mong
 	return true;
 }
 
+bool MWebapi::processStateRequest(const MongooseRequest& request, Json::Value& response) {
+	response[FlagState] = flagStateToJson();
+	response[ScriptState] = scriptStateToJson();
+
+	return true;
+}
+
 bool MWebapi::writeRemoteScript(stringstream& script, const QueryParams& params) {
-
-
-
 	ofstream os;
 	os.open(string(remoteScriptsDir + params["file"]).c_str(), ios::out | ios::trunc);
 

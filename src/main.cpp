@@ -297,6 +297,8 @@ int main(int argc, char **argv)
 
 	app->startMainLoop();
 
+	ms.debug();
+
 	// Clean memory
 	ms.stop();
 	delete app;

@@ -708,7 +708,11 @@ main.o: main.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h mongoose-cpp/mwebapi.h \
- app.h mongoose-cpp/mongcpp.h mongoose-cpp/mongoose.h
+ app.h mongoose-cpp/json/json.h /usr/include/c++/4.8/deque \
+ /usr/include/c++/4.8/bits/stl_deque.h \
+ /usr/include/c++/4.8/bits/deque.tcc /usr/include/c++/4.8/stack \
+ /usr/include/c++/4.8/bits/stl_stack.h mongoose-cpp/mongcpp.h \
+ mongoose-cpp/mongoose.h
 
 /usr/include/stdc-predef.h:
 
@@ -2401,6 +2405,18 @@ signals.h:
 mongoose-cpp/mwebapi.h:
 
 app.h:
+
+mongoose-cpp/json/json.h:
+
+/usr/include/c++/4.8/deque:
+
+/usr/include/c++/4.8/bits/stl_deque.h:
+
+/usr/include/c++/4.8/bits/deque.tcc:
+
+/usr/include/c++/4.8/stack:
+
+/usr/include/c++/4.8/bits/stl_stack.h:
 
 mongoose-cpp/mongcpp.h:
 

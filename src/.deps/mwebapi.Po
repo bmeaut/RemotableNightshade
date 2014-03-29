@@ -703,7 +703,11 @@ mwebapi.o: mongoose-cpp/mwebapi.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/socket2.h /usr/include/ifaddrs.h \
- mongoose-cpp/mongcpp.h mongoose-cpp/mongoose.h \
+ mongoose-cpp/json/json.h /usr/include/c++/4.8/deque \
+ /usr/include/c++/4.8/bits/stl_deque.h \
+ /usr/include/c++/4.8/bits/deque.tcc /usr/include/c++/4.8/stack \
+ /usr/include/c++/4.8/bits/stl_stack.h mongoose-cpp/mongcpp.h \
+ mongoose-cpp/mongoose.h \
  /usr/local/include/boost/algorithm/string/classification.hpp \
  /usr/local/include/boost/range/value_type.hpp \
  /usr/local/include/boost/range/config.hpp \
@@ -2482,6 +2486,18 @@ named_sockets.h:
 /usr/include/x86_64-linux-gnu/bits/socket2.h:
 
 /usr/include/ifaddrs.h:
+
+mongoose-cpp/json/json.h:
+
+/usr/include/c++/4.8/deque:
+
+/usr/include/c++/4.8/bits/stl_deque.h:
+
+/usr/include/c++/4.8/bits/deque.tcc:
+
+/usr/include/c++/4.8/stack:
+
+/usr/include/c++/4.8/bits/stl_stack.h:
 
 mongoose-cpp/mongcpp.h:
 

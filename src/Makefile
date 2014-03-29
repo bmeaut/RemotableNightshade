@@ -144,7 +144,7 @@ am_nightshade_OBJECTS = object.$(OBJEXT) object_base.$(OBJEXT) \
 	night_shader.$(OBJEXT) bump_shader.$(OBJEXT) \
 	ring_shader.$(OBJEXT) ringed_shader.$(OBJEXT) \
 	named_sockets.$(OBJEXT) nightshade-mongoose.$(OBJEXT) \
-	mongcpp.$(OBJEXT) mwebapi.$(OBJEXT)
+	mongcpp.$(OBJEXT) mwebapi.$(OBJEXT) jsoncpp.$(OBJEXT)
 nightshade_OBJECTS = $(am_nightshade_OBJECTS)
 am__DEPENDENCIES_1 =
 nightshade_DEPENDENCIES =  \
@@ -491,7 +491,8 @@ nightshade_SOURCES = object.h object.cpp \
 	night_shader.cpp night_shader.h bump_shader.cpp bump_shader.h \
 	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h \
     mongoose-cpp/mongoose.c mongoose-cpp/mongoose.h mongoose-cpp/mongcpp.cpp mongoose-cpp/mongcpp.h \
-    mongoose-cpp/mwebapi.cpp mongoose-cpp/mwebapi.h
+    mongoose-cpp/mwebapi.cpp mongoose-cpp/mwebapi.h \
+    mongoose-cpp/json/json.h mongoose-cpp/json/json-forwards.h mongoose-cpp/jsoncpp.cpp
 
 nightshade_CFLAGS = `pkg-config --cflags libmicrohttpd`
 nightshade_LDFLAGS = `GraphicsMagick++-config --libs` `pkg-config --libs libmicrohttpd`
@@ -626,6 +627,7 @@ include ./$(DEPDIR)/hip_star_wrapper.Po
 include ./$(DEPDIR)/image.Po
 include ./$(DEPDIR)/image_mgr.Po
 include ./$(DEPDIR)/init_parser.Po
+include ./$(DEPDIR)/jsoncpp.Po
 include ./$(DEPDIR)/landscape.Po
 include ./$(DEPDIR)/loadingbar.Po
 include ./$(DEPDIR)/main.Po
@@ -776,6 +778,20 @@ mwebapi.obj: mongoose-cpp/mwebapi.cpp
 #	$(AM_V_CXX)source='mongoose-cpp/mwebapi.cpp' object='mwebapi.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o mwebapi.obj `if test -f 'mongoose-cpp/mwebapi.cpp'; then $(CYGPATH_W) 'mongoose-cpp/mwebapi.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/mwebapi.cpp'; fi`
+
+jsoncpp.o: mongoose-cpp/jsoncpp.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jsoncpp.o -MD -MP -MF $(DEPDIR)/jsoncpp.Tpo -c -o jsoncpp.o `test -f 'mongoose-cpp/jsoncpp.cpp' || echo '$(srcdir)/'`mongoose-cpp/jsoncpp.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/jsoncpp.Tpo $(DEPDIR)/jsoncpp.Po
+#	$(AM_V_CXX)source='mongoose-cpp/jsoncpp.cpp' object='jsoncpp.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jsoncpp.o `test -f 'mongoose-cpp/jsoncpp.cpp' || echo '$(srcdir)/'`mongoose-cpp/jsoncpp.cpp
+
+jsoncpp.obj: mongoose-cpp/jsoncpp.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT jsoncpp.obj -MD -MP -MF $(DEPDIR)/jsoncpp.Tpo -c -o jsoncpp.obj `if test -f 'mongoose-cpp/jsoncpp.cpp'; then $(CYGPATH_W) 'mongoose-cpp/jsoncpp.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/jsoncpp.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/jsoncpp.Tpo $(DEPDIR)/jsoncpp.Po
+#	$(AM_V_CXX)source='mongoose-cpp/jsoncpp.cpp' object='jsoncpp.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jsoncpp.obj `if test -f 'mongoose-cpp/jsoncpp.cpp'; then $(CYGPATH_W) 'mongoose-cpp/jsoncpp.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/jsoncpp.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

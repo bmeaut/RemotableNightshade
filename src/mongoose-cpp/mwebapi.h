@@ -11,6 +11,7 @@
 #include <string>
 
 #include "app.h"
+#include "json/json.h"
 #include "mongcpp.h"
 
 
@@ -53,6 +54,8 @@ public:
 
 	virtual bool handleEvent(ServerHandlingEvent eventCode, MongooseConnection &connection, const MongooseRequest &request, MongooseResponse &response);
 
+	void debug();
+
 protected:
 	App& app;
 	Core& core;
@@ -60,13 +63,16 @@ protected:
 
 	string remoteScriptsDir;
 
-	bool processFlagRequest(string uri, MongooseResponse& response);
-	bool processExecuteRequest(string uri, const MongooseRequest& request, MongooseResponse& response);
-	bool processRunRequest(string uri, const MongooseRequest& request, MongooseResponse& response);
+	bool processFlagRequest(string uri, Json::Value& response);
+	bool processExecuteRequest(string uri, const MongooseRequest& request, Json::Value& response);
+	bool processRunRequest(string uri, const MongooseRequest& request, Json::Value& response);
+	bool processStateRequest(const MongooseRequest& request, Json::Value& response);
+
+	Json::Value flagStateToJson();
+	Json::Value scriptStateToJson();
 
 	bool writeRemoteScript(stringstream& script, const QueryParams& params);
 
-	void debug();
 };
 
 #endif /* MWEBAPI_H_ */

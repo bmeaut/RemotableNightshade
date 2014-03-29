@@ -96,6 +96,9 @@ public:
 
 	double get_script_elapsed_seconds();
 
+
+	string getCurrentScriptName() { return lastScript; }
+
 private:
 
 	bool mount_directory(string path);
