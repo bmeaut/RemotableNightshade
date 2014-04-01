@@ -159,7 +159,9 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 		Json::Value responseContent;
 
 		if (boost::equals(request.getRequestMethod(), HTTP_GET)) {
-			if (boost::starts_with(uri, CommandTypeFlag)) {
+			if (boost::starts_with(uri, CommandTypeGetState)) {
+				processed = true;
+			} else if (boost::starts_with(uri, CommandTypeFlag)) {
 				uri = uri.substr(CommandTypeFlag.length());
 				processed = processFlagRequest(uri, responseContent);
 			}
