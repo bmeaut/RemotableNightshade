@@ -405,8 +405,8 @@ bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request, 
 	stringstream scriptContent(query);
 
 	// DEBUG
-	cout << "Requested a script execution:" << endl;
-	cout << "\t" << query << endl;
+//	cout << "Requested a script execution:" << endl;
+//	cout << "\t" << query << endl;
 	// END DEBUG
 
 	string line;
@@ -415,7 +415,18 @@ bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request, 
 	string failingLine;
 	while (std::getline(scriptContent, line)) {
 		counter++;
-		successful = commander.execute_command(line);
+
+		// handle comments and empty lines
+		if ((line.length() == 0) || (line.length() > 0 && line[0] == '#')) continue;
+
+		cout << "Executing line[" << counter << "]: " << line << endl;
+		try {
+			successful = commander.execute_command(line);
+		} catch (runtime_error& re) {
+			cout << "Something went wrong: " << re.what() << endl;
+			//cerr << re.what();
+			successful = false;
+		}
 		if (! successful) {
 			failingLine = line;
 			break;
