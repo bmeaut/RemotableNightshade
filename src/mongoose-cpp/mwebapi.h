@@ -67,6 +67,7 @@ protected:
 	bool processExecuteRequest(string uri, const MongooseRequest& request, Json::Value& response);
 	bool processRunRequest(string uri, const MongooseRequest& request, Json::Value& response);
 	bool processStateRequest(const MongooseRequest& request, Json::Value& response);
+	bool processControlRequest(string uri, const MongooseRequest& request, Json::Value& response);
 
 	Json::Value flagStateToJson();
 	Json::Value scriptStateToJson();

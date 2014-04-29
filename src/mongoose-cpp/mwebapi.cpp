@@ -34,6 +34,7 @@ static string CommandTypeFlag("flag");
 static string CommandTypeExecute("execute");
 static string CommandTypeRun("run");
 static string CommandTypeGetState("state");
+static string CommandTypeControl("control");
 
 static string ConstellationLines("constellationLines");
 static string ConstellationLabels("constellationLabels");
@@ -46,6 +47,10 @@ static string Atmosphere("atmosphere");
 static string BodyLabels("bodyLabels");
 static string NebulaLabels("nebulaLabels");
 static string Mount("mount");
+
+static string ControlScriptPlay("scriptPlay");
+static string ControlScriptPause("scriptPause");
+static string ControlScriptStop("scriptStop");
 
 static string On("on");
 static string Off("off");
@@ -172,6 +177,9 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 			} else if (boost::starts_with(uri, CommandTypeRun)) {
 				uri = uri.substr(CommandTypeRun.length());
 				processed = processRunRequest(uri, request, responseContent);
+			} else if (boost::starts_with(uri, CommandTypeControl)) {
+				uri = uri.substr(CommandTypeControl.length());
+				processed = processControlRequest(uri, request, responseContent);
 			}
 		}
 
@@ -486,6 +494,34 @@ bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Json
 bool MWebapi::processStateRequest(const MongooseRequest& request, Json::Value& response) {
 	response[FlagState] = flagStateToJson();
 	response[ScriptState] = scriptStateToJson();
+
+	return true;
+}
+
+bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, Json::Value& response) {
+	uri = uri.substr(1); // remove leading '/'
+
+	cout << "Requested a script state change: " << uri << endl << endl;
+
+	ScriptMgr& sm = app.getScriptManager();
+
+	bool success = true;
+
+	if (ControlScriptPlay.compare(uri) == 0) {
+		sm.resume_script();
+	} else if (ControlScriptPause.compare(uri) == 0) {
+		sm.pause_script();
+	} else if (ControlScriptStop.compare(uri) == 0) {
+		sm.cancel_script();
+	} else {
+		success = false;
+	}
+
+	if (success) {
+		response[Response] = "Control action successfully executed.";
+	} else {
+		response[Response] = "Failed to execute control action (" + uri + ").";
+	}
 
 	return true;
 }
