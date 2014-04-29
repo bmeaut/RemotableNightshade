@@ -48,8 +48,7 @@ static string BodyLabels("bodyLabels");
 static string NebulaLabels("nebulaLabels");
 static string Mount("mount");
 
-static string ControlScriptPlay("scriptPlay");
-static string ControlScriptPause("scriptPause");
+static string ControlScriptPlayPause("scriptPlayPause");
 static string ControlScriptStop("scriptStop");
 
 static string On("on");
@@ -507,10 +506,12 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 
 	bool success = true;
 
-	if (ControlScriptPlay.compare(uri) == 0) {
-		sm.resume_script();
-	} else if (ControlScriptPause.compare(uri) == 0) {
-		sm.pause_script();
+	if (ControlScriptPlayPause.compare(uri) == 0) {
+		if (sm.is_paused()) {
+			sm.resume_script();
+		} else {
+			sm.pause_script();
+		}
 	} else if (ControlScriptStop.compare(uri) == 0) {
 		sm.cancel_script();
 	} else {
@@ -518,7 +519,7 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 	}
 
 	if (success) {
-		response[Response] = "Control action successfully executed.";
+		response[Response] = "Control action successfully executed: " + uri;
 	} else {
 		response[Response] = "Failed to execute control action (" + uri + ").";
 	}
