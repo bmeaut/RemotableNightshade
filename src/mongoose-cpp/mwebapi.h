@@ -2,7 +2,7 @@
  * mwebapi.h
  *
  *  Created on: Mar 11, 2014
- *      Author: dev
+ *      Author: Ákos Pap
  */
 
 #ifndef MWEBAPI_H_
@@ -72,7 +72,7 @@ protected:
 	Json::Value flagStateToJson();
 	Json::Value scriptStateToJson();
 
-	bool writeRemoteScript(stringstream& script, const QueryParams& params);
+	bool writeRemoteScript(stringstream& script, const string& params);
 
 };
 

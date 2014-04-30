@@ -2,7 +2,7 @@
  * mwebapi.cpp
  *
  *  Created on: Mar 11, 2014
- *      Author: dev
+ *      Author: Ákos Pap
  */
 
 #include "mwebapi.h"
@@ -27,15 +27,32 @@ using namespace std;
  * ###########################################################################################################
  */
 
+/**
+ * Constants for HTTP methods.
+ */
 static string HTTP_GET("GET");
 static string HTTP_POST("POST");
 
+/**
+ * Constants for main functionality.
+ *
+ * Each one corresponds to a "controller". These should be at the beginning of the URI
+ * and may be followed by one or more parameter parts.
+ */
+/** Flag type request, eg. constellation lines visibility. */
 static string CommandTypeFlag("flag");
+/** Short script execution request (custom button in the App). */
 static string CommandTypeExecute("execute");
+/** Longer, stored script execution request. */
 static string CommandTypeRun("run");
+/** Current state request. */
 static string CommandTypeGetState("state");
+/** Script playback control request. */
 static string CommandTypeControl("control");
 
+/**
+ * Constants for flag type requests, corresponding to the manual.
+ */
 static string ConstellationLines("constellationLines");
 static string ConstellationLabels("constellationLabels");
 static string ConstellationArt("constellationArt");
@@ -48,13 +65,19 @@ static string BodyLabels("bodyLabels");
 static string NebulaLabels("nebulaLabels");
 static string Mount("mount");
 
-static string ControlScriptPlayPause("scriptPlayPause");
-static string ControlScriptStop("scriptStop");
-
 static string On("on");
 static string Off("off");
 static string Toggle("toggle");
 
+/**
+ * Constants for script playback control.
+ */
+static string ControlScriptPlayPause("scriptPlayPause");
+static string ControlScriptStop("scriptStop");
+
+/**
+ * JSON response field name constants.
+ */
 static string Response("response");
 
 static string FlagState("flagState");
@@ -65,12 +88,11 @@ static string CurrentFile("curentFile");
 static string IsFaster("isFaster");
 static string IsPaused("isPaused");
 
+
 /* ###########################################################################################################
  * 				Forward declarations
  * ###########################################################################################################
  */
-
-
 
 static CommandState parseFlagURI(string uri);
 static QueryParams parseQuery(const string& query);
@@ -81,6 +103,11 @@ static QueryParams parseQuery(const string& query);
  * ###########################################################################################################
  */
 
+/**
+ * Constructs a server instance.
+ *
+ * Sets the default script directory, and starts the server on the default port (8888).
+ */
 MWebapi::MWebapi(App& app)
 			: MongooseServer()
 			, app(app)
@@ -92,6 +119,9 @@ MWebapi::MWebapi(App& app)
 	debug();
 }
 
+/**
+ * Collects the various flag states, and generates a JSON object containing the states.
+ */
 Json::Value MWebapi::flagStateToJson() {
 	Json::Value root;
 
@@ -111,6 +141,10 @@ Json::Value MWebapi::flagStateToJson() {
 	return root;
 }
 
+/**
+ * Collects the current state of the script runner (playback state, script name, ...)
+ * and generates a JSON object from it.
+ */
 Json::Value MWebapi::scriptStateToJson() {
 	Json::Value root;
 
@@ -147,6 +181,18 @@ MWebapi::~MWebapi() {
 	// TODO Auto-generated destructor stub
 }
 
+/**
+ * Main entry point. Handles every incoming request, and dispatches them to the
+ * appropriate controller.
+ *
+ * The incoming request's path part must begin with one of the "controller" constants,
+ * then zero or more parameter parts may come.
+ * Processing these parameter parts is the controller's responsibility.
+ *
+ * Each controller should return a boolean value of true, if the request handling was successful,
+ * and false if not. Additionally, each controller can append objects to the given JSON object,
+ * which will be sent back to the client.
+ */
 bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 		MongooseConnection& connection, const MongooseRequest& request,
 		MongooseResponse& response) {
@@ -164,24 +210,30 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 
 		if (boost::equals(request.getRequestMethod(), HTTP_GET)) {
 			if (boost::starts_with(uri, CommandTypeGetState)) {
+				// state request
 				processed = true;
 			} else if (boost::starts_with(uri, CommandTypeFlag)) {
+				// Flag request
 				uri = uri.substr(CommandTypeFlag.length());
 				processed = processFlagRequest(uri, responseContent);
 			}
 		} else if (boost::equals(request.getRequestMethod(), HTTP_POST)) {
 			if (boost::starts_with(uri, CommandTypeExecute)) {
+				// short script execution request
 				uri = uri.substr(CommandTypeExecute.length());
 				processed = processExecuteRequest(uri, request, responseContent);
 			} else if (boost::starts_with(uri, CommandTypeRun)) {
+				// long script execution request.
 				uri = uri.substr(CommandTypeRun.length());
 				processed = processRunRequest(uri, request, responseContent);
 			} else if (boost::starts_with(uri, CommandTypeControl)) {
+				// script state control request
 				uri = uri.substr(CommandTypeControl.length());
 				processed = processControlRequest(uri, request, responseContent);
 			}
 		}
 
+		// always return current state
 		processStateRequest(request, responseContent);
 
 		response.setStatus(processed ? 200 : 404);
@@ -196,6 +248,11 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 	return false;
 }
 
+/**
+ * Controller for flag type requests.
+ *
+ * Parses the URI, decides which flag should be manipulated, and how, then changes it.
+ */
 bool MWebapi::processFlagRequest(string uri, Json::Value& response) {
 	uri = uri.substr(1); // remove leading '/'
 
@@ -406,6 +463,19 @@ bool MWebapi::processFlagRequest(string uri, Json::Value& response) {
 	return true;
 }
 
+/**
+ * Controller for short script execution requests.
+ *
+ * Asks the Commander module to execute the incoming commands, line-by-line.
+ * Ignores comments (lines starting with a '#')
+ *
+ * Checks the result of each line, and in case of failure notifies the client
+ * about the failing line's number and content.
+ *
+ * TODO: Can't process "set home_planet xxxxxxxx" type commands, because they fail
+ * with a cryptic OpenGL exception. If such command is encountered and it fails,
+ * aborts the execution of the current request.
+ */
 bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 
 	string query(request.readQueryString());
@@ -449,8 +519,15 @@ bool MWebapi::processExecuteRequest(string uri, const MongooseRequest& request, 
 	return true;
 }
 
-
-
+/**
+ * Controller for longer, stored scripts.
+ *
+ * Requires a filename string as named URL parameter (file), saves the data in the POST payload to
+ * a subdir in the default script directory, then makes the ScriptManager play that file.
+ *
+ * Uses the same engine as the built-in script runner, so their capabilities
+ * and limits should be the same.
+ */
 bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 	string script(request.readQueryString());
 	stringstream scriptContent(script);
@@ -477,7 +554,7 @@ bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Json
 		return true;
 	}
 
-	if (writeRemoteScript(scriptContent, params)) {
+	if (writeRemoteScript(scriptContent, filename)) {
 		app.getScriptManager().play_script(remoteScriptsDir + params["file"], remoteScriptsDir);
 		return "Successfully saved & started to execute the script";
 		return true;
@@ -490,6 +567,11 @@ bool MWebapi::processRunRequest(string uri, const MongooseRequest& request, Json
 	return true;
 }
 
+/**
+ * Controller for state request.
+ *
+ * Assembles the current stare of the Nightshade application.
+ */
 bool MWebapi::processStateRequest(const MongooseRequest& request, Json::Value& response) {
 	response[FlagState] = flagStateToJson();
 	response[ScriptState] = scriptStateToJson();
@@ -497,6 +579,9 @@ bool MWebapi::processStateRequest(const MongooseRequest& request, Json::Value& r
 	return true;
 }
 
+/**
+ * Controller for script playback control request.
+ */
 bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 	uri = uri.substr(1); // remove leading '/'
 
@@ -527,9 +612,12 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 	return true;
 }
 
-bool MWebapi::writeRemoteScript(stringstream& script, const QueryParams& params) {
+/**
+ * Writes the given stringstream's content to a file with the given filename.
+ */
+bool MWebapi::writeRemoteScript(stringstream& script, const string& filename) {
 	ofstream os;
-	os.open(string(remoteScriptsDir + params["file"]).c_str(), ios::out | ios::trunc);
+	os.open(string(remoteScriptsDir + filename).c_str(), ios::out | ios::trunc);
 
 	if (! os.bad()) {
 		string line;
@@ -549,7 +637,9 @@ bool MWebapi::writeRemoteScript(stringstream& script, const QueryParams& params)
  * ###########################################################################################################
  */
 
-
+/**
+ * Parses the query params part of a request URI, and returns a map of them.
+ */
 static QueryParams parseQuery(const string& query) {
 	static string PAIR_DELIMITER("&");
 	static string KEY_DELIMITER("=");
@@ -573,6 +663,9 @@ static QueryParams parseQuery(const string& query) {
 	return ret;
 }
 
+/**
+ * Parses a flag type request URI, and determines which flag should be changed and how.
+ */
 static CommandState parseFlagURI(string uri) {
 	CommandState ret;
 
