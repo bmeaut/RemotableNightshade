@@ -84,6 +84,10 @@ static string ControlScriptStop("scriptStop");
  */
 static string ControlReset("reset");
 
+static string ControlZoom("zoom");
+static string ControlZoomIn("in");
+static string ControlZoomOut("out");
+
 
 static string FetchObjectImage("objectImage");
 static string Key_ObjectId("objectId");
@@ -624,6 +628,16 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 		sm.cancel_script();
 	} else if (ControlReset.compare(uri) == 0) {
 		cout << "Going to reset!!" << endl << endl;
+	} else if (boost::starts_with(uri, ControlZoom)) {
+
+		if (ControlZoomIn.compare(uri.substr(ControlZoom.length() + 1)) == 0) {
+			// zoom in
+			core.zoomTo(core.getAimFov() - app.getMouseZoom() * core.getAimFov() / 60., 0.2);
+		} else {
+			// zoom out
+			core.zoomTo(core.getAimFov() + app.getMouseZoom() * core.getAimFov() / 60., 0.2);
+		}
+
 	} else {
 		success = false;
 	}

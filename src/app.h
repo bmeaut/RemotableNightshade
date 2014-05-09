@@ -111,6 +111,7 @@ public:
 	Core& getCore() { return *core; }
 	AppCommandInterface& getCommander() { return *commander; }
 	ScriptMgr& getScriptManager() { return *scripts; }
+	int getMouseZoom() { return MouseZoom; }
 
 	//! Initialize application and core
 	void init(void);
