@@ -19,6 +19,9 @@
 #include <boost/format.hpp>
 
 #include "script_mgr.h"
+#include "nebula.h"
+
+#include "base64/base64.h"
 
 using namespace std;
 
@@ -47,8 +50,9 @@ static string CommandTypeExecute("execute");
 static string CommandTypeRun("run");
 /** Current state request. */
 static string CommandTypeGetState("state");
-/** Script playback control request. */
+/** Script playback & other control request. */
 static string CommandTypeControl("control");
+static string CommandTypeFetch("fetch");
 
 /**
  * Constants for flag type requests, corresponding to the manual.
@@ -76,6 +80,15 @@ static string ControlScriptPlayPause("scriptPlayPause");
 static string ControlScriptStop("scriptStop");
 
 /**
+ * Constant to reset the whole app state.
+ */
+static string ControlReset("reset");
+
+
+static string FetchObjectImage("objectImage");
+static string Key_ObjectId("objectId");
+
+/**
  * JSON response field name constants.
  */
 static string Response("response");
@@ -88,6 +101,11 @@ static string CurrentFile("curentFile");
 static string IsFaster("isFaster");
 static string IsPaused("isPaused");
 
+static string ObjectImageRoot("objectImage");
+static string ObjectImage_Id("objectId");
+static string ObjectImage_Name("objectName");
+static string ObjectImage_Data("data");
+
 
 /* ###########################################################################################################
  * 				Forward declarations
@@ -96,6 +114,7 @@ static string IsPaused("isPaused");
 
 static CommandState parseFlagURI(string uri);
 static QueryParams parseQuery(const string& query);
+static string loadImage(const string& path);
 
 
 /* ###########################################################################################################
@@ -200,7 +219,7 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 
 	response.setConnectionAlive(false);
 	response.setCacheDisabled();
-	response.setContentType("text/html");
+	response.setContentType("application/json");
 
 	if (eventCode == MG_NEW_REQUEST) {
 		string uri(request.getUri().substr(1)); // remove leading '/'
@@ -216,6 +235,10 @@ bool MWebapi::handleEvent(ServerHandlingEvent eventCode,
 				// Flag request
 				uri = uri.substr(CommandTypeFlag.length());
 				processed = processFlagRequest(uri, responseContent);
+			} else if (boost::starts_with(uri, CommandTypeFetch)) {
+				// fetch request
+				uri = uri.substr(CommandTypeFetch.length());
+				processed = processFetchRequest(uri, request, responseContent);
 			}
 		} else if (boost::equals(request.getRequestMethod(), HTTP_POST)) {
 			if (boost::starts_with(uri, CommandTypeExecute)) {
@@ -599,6 +622,8 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 		}
 	} else if (ControlScriptStop.compare(uri) == 0) {
 		sm.cancel_script();
+	} else if (ControlReset.compare(uri) == 0) {
+		cout << "Going to reset!!" << endl << endl;
 	} else {
 		success = false;
 	}
@@ -610,6 +635,48 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 	}
 
 	return true;
+}
+
+bool MWebapi::processFetchRequest(string uri, const MongooseRequest& request, Json::Value& response) {
+	uri = uri.substr(1); // remove leading '/'
+
+	if (boost::starts_with(uri, FetchObjectImage)) {
+		if (request.getQueryString().length() > 0) {
+			// parameterized request
+			QueryParams params = parseQuery(request.getQueryString());
+			string objectId = params[Key_ObjectId];
+
+			Json::Value oiRoot;
+			oiRoot[ObjectImage_Id] = objectId;
+
+			if (boost::starts_with(objectId, "M") || boost::starts_with(objectId, "NGC")) {
+
+			}
+
+			Nebula* nebula = core.getNebulaManager().searchNebula(objectId, false);
+			if (nebula == NULL) {
+				oiRoot[ObjectImage_Name] = "Not found";
+				oiRoot[ObjectImage_Data] = "";
+			} else {
+				string filePath = nebula->getTexture().getFileName();
+
+				oiRoot[ObjectImage_Name] = nebula->getEnglishName() + "--|--" + nebula->getNameI18n();
+				oiRoot[ObjectImage_Data] = loadImage(
+						core.getDataRoot() + "/textures/" + filePath);
+
+			}
+			response[ObjectImageRoot] = oiRoot;
+		} else {
+			// general request
+		}
+
+		return true;
+	}
+	return false;
+}
+
+void MWebapi::appendNebulaImage(const string& objectId, Json::Value& response) {
+
 }
 
 /**
@@ -661,6 +728,39 @@ static QueryParams parseQuery(const string& query) {
 	}
 
 	return ret;
+}
+
+static string loadImage(const string& path) {
+
+	ifstream in;
+
+	cout << "opening file " << path << endl;
+
+	in.open(path.c_str(), ios::in|ios::binary);
+
+	if (in.is_open()) {
+		// get length of file:
+		in.seekg (0, in.end);
+		int length = in.tellg();
+		in.seekg (0, in.beg);
+
+		cout << "File length: " << length << " bytes" << endl;
+
+		// allocate memory:
+		char * buffer = new char [length];
+
+		// read data as a block:
+		in.read(buffer,length);
+
+		in.close();
+
+		return Base64::base64_encode(buffer, length);
+
+	}
+
+	cout << "Can't open file!" << endl;
+
+	return "";
 }
 
 /**

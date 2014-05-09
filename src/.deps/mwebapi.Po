@@ -811,7 +811,8 @@ mwebapi.o: mongoose-cpp/mwebapi.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/format/detail/msvc_disambiguater.hpp \
  /usr/local/include/boost/format/parsing.hpp \
  /usr/local/include/boost/format/free_funcs.hpp \
- /usr/local/include/boost/format/detail/unset_macros.hpp script_mgr.h
+ /usr/local/include/boost/format/detail/unset_macros.hpp script_mgr.h \
+ nebula.h mongoose-cpp/base64/base64.h
 
 /usr/include/stdc-predef.h:
 
@@ -2714,3 +2715,7 @@ mongoose-cpp/mongoose.h:
 /usr/local/include/boost/format/detail/unset_macros.hpp:
 
 script_mgr.h:
+
+nebula.h:
+
+mongoose-cpp/base64/base64.h:

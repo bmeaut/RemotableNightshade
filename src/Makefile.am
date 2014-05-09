@@ -37,7 +37,8 @@ nightshade_SOURCES = object.h object.cpp \
 	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h \
     mongoose-cpp/mongoose.c mongoose-cpp/mongoose.h mongoose-cpp/mongcpp.cpp mongoose-cpp/mongcpp.h \
     mongoose-cpp/mwebapi.cpp mongoose-cpp/mwebapi.h \
-    mongoose-cpp/json/json.h mongoose-cpp/json/json-forwards.h mongoose-cpp/jsoncpp.cpp
+    mongoose-cpp/json/json.h mongoose-cpp/json/json-forwards.h mongoose-cpp/jsoncpp.cpp \
+    mongoose-cpp/base64/base64.h mongoose-cpp/base64/base64.cpp 
 
 nightshade_CFLAGS = `pkg-config --cflags libmicrohttpd`
 nightshade_LDFLAGS = `GraphicsMagick++-config --libs` `pkg-config --libs libmicrohttpd`

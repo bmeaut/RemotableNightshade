@@ -68,6 +68,9 @@ protected:
 	bool processRunRequest(string uri, const MongooseRequest& request, Json::Value& response);
 	bool processStateRequest(const MongooseRequest& request, Json::Value& response);
 	bool processControlRequest(string uri, const MongooseRequest& request, Json::Value& response);
+	bool processFetchRequest(string uri, const MongooseRequest& request, Json::Value& response);
+
+	void appendNebulaImage(const string& objectId, Json::Value& response);
 
 	Json::Value flagStateToJson();
 	Json::Value scriptStateToJson();

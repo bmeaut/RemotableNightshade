@@ -59,6 +59,10 @@
 class Core
 {
 public:
+
+	NebulaMgr& getNebulaManager() { return *nebulas; }
+
+
 	//! Possible mount modes
 	enum MOUNT_MODE { MOUNT_ALTAZIMUTAL, MOUNT_EQUATORIAL };
 

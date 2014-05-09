@@ -75,6 +75,12 @@ public:
 		s_texture::texDir = _texDir;
 	}
 
+	/**
+	 * Return the filename this texture was loaded from.
+	 * @author: Ákos Pap
+	 */
+	string getFileName() { return (/*whole_path ? textureName : texDir + */textureName ); }
+
 private:
 	void blend( const int, char* const, const unsigned int );
 	bool ProxyLoad( unsigned int, unsigned int, GLint, GLint );

@@ -104,6 +104,12 @@ public:
 		return englishName;
 	}
 
+	/**
+	 * Return the texture associated with this nebula.
+	 * @author: Ákos Pap
+	 */
+	s_texture& getTexture() { return *neb_tex; }
+
 	//! @brief Get the printable nebula Type
 	//! @return the nebula type code.
 	//string getTypeString(void) const {return L"TODO";}

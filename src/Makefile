@@ -144,7 +144,8 @@ am_nightshade_OBJECTS = object.$(OBJEXT) object_base.$(OBJEXT) \
 	night_shader.$(OBJEXT) bump_shader.$(OBJEXT) \
 	ring_shader.$(OBJEXT) ringed_shader.$(OBJEXT) \
 	named_sockets.$(OBJEXT) nightshade-mongoose.$(OBJEXT) \
-	mongcpp.$(OBJEXT) mwebapi.$(OBJEXT) jsoncpp.$(OBJEXT)
+	mongcpp.$(OBJEXT) mwebapi.$(OBJEXT) jsoncpp.$(OBJEXT) \
+	base64.$(OBJEXT)
 nightshade_OBJECTS = $(am_nightshade_OBJECTS)
 am__DEPENDENCIES_1 =
 nightshade_DEPENDENCIES =  \
@@ -492,7 +493,8 @@ nightshade_SOURCES = object.h object.cpp \
 	ring_shader.cpp ring_shader.h ringed_shader.cpp ringed_shader.h named_sockets.cpp named_sockets.h \
     mongoose-cpp/mongoose.c mongoose-cpp/mongoose.h mongoose-cpp/mongcpp.cpp mongoose-cpp/mongcpp.h \
     mongoose-cpp/mwebapi.cpp mongoose-cpp/mwebapi.h \
-    mongoose-cpp/json/json.h mongoose-cpp/json/json-forwards.h mongoose-cpp/jsoncpp.cpp
+    mongoose-cpp/json/json.h mongoose-cpp/json/json-forwards.h mongoose-cpp/jsoncpp.cpp \
+    mongoose-cpp/base64/base64.h mongoose-cpp/base64/base64.cpp 
 
 nightshade_CFLAGS = `pkg-config --cflags libmicrohttpd`
 nightshade_LDFLAGS = `GraphicsMagick++-config --libs` `pkg-config --libs libmicrohttpd`
@@ -609,6 +611,7 @@ include ./$(DEPDIR)/app_command_interface.Po
 include ./$(DEPDIR)/app_settings.Po
 include ./$(DEPDIR)/atmosphere.Po
 include ./$(DEPDIR)/audio.Po
+include ./$(DEPDIR)/base64.Po
 include ./$(DEPDIR)/bump_shader.Po
 include ./$(DEPDIR)/command_interface.Po
 include ./$(DEPDIR)/command_nshade.Po
@@ -792,6 +795,20 @@ jsoncpp.obj: mongoose-cpp/jsoncpp.cpp
 #	$(AM_V_CXX)source='mongoose-cpp/jsoncpp.cpp' object='jsoncpp.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o jsoncpp.obj `if test -f 'mongoose-cpp/jsoncpp.cpp'; then $(CYGPATH_W) 'mongoose-cpp/jsoncpp.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/jsoncpp.cpp'; fi`
+
+base64.o: mongoose-cpp/base64/base64.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT base64.o -MD -MP -MF $(DEPDIR)/base64.Tpo -c -o base64.o `test -f 'mongoose-cpp/base64/base64.cpp' || echo '$(srcdir)/'`mongoose-cpp/base64/base64.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/base64.Tpo $(DEPDIR)/base64.Po
+#	$(AM_V_CXX)source='mongoose-cpp/base64/base64.cpp' object='base64.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o base64.o `test -f 'mongoose-cpp/base64/base64.cpp' || echo '$(srcdir)/'`mongoose-cpp/base64/base64.cpp
+
+base64.obj: mongoose-cpp/base64/base64.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT base64.obj -MD -MP -MF $(DEPDIR)/base64.Tpo -c -o base64.obj `if test -f 'mongoose-cpp/base64/base64.cpp'; then $(CYGPATH_W) 'mongoose-cpp/base64/base64.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/base64/base64.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/base64.Tpo $(DEPDIR)/base64.Po
+#	$(AM_V_CXX)source='mongoose-cpp/base64/base64.cpp' object='base64.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o base64.obj `if test -f 'mongoose-cpp/base64/base64.cpp'; then $(CYGPATH_W) 'mongoose-cpp/base64/base64.cpp'; else $(CYGPATH_W) '$(srcdir)/mongoose-cpp/base64/base64.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
