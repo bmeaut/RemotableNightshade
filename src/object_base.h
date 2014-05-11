@@ -30,12 +30,12 @@
 #include "../nscontrol/src/nshade_state.h"
 #include <iostream>
 #include "object_type.h"
+#include "s_texture.h"
 
 using namespace std;
 
 class Navigator;
 class Projector;
-class s_texture;
 
 class ObjectBase;
 void intrusive_ptr_add_ref(ObjectBase* p);
@@ -44,6 +44,11 @@ void intrusive_ptr_release(ObjectBase* p);
 class ObjectBase
 {
 public:
+	/**
+	 * for WebApi
+	 */
+	virtual s_texture getTexture() { return s_texture("no_texture"); }
+
 	virtual ~ObjectBase(void) {}
 	virtual void retain(void) {}
 	virtual void release(void) {}

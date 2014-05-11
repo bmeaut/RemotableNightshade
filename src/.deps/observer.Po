@@ -528,8 +528,8 @@ observer.o: observer.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/type_traits/is_abstract.hpp object_type.h \
  /usr/local/include/boost/intrusive_ptr.hpp \
  /usr/local/include/boost/smart_ptr/intrusive_ptr.hpp \
- /usr/local/include/boost/config/no_tr1/functional.hpp s_font.h \
- s_texture.h projector.h mapping.h sphere_geometry.h tone_reproductor.h \
+ /usr/local/include/boost/config/no_tr1/functional.hpp s_texture.h \
+ s_font.h projector.h mapping.h sphere_geometry.h tone_reproductor.h \
  callbacks.hpp callback_helpers.hpp fader.h /usr/include/c++/4.8/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/float.h translator.h \
  /usr/include/c++/4.8/cerrno gettext.h shared_data.h \
@@ -1892,9 +1892,9 @@ object_type.h:
 
 /usr/local/include/boost/config/no_tr1/functional.hpp:
 
-s_font.h:
-
 s_texture.h:
+
+s_font.h:
 
 projector.h:
 

@@ -514,11 +514,11 @@ mwebapi.o: mongoose-cpp/mwebapi.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/type_traits/is_abstract.hpp object_type.h \
  /usr/local/include/boost/intrusive_ptr.hpp \
  /usr/local/include/boost/smart_ptr/intrusive_ptr.hpp \
- /usr/local/include/boost/config/no_tr1/functional.hpp nightshade.h \
- ../config.h /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
- /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
- /usr/include/SDL/SDL_platform.h /usr/include/strings.h \
- /usr/include/inttypes.h /usr/include/iconv.h \
+ /usr/local/include/boost/config/no_tr1/functional.hpp s_texture.h \
+ ../config.h nightshade.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/iconv.h \
  /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
  /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
  /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
@@ -530,9 +530,9 @@ mwebapi.o: mongoose-cpp/mwebapi.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
  /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
  /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_opengl.h \
- /usr/include/GL/glu.h fmath.h utility.h s_font.h s_texture.h projector.h \
- mapping.h sphere_geometry.h tone_reproductor.h callbacks.hpp \
- callback_helpers.hpp fader.h /usr/include/c++/4.8/cfloat \
+ /usr/include/GL/glu.h fmath.h utility.h s_font.h projector.h mapping.h \
+ sphere_geometry.h tone_reproductor.h callbacks.hpp callback_helpers.hpp \
+ fader.h /usr/include/c++/4.8/cfloat \
  /usr/lib/gcc/x86_64-linux-gnu/4.8/include/float.h translator.h \
  /usr/include/c++/4.8/cerrno gettext.h shared_data.h \
  ../nscontrol/src/nshade_shared_memory.h \
@@ -707,7 +707,7 @@ mwebapi.o: mongoose-cpp/mwebapi.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/4.8/bits/stl_deque.h \
  /usr/include/c++/4.8/bits/deque.tcc /usr/include/c++/4.8/stack \
  /usr/include/c++/4.8/bits/stl_stack.h mongoose-cpp/mongcpp.h \
- mongoose-cpp/mongoose.h \
+ mongoose-cpp/mongoose.h object_base.h \
  /usr/local/include/boost/algorithm/string/classification.hpp \
  /usr/local/include/boost/range/value_type.hpp \
  /usr/local/include/boost/range/config.hpp \
@@ -1984,9 +1984,11 @@ object_type.h:
 
 /usr/local/include/boost/config/no_tr1/functional.hpp:
 
-nightshade.h:
+s_texture.h:
 
 ../config.h:
+
+nightshade.h:
 
 /usr/include/SDL/SDL.h:
 
@@ -2055,8 +2057,6 @@ fmath.h:
 utility.h:
 
 s_font.h:
-
-s_texture.h:
 
 projector.h:
 
@@ -2503,6 +2503,8 @@ mongoose-cpp/json/json.h:
 mongoose-cpp/mongcpp.h:
 
 mongoose-cpp/mongoose.h:
+
+object_base.h:
 
 /usr/local/include/boost/algorithm/string/classification.hpp:
 

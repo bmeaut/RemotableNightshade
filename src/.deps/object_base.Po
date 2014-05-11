@@ -503,8 +503,8 @@ object_base.o: object_base.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/type_traits/is_abstract.hpp object_type.h \
  /usr/local/include/boost/intrusive_ptr.hpp \
  /usr/local/include/boost/smart_ptr/intrusive_ptr.hpp \
- /usr/local/include/boost/config/no_tr1/functional.hpp object.h \
- nightshade.h ../config.h GLee.h /usr/include/GL/gl.h \
+ /usr/local/include/boost/config/no_tr1/functional.hpp s_texture.h \
+ ../config.h nightshade.h GLee.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/GL/glx.h /usr/include/X11/Xlib.h \
  /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
  /usr/include/X11/Xosdefs.h /usr/include/X11/Xutil.h \
@@ -524,7 +524,7 @@ object_base.o: object_base.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
  /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
  /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_opengl.h \
- /usr/include/GL/glu.h fmath.h projector.h s_font.h utility.h s_texture.h \
+ /usr/include/GL/glu.h fmath.h object.h projector.h s_font.h utility.h \
  mapping.h sphere_geometry.h /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
@@ -1764,11 +1764,11 @@ object_type.h:
 
 /usr/local/include/boost/config/no_tr1/functional.hpp:
 
-object.h:
-
-nightshade.h:
+s_texture.h:
 
 ../config.h:
+
+nightshade.h:
 
 GLee.h:
 
@@ -1858,13 +1858,13 @@ GLee.h:
 
 fmath.h:
 
+object.h:
+
 projector.h:
 
 s_font.h:
 
 utility.h:
-
-s_texture.h:
 
 mapping.h:
 

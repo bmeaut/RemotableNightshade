@@ -511,7 +511,7 @@ hip_star.o: hip_star.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/detail/lcast_precision.hpp \
  /usr/local/include/boost/integer_traits.hpp \
  /usr/local/include/boost/type_traits/is_abstract.hpp object_type.h \
- nightshade.h ../config.h /usr/include/SDL/SDL.h \
+ s_texture.h ../config.h nightshade.h /usr/include/SDL/SDL.h \
  /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
  /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
  /usr/include/strings.h /usr/include/inttypes.h /usr/include/iconv.h \
@@ -526,10 +526,10 @@ hip_star.o: hip_star.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
  /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
  /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_opengl.h \
- /usr/include/GL/glu.h fmath.h utility.h s_font.h s_texture.h projector.h \
- mapping.h sphere_geometry.h tone_reproductor.h callbacks.hpp \
- callback_helpers.hpp translator.h /usr/include/c++/4.8/cerrno gettext.h \
- shared_data.h ../nscontrol/src/nshade_shared_memory.h \
+ /usr/include/GL/glu.h fmath.h utility.h s_font.h projector.h mapping.h \
+ sphere_geometry.h tone_reproductor.h callbacks.hpp callback_helpers.hpp \
+ translator.h /usr/include/c++/4.8/cerrno gettext.h shared_data.h \
+ ../nscontrol/src/nshade_shared_memory.h \
  ../nscontrol/src/nshade_shared_memory_connection.h \
  /usr/local/include/boost/interprocess/containers/deque.hpp \
  /usr/local/include/boost/interprocess/containers/container/deque.hpp \
@@ -1826,9 +1826,11 @@ object_base.h:
 
 object_type.h:
 
-nightshade.h:
+s_texture.h:
 
 ../config.h:
+
+nightshade.h:
 
 /usr/include/SDL/SDL.h:
 
@@ -1897,8 +1899,6 @@ fmath.h:
 utility.h:
 
 s_font.h:
-
-s_texture.h:
 
 projector.h:
 

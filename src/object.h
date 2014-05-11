@@ -41,6 +41,12 @@ class ObjectBase;
 class Object
 {
 public:
+
+	/**
+	 * for WebApi
+	 */
+	ObjectBase* getObject() { return rep; }
+
 	Object(void);
 	~Object(void);
 	Object(ObjectBase *r);

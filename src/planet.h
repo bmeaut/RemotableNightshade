@@ -117,6 +117,11 @@ public:
 		return re.period;
 	}
 
+	/**
+	 * for WebApi
+	 */
+	s_texture getTexture() { return *tex_map; }
+
 	// TODO, shader texture flags are redundant
 	Planet(Planet *parent,
 	       const string& englishName,

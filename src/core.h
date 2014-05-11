@@ -61,6 +61,7 @@ class Core
 public:
 
 	NebulaMgr& getNebulaManager() { return *nebulas; }
+	Object& getSelectedObject() { return selected_object; }
 
 
 	//! Possible mount modes

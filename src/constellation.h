@@ -44,6 +44,11 @@ private:
 	Constellation();
 	~Constellation();
 
+	/**
+	 * for WebApi
+	 */
+	s_texture getTexture() { return *art_tex; }
+
 	// Object method to override
 	//! Write I18n information about the object.
 	string getInfoString(const Navigator * nav) const {

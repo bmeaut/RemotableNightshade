@@ -13,6 +13,7 @@
 #include "app.h"
 #include "json/json.h"
 #include "mongcpp.h"
+#include "object_base.h"
 
 
 using namespace mongoose;
@@ -70,7 +71,7 @@ protected:
 	bool processControlRequest(string uri, const MongooseRequest& request, Json::Value& response);
 	bool processFetchRequest(string uri, const MongooseRequest& request, Json::Value& response);
 
-	void appendNebulaImage(const string& objectId, Json::Value& response);
+	void appendImage(ObjectBase* object, Json::Value& destination);
 
 	Json::Value flagStateToJson();
 	Json::Value scriptStateToJson();

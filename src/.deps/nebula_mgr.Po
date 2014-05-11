@@ -645,7 +645,7 @@ nebula_mgr.o: nebula_mgr.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/random/linear_congruential.hpp \
  /usr/local/include/boost/random/detail/const_mod.hpp \
  /usr/local/include/boost/random/detail/seed.hpp nebula.h object_base.h \
- projector.h s_font.h utility.h s_texture.h mapping.h sphere_geometry.h \
+ s_texture.h projector.h s_font.h utility.h mapping.h sphere_geometry.h \
  navigator.h observer.h init_parser.h ../src/iniparser/iniparser.h \
  ../src/iniparser/dictionary.h tone_reproductor.h translator.h \
  /usr/include/c++/4.8/cerrno gettext.h loadingbar.h
@@ -2118,13 +2118,13 @@ nebula.h:
 
 object_base.h:
 
+s_texture.h:
+
 projector.h:
 
 s_font.h:
 
 utility.h:
-
-s_texture.h:
 
 mapping.h:
 

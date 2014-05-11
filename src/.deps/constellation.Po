@@ -523,8 +523,8 @@ constellation.o: constellation.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/type_traits/is_abstract.hpp object_type.h \
  /usr/local/include/boost/intrusive_ptr.hpp \
  /usr/local/include/boost/smart_ptr/intrusive_ptr.hpp \
- /usr/local/include/boost/config/no_tr1/functional.hpp object.h utility.h \
- s_font.h s_texture.h projector.h mapping.h sphere_geometry.h \
+ /usr/local/include/boost/config/no_tr1/functional.hpp s_texture.h \
+ object.h utility.h s_font.h projector.h mapping.h sphere_geometry.h \
  /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc fader.h /usr/include/c++/4.8/cfloat \
@@ -1865,13 +1865,13 @@ object_type.h:
 
 /usr/local/include/boost/config/no_tr1/functional.hpp:
 
+s_texture.h:
+
 object.h:
 
 utility.h:
 
 s_font.h:
-
-s_texture.h:
 
 projector.h:
 

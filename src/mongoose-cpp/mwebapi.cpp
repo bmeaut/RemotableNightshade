@@ -88,6 +88,9 @@ static string ControlZoom("zoom");
 static string ControlZoomIn("in");
 static string ControlZoomOut("out");
 
+static string ControlSelect("select");
+static string ControlDeselect("deselect");
+
 
 static string FetchObjectImage("objectImage");
 static string Key_ObjectId("objectId");
@@ -612,11 +615,11 @@ bool MWebapi::processStateRequest(const MongooseRequest& request, Json::Value& r
 bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 	uri = uri.substr(1); // remove leading '/'
 
-	cout << "Requested a script state change: " << uri << endl << endl;
 
 	ScriptMgr& sm = app.getScriptManager();
 
 	bool success = true;
+	string message;
 
 	if (ControlScriptPlayPause.compare(uri) == 0) {
 		if (sm.is_paused()) {
@@ -638,12 +641,33 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 			core.zoomTo(core.getAimFov() + app.getMouseZoom() * core.getAimFov() / 60., 0.2);
 		}
 
+	} else if (boost::starts_with(uri, ControlSelect)) {
+		QueryParams params = parseQuery(request.getQueryString());
+		QueryParams::const_iterator it;
+		if (params.find("type") != params.end()
+				&& params.find("id") != params.end()) {
+			string type(params["type"]);
+			string identifier(params["id"]);
+
+			app.getCore().selectObject(type, identifier);
+			app.getCore().setFlagSelectedObjectPointer(false);
+			message = app.getCore().getSelectedObjectInfo();
+
+			appendImage(app.getCore().getSelectedObject().getObject(), response);
+
+
+			//app.getCore().gotoSelectedObject();
+			app.getCore().autoZoomIn(app.getCore().getAutoMoveDuration(), false);
+		}
+
+	} else if (boost::starts_with(uri, ControlDeselect)) {
+		app.getCore().deselect();
 	} else {
 		success = false;
 	}
 
 	if (success) {
-		response[Response] = "Control action successfully executed: " + uri;
+		response[Response] = "Control action successfully executed: " + uri + "\n" + message;
 	} else {
 		response[Response] = "Failed to execute control action (" + uri + ").";
 	}
@@ -660,26 +684,9 @@ bool MWebapi::processFetchRequest(string uri, const MongooseRequest& request, Js
 			QueryParams params = parseQuery(request.getQueryString());
 			string objectId = params[Key_ObjectId];
 
-			Json::Value oiRoot;
-			oiRoot[ObjectImage_Id] = objectId;
-
-			if (boost::starts_with(objectId, "M") || boost::starts_with(objectId, "NGC")) {
-
-			}
 
 			Nebula* nebula = core.getNebulaManager().searchNebula(objectId, false);
-			if (nebula == NULL) {
-				oiRoot[ObjectImage_Name] = "Not found";
-				oiRoot[ObjectImage_Data] = "";
-			} else {
-				string filePath = nebula->getTexture().getFileName();
-
-				oiRoot[ObjectImage_Name] = nebula->getEnglishName() + "--|--" + nebula->getNameI18n();
-				oiRoot[ObjectImage_Data] = loadImage(
-						core.getDataRoot() + "/textures/" + filePath);
-
-			}
-			response[ObjectImageRoot] = oiRoot;
+			appendImage(nebula, response);
 		} else {
 			// general request
 		}
@@ -689,8 +696,16 @@ bool MWebapi::processFetchRequest(string uri, const MongooseRequest& request, Js
 	return false;
 }
 
-void MWebapi::appendNebulaImage(const string& objectId, Json::Value& response) {
+void MWebapi::appendImage(ObjectBase* object, Json::Value& destination) {
+	Json::Value oiRoot;
+	oiRoot[ObjectImage_Id] = object->getEnglishName();
+	oiRoot[ObjectImage_Name] = object->getNameI18n();
 
+	string filePath = object->getTexture().getFileName();
+	oiRoot[ObjectImage_Data] = loadImage(
+						core.getDataRoot() + "/textures/" + filePath);
+
+	destination[ObjectImageRoot] = oiRoot;
 }
 
 /**

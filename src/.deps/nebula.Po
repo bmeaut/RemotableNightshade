@@ -503,16 +503,16 @@ nebula.o: nebula.cpp /usr/include/stdc-predef.h \
  /usr/local/include/boost/type_traits/is_abstract.hpp object_type.h \
  /usr/local/include/boost/intrusive_ptr.hpp \
  /usr/local/include/boost/smart_ptr/intrusive_ptr.hpp \
- /usr/local/include/boost/config/no_tr1/functional.hpp nightshade.h \
- ../config.h GLee.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
- /usr/include/GL/glx.h /usr/include/X11/Xlib.h /usr/include/X11/X.h \
- /usr/include/X11/Xfuncproto.h /usr/include/X11/Xosdefs.h \
- /usr/include/X11/Xutil.h /usr/include/X11/keysym.h \
- /usr/include/X11/keysymdef.h /usr/include/GL/glxext.h \
- /usr/include/SDL/SDL.h /usr/include/SDL/SDL_main.h \
- /usr/include/SDL/SDL_stdinc.h /usr/include/SDL/SDL_config.h \
- /usr/include/SDL/SDL_platform.h /usr/include/strings.h \
- /usr/include/inttypes.h /usr/include/iconv.h \
+ /usr/local/include/boost/config/no_tr1/functional.hpp s_texture.h \
+ ../config.h nightshade.h GLee.h /usr/include/GL/gl.h \
+ /usr/include/GL/glext.h /usr/include/GL/glx.h /usr/include/X11/Xlib.h \
+ /usr/include/X11/X.h /usr/include/X11/Xfuncproto.h \
+ /usr/include/X11/Xosdefs.h /usr/include/X11/Xutil.h \
+ /usr/include/X11/keysym.h /usr/include/X11/keysymdef.h \
+ /usr/include/GL/glxext.h /usr/include/SDL/SDL.h \
+ /usr/include/SDL/SDL_main.h /usr/include/SDL/SDL_stdinc.h \
+ /usr/include/SDL/SDL_config.h /usr/include/SDL/SDL_platform.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/iconv.h \
  /usr/include/SDL/begin_code.h /usr/include/SDL/close_code.h \
  /usr/include/SDL/SDL_audio.h /usr/include/SDL/SDL_error.h \
  /usr/include/SDL/SDL_endian.h /usr/include/SDL/SDL_mutex.h \
@@ -524,8 +524,8 @@ nebula.o: nebula.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL/SDL_joystick.h /usr/include/SDL/SDL_quit.h \
  /usr/include/SDL/SDL_loadso.h /usr/include/SDL/SDL_timer.h \
  /usr/include/SDL/SDL_version.h /usr/include/SDL/SDL_opengl.h \
- /usr/include/GL/glu.h fmath.h projector.h s_font.h utility.h s_texture.h \
- mapping.h sphere_geometry.h /usr/include/c++/4.8/vector \
+ /usr/include/GL/glu.h fmath.h projector.h s_font.h utility.h mapping.h \
+ sphere_geometry.h /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc navigator.h observer.h \
@@ -1770,9 +1770,11 @@ object_type.h:
 
 /usr/local/include/boost/config/no_tr1/functional.hpp:
 
-nightshade.h:
+s_texture.h:
 
 ../config.h:
+
+nightshade.h:
 
 GLee.h:
 
@@ -1867,8 +1869,6 @@ projector.h:
 s_font.h:
 
 utility.h:
-
-s_texture.h:
 
 mapping.h:
 
