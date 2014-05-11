@@ -60,6 +60,7 @@ static string CommandTypeFetch("fetch");
 static string ConstellationLines("constellationLines");
 static string ConstellationLabels("constellationLabels");
 static string ConstellationArt("constellationArt");
+static string ConstellationBoundaries("constellationBoundaries");
 static string AzimuthalGrid("azimuthalGrid");
 static string EquatorialGrid("equatorialGrid");
 static string Ground("ground");
@@ -154,6 +155,7 @@ Json::Value MWebapi::flagStateToJson() {
 	root[ConstellationLines] = 	core.getFlagConstellationLines();
 	root[ConstellationLabels] = 	core.getFlagConstellationNames();
 	root[ConstellationArt] = 		core.getFlagConstellationArt();
+	root[ConstellationBoundaries] = core.getFlagConstellationBoundaries();
 	root[AzimuthalGrid] = 			core.getFlagAzimutalGrid();
 	root[EquatorialGrid] = 		core.getFlagEquatorGrid();
 	root[Ground] = 				core.getFlagLandscape();
@@ -339,6 +341,23 @@ bool MWebapi::processFlagRequest(string uri, Json::Value& response) {
 					case TOGGLE: {
 							bool currState = core.getFlagConstellationArt();
 							core.setFlagConstellationArt(!currState);
+						}
+						break;
+					default:
+						break;
+				}
+				break;
+			case CONSTELLATION_BOUNDARIES:
+				switch (cs.state) {
+					case ON:
+						core.setFlagConstellationBoundaries(true);
+						break;
+					case OFF:
+						core.setFlagConstellationBoundaries(false);
+						break;
+					case TOGGLE: {
+							bool currState = core.getFlagConstellationBoundaries();
+							core.setFlagConstellationBoundaries(!currState);
 						}
 						break;
 					default:
@@ -622,17 +641,20 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 	string message;
 
 	if (ControlScriptPlayPause.compare(uri) == 0) {
+// play/pause script
 		if (sm.is_paused()) {
 			sm.resume_script();
 		} else {
 			sm.pause_script();
 		}
 	} else if (ControlScriptStop.compare(uri) == 0) {
+// stop script
 		sm.cancel_script();
 	} else if (ControlReset.compare(uri) == 0) {
+// reset
 		cout << "Going to reset!!" << endl << endl;
 	} else if (boost::starts_with(uri, ControlZoom)) {
-
+// zoom
 		if (ControlZoomIn.compare(uri.substr(ControlZoom.length() + 1)) == 0) {
 			// zoom in
 			core.zoomTo(core.getAimFov() - app.getMouseZoom() * core.getAimFov() / 60., 0.2);
@@ -642,6 +664,7 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 		}
 
 	} else if (boost::starts_with(uri, ControlSelect)) {
+// select
 		QueryParams params = parseQuery(request.getQueryString());
 		QueryParams::const_iterator it;
 		if (params.find("type") != params.end()
@@ -661,6 +684,7 @@ bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, 
 		}
 
 	} else if (boost::starts_with(uri, ControlDeselect)) {
+// deselect
 		app.getCore().deselect();
 	} else {
 		success = false;
@@ -807,6 +831,9 @@ static CommandState parseFlagURI(string uri) {
 	} else if (boost::starts_with(uri, ConstellationArt)) {
 		ret.command = CONSTELLATION_ART;
 		uri = uri.substr(ConstellationArt.length() + 1);
+	} else if (boost::starts_with(uri, ConstellationBoundaries)) {
+		ret.command = CONSTELLATION_BOUNDARIES;
+		uri = uri.substr(ConstellationBoundaries.length() + 1);
 	} else if (boost::starts_with(uri, AzimuthalGrid)) {
 		ret.command = AZIMUTHAL_GRID;
 		uri = uri.substr(AzimuthalGrid.length() + 1);
