@@ -80,6 +80,11 @@ static string Toggle("toggle");
 static string ControlScriptPlayPause("scriptPlayPause");
 static string ControlScriptStop("scriptStop");
 
+static string ControlTimeFaster("timeFaster");
+static string ControlTimeSlower("timeSlower");
+static string ControlTimeReal("timeReal");
+static string ControlTimeCurrent("timeCurrent");
+
 /**
  * Constant to reset the whole app state.
  */
@@ -634,25 +639,37 @@ bool MWebapi::processStateRequest(const MongooseRequest& request, Json::Value& r
 bool MWebapi::processControlRequest(string uri, const MongooseRequest& request, Json::Value& response) {
 	uri = uri.substr(1); // remove leading '/'
 
-
-	ScriptMgr& sm = app.getScriptManager();
-
 	bool success = true;
 	string message;
 
 	if (ControlScriptPlayPause.compare(uri) == 0) {
 // play/pause script
-		if (sm.is_paused()) {
-			sm.resume_script();
-		} else {
-			sm.pause_script();
-		}
+		commander.execute_command("script action pause");
+
 	} else if (ControlScriptStop.compare(uri) == 0) {
 // stop script
-		sm.cancel_script();
+		commander.execute_command("script action end");
+
+	} else if (ControlTimeFaster.compare(uri) == 0) {
+// faster time
+		commander.execute_command("timerate action increment");
+
+	} else if (ControlTimeSlower.compare(uri) == 0) {
+// slower time
+		commander.execute_command("timerate action decrement");
+
+	} else if (ControlTimeReal.compare(uri) == 0) {
+// real time
+		commander.execute_command("timerate rate 1");
+
+	} else if (ControlTimeCurrent.compare(uri) == 0) {
+// current time
+		core.setTimeNow(); // TODO Ha lehet, scriptesen megoldani
+
 	} else if (ControlReset.compare(uri) == 0) {
 // reset
 		cout << "Going to reset!!" << endl << endl;
+
 	} else if (boost::starts_with(uri, ControlZoom)) {
 // zoom
 		if (ControlZoomIn.compare(uri.substr(ControlZoom.length() + 1)) == 0) {
